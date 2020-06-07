@@ -1,0 +1,52 @@
+.\out\mdf.o: ..\..\Speex_Lib\libspeex\mdf.c
+.\out\mdf.o: ..\..\Speex_Lib\libspeex\speex_config.h
+.\out\mdf.o: ..\..\Speex_Lib\libspeex\speex_arch.h
+.\out\mdf.o: ..\..\Speex_Lib\include\speex/speex_types.h
+.\out\mdf.o: ..\..\Speex_Lib\include\speex/speex_config_types.h
+.\out\mdf.o: ..\..\Speex_Lib\libspeex\fixed_generic.h
+.\out\mdf.o: ..\..\Speex_Lib\include\speex/speex_echo.h
+.\out\mdf.o: ..\..\Speex_Lib\libspeex\fftwrap.h
+.\out\mdf.o: ..\..\Speex_Lib\libspeex\pseudofloat.h
+.\out\mdf.o: ..\..\Speex_Lib\libspeex\os_support.h
+.\out\mdf.o: F:\Program Files (x86)\MDK5\ARM\ARMCC\Bin\..\include\string.h
+.\out\mdf.o: F:\Program Files (x86)\MDK5\ARM\ARMCC\Bin\..\include\stdio.h
+.\out\mdf.o: F:\Program Files (x86)\MDK5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\out\mdf.o: ..\..\app\inc\debug.h
+.\out\mdf.o: ..\..\app\inc\type.h
+.\out\mdf.o: ..\..\kernel\api\inc\timer.h
+.\out\mdf.o: ..\..\kernel\api\inc\api.h
+.\out\mdf.o: ..\..\kernel\FreeRTOS\Source\include\FreeRTOS.h
+.\out\mdf.o: F:\Program Files (x86)\MDK5\ARM\ARMCC\Bin\..\include\stddef.h
+.\out\mdf.o: F:\Program Files (x86)\MDK5\ARM\ARMCC\Bin\..\include\stdint.h
+.\out\mdf.o: ..\..\kernel\FreeRTOS\Source\include\FreeRTOSConfig.h
+.\out\mdf.o: ..\..\config\app_cfg.h
+.\out\mdf.o: ..\..\kernel\FreeRTOS\Source\include\projdefs.h
+.\out\mdf.o: ..\..\kernel\FreeRTOS\Source\include\portable.h
+.\out\mdf.o: ..\..\kernel\FreeRTOS\Source\include\deprecated_definitions.h
+.\out\mdf.o: ..\..\kernel\FreeRTOS\Source\portable\RVDS\ARM_CM4F\portmacro.h
+.\out\mdf.o: ..\..\kernel\FreeRTOS\Source\include\mpu_wrappers.h
+.\out\mdf.o: ..\..\kernel\FreeRTOS\Source\include\task.h
+.\out\mdf.o: ..\..\kernel\FreeRTOS\Source\include\list.h
+.\out\mdf.o: ..\..\kernel\FreeRTOS\Source\include\semphr.h
+.\out\mdf.o: ..\..\kernel\FreeRTOS\Source\include\queue.h
+.\out\mdf.o: ..\..\kernel\FreeRTOS\Source\include\timers.h
+.\out\mdf.o: ..\..\kernel\api\inc\atomic.h
+.\out\mdf.o: ..\..\kernel\api\inc\api.h
+.\out\mdf.o: ..\..\kernel\api\inc\mbox.h
+.\out\mdf.o: ..\..\kernel\api\inc\mutex.h
+.\out\mdf.o: ..\..\kernel\api\inc\sem.h
+.\out\mdf.o: ..\..\kernel\api\inc\wait.h
+.\out\mdf.o: ..\..\kernel\api\inc\task_api.h
+.\out\mdf.o: ..\..\kernel\api\inc\timer.h
+.\out\mdf.o: ..\..\kernel\api\inc\msg_q.h
+.\out\mdf.o: ..\..\kernel\api\inc\memory.h
+.\out\mdf.o: ..\..\net\lwip\src\include\lwip/opt.h
+.\out\mdf.o: ..\..\net\lwip\src\include\lwip/debug.h
+.\out\mdf.o: ..\..\net\lwip\src\include\lwip/debug.h
+.\out\mdf.o: ..\..\net\lwip\src\include\lwip/arch.h
+.\out\mdf.o: ..\..\net\lwip\src\include\lwip/arch/cc.h
+.\out\mdf.o: ..\..\net\lwip\src\include\lwip/opt.h
+.\out\mdf.o: ..\..\kernel\api\inc\memory2.h
+.\out\mdf.o: ..\..\Speex_Lib\libspeex\speex_config.h
+.\out\mdf.o: ..\..\Speex_Lib\libspeex\math_approx.h
+.\out\mdf.o: F:\Program Files (x86)\MDK5\ARM\ARMCC\Bin\..\include\math.h

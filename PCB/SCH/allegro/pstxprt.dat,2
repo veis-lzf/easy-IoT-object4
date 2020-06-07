@@ -1,0 +1,838 @@
+FILE_TYPE = EXPANDEDPARTLIST;
+{ Using PSTWRITER 16.6.0 d001Sep-06-2019 at 20:51:30 }
+DIRECTIVES
+ PST_VERSION='PST_HDL_CENTRIC_VERSION_0';
+ ROOT_DRAWING='LWIP_BASEBOARD';
+ POST_TIME='Feb 15 2016 19:53:59';
+ SOURCE_TOOL='CAPTURE_WRITER';
+END_DIRECTIVES;
+
+PART_NAME
+ C1 'CAP NP_C0603_0.1UF/C0603':;
+
+SECTION_NUMBER 1
+ '@LWIP_BASEBOARD.SCHEMATIC1(SCH_1):INS2827@MY_LIB.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@lwip_baseboard.schematic1(sch_1):ins2827@my_lib.\cap np.normal\(chips)',
+ P_PATH='@lwip_baseboard.schematic1(sch_1):page4_ins2827@my_lib.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C10 'CAP NP_C0603_0.1UF/C0603':;
+
+SECTION_NUMBER 1
+ '@LWIP_BASEBOARD.SCHEMATIC1(SCH_1):INS4437@MY_LIB.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@lwip_baseboard.schematic1(sch_1):ins4437@my_lib.\cap np.normal\(chips)',
+ P_PATH='@lwip_baseboard.schematic1(sch_1):page4_ins4437@my_lib.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C11 'CAP TAC_TA3216_10UF':;
+
+SECTION_NUMBER 1
+ '@LWIP_BASEBOARD.SCHEMATIC1(SCH_1):INS4469@MY_LIB.CAP TAC.NORMAL(CHIPS)':
+ C_PATH='@lwip_baseboard.schematic1(sch_1):ins4469@my_lib.\cap tac.normal\(chips)',
+ P_PATH='@lwip_baseboard.schematic1(sch_1):page4_ins4469@my_lib.\cap tac.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C12 'CAP NP_C0603_0.1UF/C0603':;
+
+SECTION_NUMBER 1
+ '@LWIP_BASEBOARD.SCHEMATIC1(SCH_1):INS3734@MY_LIB.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@lwip_baseboard.schematic1(sch_1):ins3734@my_lib.\cap np.normal\(chips)',
+ P_PATH='@lwip_baseboard.schematic1(sch_1):page4_ins3734@my_lib.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C13 'CAP TAC_TA3216_10UF':;
+
+SECTION_NUMBER 1
+ '@LWIP_BASEBOARD.SCHEMATIC1(SCH_1):INS3843@MY_LIB.CAP TAC.NORMAL(CHIPS)':
+ C_PATH='@lwip_baseboard.schematic1(sch_1):ins3843@my_lib.\cap tac.normal\(chips)',
+ P_PATH='@lwip_baseboard.schematic1(sch_1):page4_ins3843@my_lib.\cap tac.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C14 'CAP NP_C0603_1UF/C0603':;
+
+SECTION_NUMBER 1
+ '@LWIP_BASEBOARD.SCHEMATIC1(SCH_1):INS17741@MY_LIB.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@lwip_baseboard.schematic1(sch_1):ins17741@my_lib.\cap np.normal\(chips)',
+ P_PATH='@lwip_baseboard.schematic1(sch_1):page6_ins17741@my_lib.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C15 'CAP POL_C_SMD_6R3X5R3_470UF':;
+
+SECTION_NUMBER 1
+ '@LWIP_BASEBOARD.SCHEMATIC1(SCH_1):INS17792@MY_LIB.CAP POL.NORMAL(CHIPS)':
+ C_PATH='@lwip_baseboard.schematic1(sch_1):ins17792@my_lib.\cap pol.normal\(chips)',
+ P_PATH='@lwip_baseboard.schematic1(sch_1):page6_ins17792@my_lib.\cap pol.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C16 'CAP NP_C0603_1UF/C0603':;
+
+SECTION_NUMBER 1
+ '@LWIP_BASEBOARD.SCHEMATIC1(SCH_1):INS17767@MY_LIB.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@lwip_baseboard.schematic1(sch_1):ins17767@my_lib.\cap np.normal\(chips)',
+ P_PATH='@lwip_baseboard.schematic1(sch_1):page6_ins17767@my_lib.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C17 'CAP NP_C0603_1UF/C0603':;
+
+SECTION_NUMBER 1
+ '@LWIP_BASEBOARD.SCHEMATIC1(SCH_1):INS17558@MY_LIB.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@lwip_baseboard.schematic1(sch_1):ins17558@my_lib.\cap np.normal\(chips)',
+ P_PATH='@lwip_baseboard.schematic1(sch_1):page6_ins17558@my_lib.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C18 'CAP NP_C0603_1UF/C0603':;
+
+SECTION_NUMBER 1
+ '@LWIP_BASEBOARD.SCHEMATIC1(SCH_1):INS17155@MY_LIB.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@lwip_baseboard.schematic1(sch_1):ins17155@my_lib.\cap np.normal\(chips)',
+ P_PATH='@lwip_baseboard.schematic1(sch_1):page6_ins17155@my_lib.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C19 'CAP NP_C0603_0.1UF/C0603':;
+
+SECTION_NUMBER 1
+ '@LWIP_BASEBOARD.SCHEMATIC1(SCH_1):INS17209@MY_LIB.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@lwip_baseboard.schematic1(sch_1):ins17209@my_lib.\cap np.normal\(chips)',
+ P_PATH='@lwip_baseboard.schematic1(sch_1):page6_ins17209@my_lib.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C2 'CAP NP_C0603_22PF/C0603':;
+
+SECTION_NUMBER 1
+ '@LWIP_BASEBOARD.SCHEMATIC1(SCH_1):INS2471@MY_LIB.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@lwip_baseboard.schematic1(sch_1):ins2471@my_lib.\cap np.normal\(chips)',
+ P_PATH='@lwip_baseboard.schematic1(sch_1):page4_ins2471@my_lib.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C20 'CAP NP_C0603_1UF/C0603':;
+
+SECTION_NUMBER 1
+ '@LWIP_BASEBOARD.SCHEMATIC1(SCH_1):INS18709@MY_LIB.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@lwip_baseboard.schematic1(sch_1):ins18709@my_lib.\cap np.normal\(chips)',
+ P_PATH='@lwip_baseboard.schematic1(sch_1):page6_ins18709@my_lib.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C21 'CAP NP_C0603_1UF/C0603':;
+
+SECTION_NUMBER 1
+ '@LWIP_BASEBOARD.SCHEMATIC1(SCH_1):INS18683@MY_LIB.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@lwip_baseboard.schematic1(sch_1):ins18683@my_lib.\cap np.normal\(chips)',
+ P_PATH='@lwip_baseboard.schematic1(sch_1):page6_ins18683@my_lib.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C22 'CAP NP_C0603_0.1UF/C0603':;
+
+SECTION_NUMBER 1
+ '@LWIP_BASEBOARD.SCHEMATIC1(SCH_1):INS20180@MY_LIB.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@lwip_baseboard.schematic1(sch_1):ins20180@my_lib.\cap np.normal\(chips)',
+ P_PATH='@lwip_baseboard.schematic1(sch_1):page7_ins20180@my_lib.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C23 'CAP NP_C0603_0.1UF/C0603':;
+
+SECTION_NUMBER 1
+ '@LWIP_BASEBOARD.SCHEMATIC1(SCH_1):INS21054@MY_LIB.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@lwip_baseboard.schematic1(sch_1):ins21054@my_lib.\cap np.normal\(chips)',
+ P_PATH='@lwip_baseboard.schematic1(sch_1):page7_ins21054@my_lib.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C24 'CAP NP_C0603_NC':;
+
+SECTION_NUMBER 1
+ '@LWIP_BASEBOARD.SCHEMATIC1(SCH_1):INS25725@MY_LIB.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@lwip_baseboard.schematic1(sch_1):ins25725@my_lib.\cap np.normal\(chips)',
+ P_PATH='@lwip_baseboard.schematic1(sch_1):page8_ins25725@my_lib.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C25 'CAP NP_C0603_NC':;
+
+SECTION_NUMBER 1
+ '@LWIP_BASEBOARD.SCHEMATIC1(SCH_1):INS25751@MY_LIB.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@lwip_baseboard.schematic1(sch_1):ins25751@my_lib.\cap np.normal\(chips)',
+ P_PATH='@lwip_baseboard.schematic1(sch_1):page8_ins25751@my_lib.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C26 'CAP NP_C0603_0.1UF/C0603':;
+
+SECTION_NUMBER 1
+ '@LWIP_BASEBOARD.SCHEMATIC1(SCH_1):INS29103@MY_LIB.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@lwip_baseboard.schematic1(sch_1):ins29103@my_lib.\cap np.normal\(chips)',
+ P_PATH='@lwip_baseboard.schematic1(sch_1):page8_ins29103@my_lib.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C27 'CAP TAC_TA3216_10UF':;
+
+SECTION_NUMBER 1
+ '@LWIP_BASEBOARD.SCHEMATIC1(SCH_1):INS28646@MY_LIB.CAP TAC.NORMAL(CHIPS)':
+ C_PATH='@lwip_baseboard.schematic1(sch_1):ins28646@my_lib.\cap tac.normal\(chips)',
+ P_PATH='@lwip_baseboard.schematic1(sch_1):page8_ins28646@my_lib.\cap tac.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C28 'CAP TAC_TA3216_10UF':;
+
+SECTION_NUMBER 1
+ '@LWIP_BASEBOARD.SCHEMATIC1(SCH_1):INS28961@MY_LIB.CAP TAC.NORMAL(CHIPS)':
+ C_PATH='@lwip_baseboard.schematic1(sch_1):ins28961@my_lib.\cap tac.normal\(chips)',
+ P_PATH='@lwip_baseboard.schematic1(sch_1):page9_ins28961@my_lib.\cap tac.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C29 'CAP NP_C0603_0.1UF/C0603':;
+
+SECTION_NUMBER 1
+ '@LWIP_BASEBOARD.SCHEMATIC1(SCH_1):INS29409@MY_LIB.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@lwip_baseboard.schematic1(sch_1):ins29409@my_lib.\cap np.normal\(chips)',
+ P_PATH='@lwip_baseboard.schematic1(sch_1):page9_ins29409@my_lib.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C3 'CAP NP_C0603_22PF/C0603':;
+
+SECTION_NUMBER 1
+ '@LWIP_BASEBOARD.SCHEMATIC1(SCH_1):INS2504@MY_LIB.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@lwip_baseboard.schematic1(sch_1):ins2504@my_lib.\cap np.normal\(chips)',
+ P_PATH='@lwip_baseboard.schematic1(sch_1):page4_ins2504@my_lib.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C30 'CAP NP_C0603_0.1UF/C0603':;
+
+SECTION_NUMBER 1
+ '@LWIP_BASEBOARD.SCHEMATIC1(SCH_1):INS29515@MY_LIB.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@lwip_baseboard.schematic1(sch_1):ins29515@my_lib.\cap np.normal\(chips)',
+ P_PATH='@lwip_baseboard.schematic1(sch_1):page9_ins29515@my_lib.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C31 'CAP POL_C_SMD_6R3X5R3_220UF':;
+
+SECTION_NUMBER 1
+ '@LWIP_BASEBOARD.SCHEMATIC1(SCH_1):INS31412@MY_LIB.CAP POL.NORMAL(CHIPS)':
+ C_PATH='@lwip_baseboard.schematic1(sch_1):ins31412@my_lib.\cap pol.normal\(chips)',
+ P_PATH='@lwip_baseboard.schematic1(sch_1):page10_ins31412@my_lib.\cap pol.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C32 'CAP NP_C0603_0.1UF':;
+
+SECTION_NUMBER 1
+ '@LWIP_BASEBOARD.SCHEMATIC1(SCH_1):INS31476@MY_LIB.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@lwip_baseboard.schematic1(sch_1):ins31476@my_lib.\cap np.normal\(chips)',
+ P_PATH='@lwip_baseboard.schematic1(sch_1):page10_ins31476@my_lib.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C33 'CAP POL_C_SMD_6R3X5R3_220UF':;
+
+SECTION_NUMBER 1
+ '@LWIP_BASEBOARD.SCHEMATIC1(SCH_1):INS31594@MY_LIB.CAP POL.NORMAL(CHIPS)':
+ C_PATH='@lwip_baseboard.schematic1(sch_1):ins31594@my_lib.\cap pol.normal\(chips)',
+ P_PATH='@lwip_baseboard.schematic1(sch_1):page10_ins31594@my_lib.\cap pol.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C34 'CAP NP_C0603_0.1UF':;
+
+SECTION_NUMBER 1
+ '@LWIP_BASEBOARD.SCHEMATIC1(SCH_1):INS31610@MY_LIB.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@lwip_baseboard.schematic1(sch_1):ins31610@my_lib.\cap np.normal\(chips)',
+ P_PATH='@lwip_baseboard.schematic1(sch_1):page10_ins31610@my_lib.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C35 'CAP NP_C0603_0.1UF/C0603':;
+
+SECTION_NUMBER 1
+ '@LWIP_BASEBOARD.SCHEMATIC1(SCH_1):INS36442@MY_LIB.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@lwip_baseboard.schematic1(sch_1):ins36442@my_lib.\cap np.normal\(chips)',
+ P_PATH='@lwip_baseboard.schematic1(sch_1):page4_ins36442@my_lib.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C4 'CAP NP_C0603_2.2UF':;
+
+SECTION_NUMBER 1
+ '@LWIP_BASEBOARD.SCHEMATIC1(SCH_1):INS2264@MY_LIB.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@lwip_baseboard.schematic1(sch_1):ins2264@my_lib.\cap np.normal\(chips)',
+ P_PATH='@lwip_baseboard.schematic1(sch_1):page4_ins2264@my_lib.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C5 'CAP NP_C0603_2.2UF':;
+
+SECTION_NUMBER 1
+ '@LWIP_BASEBOARD.SCHEMATIC1(SCH_1):INS2238@MY_LIB.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@lwip_baseboard.schematic1(sch_1):ins2238@my_lib.\cap np.normal\(chips)',
+ P_PATH='@lwip_baseboard.schematic1(sch_1):page4_ins2238@my_lib.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C6 'CAP NP_C0603_0.1UF/C0603':;
+
+SECTION_NUMBER 1
+ '@LWIP_BASEBOARD.SCHEMATIC1(SCH_1):INS3402@MY_LIB.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@lwip_baseboard.schematic1(sch_1):ins3402@my_lib.\cap np.normal\(chips)',
+ P_PATH='@lwip_baseboard.schematic1(sch_1):page4_ins3402@my_lib.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C7 'CAP NP_C0603_0.1UF/C0603':;
+
+SECTION_NUMBER 1
+ '@LWIP_BASEBOARD.SCHEMATIC1(SCH_1):INS4359@MY_LIB.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@lwip_baseboard.schematic1(sch_1):ins4359@my_lib.\cap np.normal\(chips)',
+ P_PATH='@lwip_baseboard.schematic1(sch_1):page4_ins4359@my_lib.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C8 'CAP NP_C0603_0.1UF/C0603':;
+
+SECTION_NUMBER 1
+ '@LWIP_BASEBOARD.SCHEMATIC1(SCH_1):INS4385@MY_LIB.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@lwip_baseboard.schematic1(sch_1):ins4385@my_lib.\cap np.normal\(chips)',
+ P_PATH='@lwip_baseboard.schematic1(sch_1):page4_ins4385@my_lib.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C9 'CAP NP_C0603_0.1UF/C0603':;
+
+SECTION_NUMBER 1
+ '@LWIP_BASEBOARD.SCHEMATIC1(SCH_1):INS4411@MY_LIB.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@lwip_baseboard.schematic1(sch_1):ins4411@my_lib.\cap np.normal\(chips)',
+ P_PATH='@lwip_baseboard.schematic1(sch_1):page4_ins4411@my_lib.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ D1 'LED_LED0603_LED':;
+
+SECTION_NUMBER 1
+ '@LWIP_BASEBOARD.SCHEMATIC1(SCH_1):INS15428@MY_LIB.LED.NORMAL(CHIPS)':
+ C_PATH='@lwip_baseboard.schematic1(sch_1):ins15428@my_lib.\led.normal\(chips)',
+ P_PATH='@lwip_baseboard.schematic1(sch_1):page5_ins15428@my_lib.\led.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ D2 'LED_LED0603_LED':;
+
+SECTION_NUMBER 1
+ '@LWIP_BASEBOARD.SCHEMATIC1(SCH_1):INS15534@MY_LIB.LED.NORMAL(CHIPS)':
+ C_PATH='@lwip_baseboard.schematic1(sch_1):ins15534@my_lib.\led.normal\(chips)',
+ P_PATH='@lwip_baseboard.schematic1(sch_1):page5_ins15534@my_lib.\led.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ D3 'LED_LED0603_LED':;
+
+SECTION_NUMBER 1
+ '@LWIP_BASEBOARD.SCHEMATIC1(SCH_1):INS15612@MY_LIB.LED.NORMAL(CHIPS)':
+ C_PATH='@lwip_baseboard.schematic1(sch_1):ins15612@my_lib.\led.normal\(chips)',
+ P_PATH='@lwip_baseboard.schematic1(sch_1):page5_ins15612@my_lib.\led.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ D4 'LED_LED0603_LED':;
+
+SECTION_NUMBER 1
+ '@LWIP_BASEBOARD.SCHEMATIC1(SCH_1):INS15938@MY_LIB.LED.NORMAL(CHIPS)':
+ C_PATH='@lwip_baseboard.schematic1(sch_1):ins15938@my_lib.\led.normal\(chips)',
+ P_PATH='@lwip_baseboard.schematic1(sch_1):page5_ins15938@my_lib.\led.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ D5 'DIODE_SOD123_1N5819':;
+
+SECTION_NUMBER 1
+ '@LWIP_BASEBOARD.SCHEMATIC1(SCH_1):INS32173@MY_LIB.DIODE.NORMAL(CHIPS)':
+ C_PATH='@lwip_baseboard.schematic1(sch_1):ins32173@my_lib.\diode.normal\(chips)',
+ P_PATH='@lwip_baseboard.schematic1(sch_1):page10_ins32173@my_lib.\diode.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ J1 'CON4_1_25_PWT_4P_JLINK':;
+
+SECTION_NUMBER 1
+ '@LWIP_BASEBOARD.SCHEMATIC1(SCH_1):INS812@MY_LIB.CON4.NORMAL(CHIPS)':
+ C_PATH='@lwip_baseboard.schematic1(sch_1):ins812@my_lib.\con4.normal\(chips)',
+ P_PATH='@lwip_baseboard.schematic1(sch_1):page1_ins812@my_lib.\con4.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ J2 'CON4_1_25_PWT_4P_UART1':;
+
+SECTION_NUMBER 1
+ '@LWIP_BASEBOARD.SCHEMATIC1(SCH_1):INS5294@MY_LIB.CON4.NORMAL(CHIPS)':
+ C_PATH='@lwip_baseboard.schematic1(sch_1):ins5294@my_lib.\con4.normal\(chips)',
+ P_PATH='@lwip_baseboard.schematic1(sch_1):page1_ins5294@my_lib.\con4.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ J3 'CON18A_CON_2R54_2X9_OV2640':;
+
+SECTION_NUMBER 1
+ '@LWIP_BASEBOARD.SCHEMATIC1(SCH_1):INS20996@CONNECTOR.CON18A.NORMAL(CHIPS)':
+ C_PATH='@lwip_baseboard.schematic1(sch_1):ins20996@connector.\con18a.normal\(chips)',
+ P_PATH='@lwip_baseboard.schematic1(sch_1):page7_ins20996@connector.\con18a.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ J4 'CON2_SIP-2_CON2':;
+
+SECTION_NUMBER 1
+ '@LWIP_BASEBOARD.SCHEMATIC1(SCH_1):INS31973@CONNECTOR.CON2.NORMAL(CHIPS)':
+ C_PATH='@lwip_baseboard.schematic1(sch_1):ins31973@connector.\con2.normal\(chips)',
+ P_PATH='@lwip_baseboard.schematic1(sch_1):page10_ins31973@connector.\con2.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ J5 'CON3_IPX-3X3_ANT':;
+
+SECTION_NUMBER 1
+ '@LWIP_BASEBOARD.SCHEMATIC1(SCH_1):INS36133@CONNECTOR.CON3.NORMAL(CHIPS)':
+ C_PATH='@lwip_baseboard.schematic1(sch_1):ins36133@connector.\con3.normal\(chips)',
+ P_PATH='@lwip_baseboard.schematic1(sch_1):page8_ins36133@connector.\con3.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ L1 'INDUCTANCE_L0603_10PF':;
+
+SECTION_NUMBER 1
+ '@LWIP_BASEBOARD.SCHEMATIC1(SCH_1):INS25869@MY_LIB.INDUCTANCE.NORMAL(CHIPS)':
+ C_PATH='@lwip_baseboard.schematic1(sch_1):ins25869@my_lib.\inductance.normal\(chips)',
+ P_PATH='@lwip_baseboard.schematic1(sch_1):page8_ins25869@my_lib.\inductance.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ LB1 'FB_L0603_600R':;
+
+SECTION_NUMBER 1
+ '@LWIP_BASEBOARD.SCHEMATIC1(SCH_1):INS3455@MY_LIB.FB.NORMAL(CHIPS)':
+ C_PATH='@lwip_baseboard.schematic1(sch_1):ins3455@my_lib.\fb.normal\(chips)',
+ P_PATH='@lwip_baseboard.schematic1(sch_1):page4_ins3455@my_lib.\fb.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ LB2 'FB_L0603_600R':;
+
+SECTION_NUMBER 1
+ '@LWIP_BASEBOARD.SCHEMATIC1(SCH_1):INS18240@MY_LIB.FB.NORMAL(CHIPS)':
+ C_PATH='@lwip_baseboard.schematic1(sch_1):ins18240@my_lib.\fb.normal\(chips)',
+ P_PATH='@lwip_baseboard.schematic1(sch_1):page6_ins18240@my_lib.\fb.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ LB3 'FB_L0603_600R':;
+
+SECTION_NUMBER 1
+ '@LWIP_BASEBOARD.SCHEMATIC1(SCH_1):INS18332@MY_LIB.FB.NORMAL(CHIPS)':
+ C_PATH='@lwip_baseboard.schematic1(sch_1):ins18332@my_lib.\fb.normal\(chips)',
+ P_PATH='@lwip_baseboard.schematic1(sch_1):page6_ins18332@my_lib.\fb.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ LB4 'FB_L0603_600R':;
+
+SECTION_NUMBER 1
+ '@LWIP_BASEBOARD.SCHEMATIC1(SCH_1):INS18587@MY_LIB.FB.NORMAL(CHIPS)':
+ C_PATH='@lwip_baseboard.schematic1(sch_1):ins18587@my_lib.\fb.normal\(chips)',
+ P_PATH='@lwip_baseboard.schematic1(sch_1):page6_ins18587@my_lib.\fb.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ LB5 'FB_L0603_600R':;
+
+SECTION_NUMBER 1
+ '@LWIP_BASEBOARD.SCHEMATIC1(SCH_1):INS18625@MY_LIB.FB.NORMAL(CHIPS)':
+ C_PATH='@lwip_baseboard.schematic1(sch_1):ins18625@my_lib.\fb.normal\(chips)',
+ P_PATH='@lwip_baseboard.schematic1(sch_1):page6_ins18625@my_lib.\fb.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ LCD1 'TFT_LCD_3R5_3_2_LCD_TFT_LCD_3R5':;
+
+SECTION_NUMBER 1
+ '@LWIP_BASEBOARD.SCHEMATIC1(SCH_1):INS27054@MY_LIB.TFT_LCD_3R5.NORMAL(CHIPS)':
+ C_PATH='@lwip_baseboard.schematic1(sch_1):ins27054@my_lib.\tft_lcd_3r5.normal\(chips)',
+ P_PATH='@lwip_baseboard.schematic1(sch_1):page9_ins27054@my_lib.\tft_lcd_3r5.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ LS1 'SPEAKER_SIP-2_SPEAKER/8OHM/0.5W':;
+
+SECTION_NUMBER 1
+ '@LWIP_BASEBOARD.SCHEMATIC1(SCH_1):INS18838@DISCRETE.SPEAKER.NORMAL(CHIPS)':
+ C_PATH='@lwip_baseboard.schematic1(sch_1):ins18838@discrete.\speaker.normal\(chips)',
+ P_PATH='@lwip_baseboard.schematic1(sch_1):page6_ins18838@discrete.\speaker.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R1 'RES_R0603_10K':;
+
+SECTION_NUMBER 1
+ '@LWIP_BASEBOARD.SCHEMATIC1(SCH_1):INS2344@MY_LIB.RES.NORMAL(CHIPS)':
+ C_PATH='@lwip_baseboard.schematic1(sch_1):ins2344@my_lib.\res.normal\(chips)',
+ P_PATH='@lwip_baseboard.schematic1(sch_1):page4_ins2344@my_lib.\res.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R10 'RES_R0603_10K':;
+
+SECTION_NUMBER 1
+ '@LWIP_BASEBOARD.SCHEMATIC1(SCH_1):INS17085@MY_LIB.RES.NORMAL(CHIPS)':
+ C_PATH='@lwip_baseboard.schematic1(sch_1):ins17085@my_lib.\res.normal\(chips)',
+ P_PATH='@lwip_baseboard.schematic1(sch_1):page6_ins17085@my_lib.\res.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R11 'RES_R0603_0R':;
+
+SECTION_NUMBER 1
+ '@LWIP_BASEBOARD.SCHEMATIC1(SCH_1):INS19134@MY_LIB.RES.NORMAL(CHIPS)':
+ C_PATH='@lwip_baseboard.schematic1(sch_1):ins19134@my_lib.\res.normal\(chips)',
+ P_PATH='@lwip_baseboard.schematic1(sch_1):page6_ins19134@my_lib.\res.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R12 'RES_R0603_10K':;
+
+SECTION_NUMBER 1
+ '@LWIP_BASEBOARD.SCHEMATIC1(SCH_1):INS21549@MY_LIB.RES.NORMAL(CHIPS)':
+ C_PATH='@lwip_baseboard.schematic1(sch_1):ins21549@my_lib.\res.normal\(chips)',
+ P_PATH='@lwip_baseboard.schematic1(sch_1):page7_ins21549@my_lib.\res.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R13 'RES_R0603_10K':;
+
+SECTION_NUMBER 1
+ '@LWIP_BASEBOARD.SCHEMATIC1(SCH_1):INS21581@MY_LIB.RES.NORMAL(CHIPS)':
+ C_PATH='@lwip_baseboard.schematic1(sch_1):ins21581@my_lib.\res.normal\(chips)',
+ P_PATH='@lwip_baseboard.schematic1(sch_1):page7_ins21581@my_lib.\res.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R14 'RES_R0603_10K':;
+
+SECTION_NUMBER 1
+ '@LWIP_BASEBOARD.SCHEMATIC1(SCH_1):INS27856@MY_LIB.RES.NORMAL(CHIPS)':
+ C_PATH='@lwip_baseboard.schematic1(sch_1):ins27856@my_lib.\res.normal\(chips)',
+ P_PATH='@lwip_baseboard.schematic1(sch_1):page8_ins27856@my_lib.\res.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R15 'RES_R0603_10K':;
+
+SECTION_NUMBER 1
+ '@LWIP_BASEBOARD.SCHEMATIC1(SCH_1):INS27888@MY_LIB.RES.NORMAL(CHIPS)':
+ C_PATH='@lwip_baseboard.schematic1(sch_1):ins27888@my_lib.\res.normal\(chips)',
+ P_PATH='@lwip_baseboard.schematic1(sch_1):page8_ins27888@my_lib.\res.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R16 'RES_R0603_10K':;
+
+SECTION_NUMBER 1
+ '@LWIP_BASEBOARD.SCHEMATIC1(SCH_1):INS27932@MY_LIB.RES.NORMAL(CHIPS)':
+ C_PATH='@lwip_baseboard.schematic1(sch_1):ins27932@my_lib.\res.normal\(chips)',
+ P_PATH='@lwip_baseboard.schematic1(sch_1):page8_ins27932@my_lib.\res.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R17 'RES_R0603_10K':;
+
+SECTION_NUMBER 1
+ '@LWIP_BASEBOARD.SCHEMATIC1(SCH_1):INS27952@MY_LIB.RES.NORMAL(CHIPS)':
+ C_PATH='@lwip_baseboard.schematic1(sch_1):ins27952@my_lib.\res.normal\(chips)',
+ P_PATH='@lwip_baseboard.schematic1(sch_1):page8_ins27952@my_lib.\res.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R18 'RES_R0603_10K':;
+
+SECTION_NUMBER 1
+ '@LWIP_BASEBOARD.SCHEMATIC1(SCH_1):INS27996@MY_LIB.RES.NORMAL(CHIPS)':
+ C_PATH='@lwip_baseboard.schematic1(sch_1):ins27996@my_lib.\res.normal\(chips)',
+ P_PATH='@lwip_baseboard.schematic1(sch_1):page8_ins27996@my_lib.\res.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R2 'RES_R0603_0R':;
+
+SECTION_NUMBER 1
+ '@LWIP_BASEBOARD.SCHEMATIC1(SCH_1):INS3995@MY_LIB.RES.NORMAL(CHIPS)':
+ C_PATH='@lwip_baseboard.schematic1(sch_1):ins3995@my_lib.\res.normal\(chips)',
+ P_PATH='@lwip_baseboard.schematic1(sch_1):page4_ins3995@my_lib.\res.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R3 'RES_R0603_0R':;
+
+SECTION_NUMBER 1
+ '@LWIP_BASEBOARD.SCHEMATIC1(SCH_1):INS4091@MY_LIB.RES.NORMAL(CHIPS)':
+ C_PATH='@lwip_baseboard.schematic1(sch_1):ins4091@my_lib.\res.normal\(chips)',
+ P_PATH='@lwip_baseboard.schematic1(sch_1):page4_ins4091@my_lib.\res.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R4 'RES_R0603_1K':;
+
+SECTION_NUMBER 1
+ '@LWIP_BASEBOARD.SCHEMATIC1(SCH_1):INS15460@MY_LIB.RES.NORMAL(CHIPS)':
+ C_PATH='@lwip_baseboard.schematic1(sch_1):ins15460@my_lib.\res.normal\(chips)',
+ P_PATH='@lwip_baseboard.schematic1(sch_1):page5_ins15460@my_lib.\res.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R5 'RES_R0603_1K':;
+
+SECTION_NUMBER 1
+ '@LWIP_BASEBOARD.SCHEMATIC1(SCH_1):INS15558@MY_LIB.RES.NORMAL(CHIPS)':
+ C_PATH='@lwip_baseboard.schematic1(sch_1):ins15558@my_lib.\res.normal\(chips)',
+ P_PATH='@lwip_baseboard.schematic1(sch_1):page5_ins15558@my_lib.\res.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R6 'RES_R0603_1K':;
+
+SECTION_NUMBER 1
+ '@LWIP_BASEBOARD.SCHEMATIC1(SCH_1):INS15636@MY_LIB.RES.NORMAL(CHIPS)':
+ C_PATH='@lwip_baseboard.schematic1(sch_1):ins15636@my_lib.\res.normal\(chips)',
+ P_PATH='@lwip_baseboard.schematic1(sch_1):page5_ins15636@my_lib.\res.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R7 'RES_R0603_1K':;
+
+SECTION_NUMBER 1
+ '@LWIP_BASEBOARD.SCHEMATIC1(SCH_1):INS15962@MY_LIB.RES.NORMAL(CHIPS)':
+ C_PATH='@lwip_baseboard.schematic1(sch_1):ins15962@my_lib.\res.normal\(chips)',
+ P_PATH='@lwip_baseboard.schematic1(sch_1):page5_ins15962@my_lib.\res.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R8 'RES_R0603_10K':;
+
+SECTION_NUMBER 1
+ '@LWIP_BASEBOARD.SCHEMATIC1(SCH_1):INS16201@MY_LIB.RES.NORMAL(CHIPS)':
+ C_PATH='@lwip_baseboard.schematic1(sch_1):ins16201@my_lib.\res.normal\(chips)',
+ P_PATH='@lwip_baseboard.schematic1(sch_1):page5_ins16201@my_lib.\res.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R9 'RES_R0603_10K':;
+
+SECTION_NUMBER 1
+ '@LWIP_BASEBOARD.SCHEMATIC1(SCH_1):INS16233@MY_LIB.RES.NORMAL(CHIPS)':
+ C_PATH='@lwip_baseboard.schematic1(sch_1):ins16233@my_lib.\res.normal\(chips)',
+ P_PATH='@lwip_baseboard.schematic1(sch_1):page5_ins16233@my_lib.\res.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ SW1 'SW DPST_BUTTON_4P_DIP_RESET':;
+
+SECTION_NUMBER 1
+ '@LWIP_BASEBOARD.SCHEMATIC1(SCH_1):INS2892@DISCRETE.SW DPST.NORMAL(CHIPS)':
+ C_PATH='@lwip_baseboard.schematic1(sch_1):ins2892@discrete.\sw dpst.normal\(chips)',
+ P_PATH='@lwip_baseboard.schematic1(sch_1):page4_ins2892@discrete.\sw dpst.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ SW2 'SW DPST_BUTTON_4P_DIP_TRIGGER_M':;
+
+SECTION_NUMBER 1
+ '@LWIP_BASEBOARD.SCHEMATIC1(SCH_1):INS16135@DISCRETE.SW DPST.NORMAL(CHIPS)':
+ C_PATH='@lwip_baseboard.schematic1(sch_1):ins16135@discrete.\sw dpst.normal\(chips)',
+ P_PATH='@lwip_baseboard.schematic1(sch_1):page5_ins16135@discrete.\sw dpst.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ SW3 'SW DPST_BUTTON_4P_DIP_WIFI_CFG':;
+
+SECTION_NUMBER 1
+ '@LWIP_BASEBOARD.SCHEMATIC1(SCH_1):INS16169@DISCRETE.SW DPST.NORMAL(CHIPS)':
+ C_PATH='@lwip_baseboard.schematic1(sch_1):ins16169@discrete.\sw dpst.normal\(chips)',
+ P_PATH='@lwip_baseboard.schematic1(sch_1):page5_ins16169@discrete.\sw dpst.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ U1 'STM32F407VET6_LQFP-100_STM32F40':;
+
+SECTION_NUMBER 1
+ '@LWIP_BASEBOARD.SCHEMATIC1(SCH_1):INS86@MY_LIB.STM32F407VET6A.NORMAL(CHIPS)':
+ C_PATH='@lwip_baseboard.schematic1(sch_1):ins86@my_lib.\stm32f407vet6a.normal\(chips)',
+ P_PATH='@lwip_baseboard.schematic1(sch_1):page1_ins86@my_lib.\stm32f407vet6a.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='A';
+
+SECTION_NUMBER 2
+ '@LWIP_BASEBOARD.SCHEMATIC1(SCH_1):INS1024@MY_LIB.STM32F407VET6B.NORMAL(CHIPS)':
+ C_PATH='@lwip_baseboard.schematic1(sch_1):ins1024@my_lib.\stm32f407vet6b.normal\(chips)',
+ P_PATH='@lwip_baseboard.schematic1(sch_1):page2_ins1024@my_lib.\stm32f407vet6b.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='B';
+
+SECTION_NUMBER 3
+ '@LWIP_BASEBOARD.SCHEMATIC1(SCH_1):INS1622@MY_LIB.STM32F407VET6C.NORMAL(CHIPS)':
+ C_PATH='@lwip_baseboard.schematic1(sch_1):ins1622@my_lib.\stm32f407vet6c.normal\(chips)',
+ P_PATH='@lwip_baseboard.schematic1(sch_1):page3_ins1622@my_lib.\stm32f407vet6c.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='C';
+
+SECTION_NUMBER 4
+ '@LWIP_BASEBOARD.SCHEMATIC1(SCH_1):INS2168@MY_LIB.STM32F407VET6D.NORMAL(CHIPS)':
+ C_PATH='@lwip_baseboard.schematic1(sch_1):ins2168@my_lib.\stm32f407vet6d.normal\(chips)',
+ P_PATH='@lwip_baseboard.schematic1(sch_1):page4_ins2168@my_lib.\stm32f407vet6d.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='D';
+
+SECTION_NUMBER 5
+ '@LWIP_BASEBOARD.SCHEMATIC1(SCH_1):INS3259@MY_LIB.STM32F407VET6E.NORMAL(CHIPS)':
+ C_PATH='@lwip_baseboard.schematic1(sch_1):ins3259@my_lib.\stm32f407vet6e.normal\(chips)',
+ P_PATH='@lwip_baseboard.schematic1(sch_1):page4_ins3259@my_lib.\stm32f407vet6e.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='E';
+
+PART_NAME
+ U2 'PAM8403_SOIC-16_PAM8403':;
+
+SECTION_NUMBER 1
+ '@LWIP_BASEBOARD.SCHEMATIC1(SCH_1):INS17021@MY_LIB.PAM8403.NORMAL(CHIPS)':
+ C_PATH='@lwip_baseboard.schematic1(sch_1):ins17021@my_lib.\pam8403.normal\(chips)',
+ P_PATH='@lwip_baseboard.schematic1(sch_1):page6_ins17021@my_lib.\pam8403.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ U3 'W25Q64_SOP-8-208_W25Q64':;
+
+SECTION_NUMBER 1
+ '@LWIP_BASEBOARD.SCHEMATIC1(SCH_1):INS19769@MY_LIB.W25Q64.NORMAL(CHIPS)':
+ C_PATH='@lwip_baseboard.schematic1(sch_1):ins19769@my_lib.\w25q64.normal\(chips)',
+ P_PATH='@lwip_baseboard.schematic1(sch_1):page7_ins19769@my_lib.\w25q64.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ U4 'W8782_W8782_MODULE_W8782':;
+
+SECTION_NUMBER 1
+ '@LWIP_BASEBOARD.SCHEMATIC1(SCH_1):INS25225@MY_LIB.W8782.NORMAL(CHIPS)':
+ C_PATH='@lwip_baseboard.schematic1(sch_1):ins25225@my_lib.\w8782.normal\(chips)',
+ P_PATH='@lwip_baseboard.schematic1(sch_1):page8_ins25225@my_lib.\w8782.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ U5 'AMS1117-3V3_SOT-223_AMS1117-3V3':;
+
+SECTION_NUMBER 1
+ '@LWIP_BASEBOARD.SCHEMATIC1(SCH_1):INS31300@MY_LIB.AMS1117-3V3.NORMAL(CHIPS)':
+ C_PATH='@lwip_baseboard.schematic1(sch_1):ins31300@my_lib.\ams1117-3v3.normal\(chips)',
+ P_PATH='@lwip_baseboard.schematic1(sch_1):page10_ins31300@my_lib.\ams1117-3v3.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ X1 'XTAL_CRY_HC_49U_SMD_8MHZ':;
+
+SECTION_NUMBER 1
+ '@LWIP_BASEBOARD.SCHEMATIC1(SCH_1):INS2445@MY_LIB.XTAL.NORMAL(CHIPS)':
+ C_PATH='@lwip_baseboard.schematic1(sch_1):ins2445@my_lib.\xtal.normal\(chips)',
+ P_PATH='@lwip_baseboard.schematic1(sch_1):page4_ins2445@my_lib.\xtal.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+END.

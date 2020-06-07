@@ -1,0 +1,12 @@
+BUILD_TYPE              = debug
+PLATFORM                = linux
+PLATFORM_CC             = gcc
+PLATFORM_AR             = ar
+SSL_LIB_NAME            = mbedtls
+CHANNEL_ENCRYPT         = TCP
+
+MBEDTLS_LIB_ENABLE      = y
+MQTT_MBED_LIB_ENABLE    = y
+MQTTMBED_LIB_NAME       = libmqtt_mbed
+
+ALIIOT_SDK_LIB_NAME     = libaliot_sdk

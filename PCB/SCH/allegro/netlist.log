@@ -1,0 +1,37 @@
+{ Using PSTWRITER 16.6.0 d001Sep-06-2019 at 21:23:07 }
+
+#1 WARNING(ORCAP-36038): "No_connect" property on Pin "U1.33" ignored for U1: SCHEMATIC1, 02-PART-B (0.60, 1.30). Connecting pin to net "KEY1".
+#2 WARNING(ORCAP-36042): Pin "GND" is renamed to "GND#22" as visible power pin of same name already exists in Package TFT_LCD_3R5 , LCD1: SCHEMATIC1, 09-TFT-LCD (3.50, 1.50).
+#3 WARNING(ORCAP-36042): Pin "VDD_3V3" is renamed to "VDD_3V3#24" as visible power pin of same name already exists in Package TFT_LCD_3R5 , LCD1: SCHEMATIC1, 09-TFT-LCD (3.50, 1.50).
+#4 WARNING(ORCAP-36042): Pin "VDD_3V3" is renamed to "VDD_3V3#25" as visible power pin of same name already exists in Package TFT_LCD_3R5 , LCD1: SCHEMATIC1, 09-TFT-LCD (3.50, 1.50).
+#5 WARNING(ORCAP-36042): Pin "GND" is renamed to "GND#26" as visible power pin of same name already exists in Package TFT_LCD_3R5 , LCD1: SCHEMATIC1, 09-TFT-LCD (3.50, 1.50).
+#6 WARNING(ORCAP-36042): Pin "GND" is renamed to "GND#27" as visible power pin of same name already exists in Package TFT_LCD_3R5 , LCD1: SCHEMATIC1, 09-TFT-LCD (3.50, 1.50).
+#7 WARNING(ORCAP-36006): Part Name "SW DPST_BUTTON_4P_DIP_TRIGGER_MODE" is renamed to "SW DPST_BUTTON_4P_DIP_TRIGGER_M".
+#8 WARNING(ORCAP-36006): Part Name "STM32F407VET6_LQFP-100_STM32F407VET6" is renamed to "STM32F407VET6_LQFP-100_STM32F40".
+#9 WARNING(ORCAP-36042): Pin "VDD" is renamed to "VDD#11" as visible power pin of same name already exists in Package STM32F407VET6E , U1A: SCHEMATIC1, 01-PART-A (0.30, 0.40).
+#10 WARNING(ORCAP-36042): Pin "VDD" is renamed to "VDD#19" as visible power pin of same name already exists in Package STM32F407VET6E , U1A: SCHEMATIC1, 01-PART-A (0.30, 0.40).
+#11 WARNING(ORCAP-36042): Pin "VDD" is renamed to "VDD#28" as visible power pin of same name already exists in Package STM32F407VET6E , U1A: SCHEMATIC1, 01-PART-A (0.30, 0.40).
+#12 WARNING(ORCAP-36042): Pin "VDD" is renamed to "VDD#50" as visible power pin of same name already exists in Package STM32F407VET6E , U1A: SCHEMATIC1, 01-PART-A (0.30, 0.40).
+#13 WARNING(ORCAP-36042): Pin "VDD" is renamed to "VDD#75" as visible power pin of same name already exists in Package STM32F407VET6E , U1A: SCHEMATIC1, 01-PART-A (0.30, 0.40).
+#14 WARNING(ORCAP-36042): Pin "VDD" is renamed to "VDD#100" as visible power pin of same name already exists in Package STM32F407VET6E , U1A: SCHEMATIC1, 01-PART-A (0.30, 0.40).
+#15 WARNING(ORCAP-36042): Pin "VSS" is renamed to "VSS#10" as visible power pin of same name already exists in Package STM32F407VET6E , U1A: SCHEMATIC1, 01-PART-A (0.30, 0.40).
+#16 WARNING(ORCAP-36042): Pin "VSS" is renamed to "VSS#27" as visible power pin of same name already exists in Package STM32F407VET6E , U1A: SCHEMATIC1, 01-PART-A (0.30, 0.40).
+#17 WARNING(ORCAP-36042): Pin "VSS" is renamed to "VSS#74" as visible power pin of same name already exists in Package STM32F407VET6E , U1A: SCHEMATIC1, 01-PART-A (0.30, 0.40).
+#18 WARNING(ORCAP-36042): Pin "VSS" is renamed to "VSS#99" as visible power pin of same name already exists in Package STM32F407VET6E , U1A: SCHEMATIC1, 01-PART-A (0.30, 0.40).
+#19 WARNING(ORCAP-36042): Pin "PGND" is renamed to "PGND#2" as visible power pin of same name already exists in Package PAM8403 , U2: SCHEMATIC1, 06-AUDIO (3.10, 2.50).
+#20 WARNING(ORCAP-36042): Pin "PVDD" is renamed to "PVDD#4" as visible power pin of same name already exists in Package PAM8403 , U2: SCHEMATIC1, 06-AUDIO (3.10, 2.50).
+#21 WARNING(ORCAP-36042): Pin "PVDD" is renamed to "PVDD#13" as visible power pin of same name already exists in Package PAM8403 , U2: SCHEMATIC1, 06-AUDIO (3.10, 2.50).
+#22 WARNING(ORCAP-36042): Pin "PGND" is renamed to "PGND#15" as visible power pin of same name already exists in Package PAM8403 , U2: SCHEMATIC1, 06-AUDIO (3.10, 2.50).
+#23 WARNING(ORCAP-36042): Pin "GND" is renamed to "GND#4" as visible power pin of same name already exists in Package W8782 , U4: SCHEMATIC1, 08-WIFI (3.70, 0.50).
+#24 WARNING(ORCAP-36042): Pin "GND" is renamed to "GND#10" as visible power pin of same name already exists in Package W8782 , U4: SCHEMATIC1, 08-WIFI (3.70, 0.50).
+#25 WARNING(ORCAP-36042): Pin "GND" is renamed to "GND#12" as visible power pin of same name already exists in Package W8782 , U4: SCHEMATIC1, 08-WIFI (3.70, 0.50).
+INFO(ORCAP-36080): Scanning netlist files ...
+
+Loading... D:\STM32F407 LWIP\物体识别  8.12\PCB\allegro/pstchip.dat
+
+Loading... D:\STM32F407 LWIP\物体识别  8.12\PCB\allegro/pstchip.dat
+
+Loading... D:\STM32F407 LWIP\物体识别  8.12\PCB\allegro/pstxprt.dat
+
+Loading... D:\STM32F407 LWIP\物体识别  8.12\PCB\allegro/pstxnet.dat
+packaging the design view...

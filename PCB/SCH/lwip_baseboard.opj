@@ -1,0 +1,199 @@
+(ExpressProject "lwip_baseboard"
+  (ProjectVersion "19981106")
+  (ProjectType "PCB")
+  (Folder "Design Resources"
+    (Folder "Library")
+    (NoModify)
+    (File ".\lwip_baseboard.dsn"
+      (Type "Schematic Design"))
+    (BuildFileAddedOrDeleted "x")
+    (CompileFileAddedOrDeleted "x")
+    (Board_sim_option "VHDL_flow")
+    (ANNOTATE_Scope "0")
+    (ANNOTATE_Mode "1")
+    (ANNOTATE_Action "3")
+    (Annotate_Page_Order "0")
+    (ANNOTATE_Reset_References_to_1 "FALSE")
+    (ANNOTATE_No_Page_Number_Change "FALSE")
+    (ANNOTATE_Property_Combine "{Value}{Source Package}{POWER_GROUP}")
+    (ANNOTATE_IncludeNonPrimitive "FALSE")
+    (ANNOTATE_PreserveDesignator "FALSE")
+    (ANNOTATE_PreserveUserEdits "FALSE")
+    (ANNOTATE_Refdes_Control_Required "FALSE")
+    (Update_Instace_for_External_Design "FALSE")
+    (Annotate_type "Default")
+    (width_pages "100")
+    (width_start "80")
+    (width_End "80")
+    (DRC_Scope "0")
+    (DRC_Action "0")
+    (DRC_Create_Warnings "FALSE")
+    (DRC_View_Output "FALSE")
+    (DRC_Preserved_Waived "FALSE")
+    (DRC_Run_Electrical_Rules "TRUE")
+    (DRC_Run_Physical_Rules "TRUE")
+    (DRC_Report_File "D:\STM32F407 LWIP\物体识别  8.12\PCB\LWIP_BASEBOARD.DRC")
+    (DRC_Check_Ports "FALSE")
+    (DRC_Check_Off-Page_Connectors "FALSE")
+    (DRC_Report_Ports_and_Off-page_Connectors "FALSE")
+    (DRC_SDT_Compatibility "FALSE")
+    (DRC_Report_Off-grid_Objects "FALSE")
+    (DRC_Check_Unconnected_Nets "TRUE")
+    (DRC_Check_for_Misleading_TAP "FALSE")
+    (DRC_Report_Netnames "FALSE")
+    (DRC_Check_Single_Node_Nets "TRUE")
+    (DRC_Run_Electrical_Custom_DRC "FALSE")
+    (DRC_Check_No_Driving_Source "TRUE")
+    (DRC_Check_Duplicate_NetNames "TRUE")
+    (DRC_Check_Floating_Pins "TRUE")
+    (DRC_Check_Physical_Power_Pins_Visibility "TRUE")
+    (DRC_Check_PCB_Footprint_Property "TRUE")
+    (DRC_Check_Normal_Convert_View_Sync "TRUE")
+    (DRC_Check_Incorrect_PinGroup_Assignment "TRUE")
+    (DRC_Check_High_Speed_Props_Syntax "TRUE")
+    (DRC_Check_Missing_Pin_Numbers "TRUE")
+    (DRC_Check_Device_With_No_Pins "TRUE")
+    (DRC_Check_Power_Ground_Short "TRUE")
+    (DRC_Identical_References "TRUE")
+    (DRC_Type_Mismatch "TRUE")
+    (DRC_Visible_Power_pins "FALSE")
+    (DRC_Report_Unused_Part_Packages "TRUE")
+    (DRC_Check_Name_Prop_For_HierBlocks "TRUE")
+    (DRC_Run_Physical_Custom_DRC "FALSE")
+    (IREFReportFile "D:\STM32F407 LWIP\物体识别  8.12\PCB\LWIP_BASEBOARD.csv")
+    (IREFViewOutput "0")
+    (Netlist_TAB "0"))
+  (Folder "Outputs"
+    (File ".\lwip_baseboard.drc"
+      (Type "Report"))
+    (File ".\lwip_baseboard.csv"
+      (Type "Report"))
+    (File ".\allegro\pstxnet.dat"
+      (Type "Report")
+      (DisplayName "pstxnet.dat"))
+    (File ".\allegro\pstxprt.dat"
+      (Type "Report")
+      (DisplayName "pstxprt.dat"))
+    (File ".\allegro\pstchip.dat"
+      (Type "Report")
+      (DisplayName "pstchip.dat")))
+  (Folder "Referenced Projects")
+  (PartMRUSelector
+    (CON3
+      (FullPartName "CON3.Normal")
+      (LibraryName "H:\CADENCE\SPB_16.6\TOOLS\CAPTURE\LIBRARY\CONNECTOR.OLB")
+      (DeviceIndex "0"))
+    (My_Title_Block
+      (LibraryName "G:\CADENCE ALLEGRO\MY_LIB\MY_SCH_LIB\MY_LIB.OLB")
+      (DeviceIndex "0"))
+    (Diode
+      (FullPartName "Diode.Normal")
+      (LibraryName "G:\CADENCE ALLEGRO\MY_LIB\MY_SCH_LIB\MY_LIB.OLB")
+      (DeviceIndex "0"))
+    (CON2
+      (FullPartName "CON2.Normal")
+      (LibraryName "H:\CADENCE\SPB_16.6\TOOLS\CAPTURE\LIBRARY\CONNECTOR.OLB")
+      (DeviceIndex "0"))
+    (GND
+      (LibraryName "H:\CADENCE\SPB_16.6\TOOLS\CAPTURE\LIBRARY\CAPSYM.OLB")
+      (DeviceIndex "0"))
+    (OFFPAGELEFT-L
+      (LibraryName "H:\CADENCE\SPB_16.6\TOOLS\CAPTURE\LIBRARY\CAPSYM.OLB")
+      (DeviceIndex "0"))
+    (OFFPAGELEFT-R
+      (LibraryName "H:\CADENCE\SPB_16.6\TOOLS\CAPTURE\LIBRARY\CAPSYM.OLB")
+      (DeviceIndex "0"))
+    (INDUCTANCE
+      (FullPartName "INDUCTANCE.Normal")
+      (LibraryName "G:\CADENCE ALLEGRO\MY_LIB\MY_SCH_LIB\MY_LIB.OLB")
+      (DeviceIndex "0"))
+    (W8782
+      (FullPartName "W8782.Normal")
+      (LibraryName "G:\CADENCE ALLEGRO\MY_LIB\MY_SCH_LIB\MY_LIB.OLB")
+      (DeviceIndex "0"))
+    (CON18A
+      (FullPartName "CON18A.Normal")
+      (LibraryName "H:\CADENCE\SPB_16.6\TOOLS\CAPTURE\LIBRARY\CONNECTOR.OLB")
+      (DeviceIndex "0"))
+    (VCC_BAR
+      (LibraryName "H:\CADENCE\SPB_16.6\TOOLS\CAPTURE\LIBRARY\CAPSYM.OLB")
+      (DeviceIndex "0"))
+    (W25Q64
+      (FullPartName "W25Q64.Normal")
+      (LibraryName "G:\CADENCE ALLEGRO\MY_LIB\MY_SCH_LIB\MY_LIB.OLB")
+      (DeviceIndex "0"))
+    (SPEAKER
+      (FullPartName "SPEAKER.Normal")
+      (LibraryName "H:\CADENCE\SPB_16.6\TOOLS\CAPTURE\LIBRARY\DISCRETE.OLB")
+      (DeviceIndex "0"))
+    (FB
+      (FullPartName "FB.Normal")
+      (LibraryName "G:\CADENCE ALLEGRO\MY_LIB\MY_SCH_LIB\MY_LIB.OLB")
+      (DeviceIndex "0"))
+    ("CAP POL"
+      (FullPartName "CAP POL.Normal")
+      (LibraryName "G:\CADENCE ALLEGRO\MY_LIB\MY_SCH_LIB\MY_LIB.OLB")
+      (DeviceIndex "0"))
+    (GND_POWER
+      (LibraryName "H:\CADENCE\SPB_16.6\TOOLS\CAPTURE\LIBRARY\CAPSYM.OLB")
+      (DeviceIndex "0"))
+    (AGND
+      (LibraryName "G:\CADENCE ALLEGRO\MY_LIB\MY_SCH_LIB\MY_LIB.OLB")
+      (DeviceIndex "0"))
+    (PAM8403
+      (FullPartName "PAM8403.Normal")
+      (LibraryName "G:\CADENCE ALLEGRO\MY_LIB\MY_SCH_LIB\MY_LIB.OLB")
+      (DeviceIndex "0"))
+    (LED
+      (FullPartName "LED.Normal")
+      (LibraryName "G:\CADENCE ALLEGRO\MY_LIB\MY_SCH_LIB\MY_LIB.OLB")
+      (DeviceIndex "0"))
+    ("CAP TAC"
+      (FullPartName "CAP TAC.Normal")
+      (LibraryName "G:\CADENCE ALLEGRO\MY_LIB\MY_SCH_LIB\MY_LIB.OLB")
+      (DeviceIndex "0"))
+    (STM32F407VET6
+      (FullPartName "STM32F407VET6E.Normal")
+      (LibraryName "G:\CADENCE ALLEGRO\MY_LIB\MY_SCH_LIB\MY_LIB.OLB")
+      (DeviceIndex "4"))
+    ("SW DPST"
+      (FullPartName "SW DPST.Normal")
+      (LibraryName "H:\CADENCE\SPB_16.6\TOOLS\CAPTURE\LIBRARY\DISCRETE.OLB")
+      (DeviceIndex "0"))
+    (KEY_2
+      (FullPartName "KEY_2.Normal")
+      (LibraryName "G:\CADENCE ALLEGRO\MY_LIB\MY_SCH_LIB\MY_LIB.OLB")
+      (DeviceIndex "0"))
+    (XTAL
+      (FullPartName "XTAL.Normal")
+      (LibraryName "G:\CADENCE ALLEGRO\MY_LIB\MY_SCH_LIB\MY_LIB.OLB")
+      (DeviceIndex "0"))
+    (RES
+      (FullPartName "RES.Normal")
+      (LibraryName "G:\CADENCE ALLEGRO\MY_LIB\MY_SCH_LIB\MY_LIB.OLB")
+      (DeviceIndex "0")))
+  (GlobalState
+    (FileView
+      (Path "Design Resources")
+      (Path "Design Resources" ".\lwip_baseboard.dsn")
+      (Path "Design Resources" ".\lwip_baseboard.dsn" "SCHEMATIC1")
+      (Path "Outputs")
+      (Select "Design Resources" ".\lwip_baseboard.dsn"))
+    (HierarchyView)
+    (Doc
+      (Type "COrCapturePMDoc")
+      (Frame
+        (Placement "44 2 3 -1 -1 -8 -31 0 200 0 288"))
+      (Tab 0))
+    (Doc
+      (Type "COrSchematicDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -8 -31 26 1330 26 357")
+        (Scroll "-143 0")
+        (Zoom "100")
+        (Occurrence "/"))
+      (Path "D:\STM32F407 LWIP\物体识别  8.12\PCB\SCH\LWIP_BASEBOARD.DSN")
+      (Schematic "SCHEMATIC1")
+      (Page "01-PART-A")))
+  (MPSSessionName "12566")
+  (ISPCBBASICLICENSE "false"))

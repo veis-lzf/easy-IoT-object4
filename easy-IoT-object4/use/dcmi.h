@@ -1,0 +1,20 @@
+#ifndef __DCMI_H
+#define __DCMI_H
+	 
+#include "drivers.h"    									
+
+void My_DCMI_Init(void);
+void DCMI_DMA_Init(uint32_t *DMA_Memory0BaseAddr,u16 DMA_BufferSize,u32 DMA_MemoryDataSize,u32 mode);
+void DCMI_Start(void);
+void DCMI_Stop(void);
+
+void DCMI_Set_Window(u16 sx,u16 sy,u16 width,u16 height);
+void DCMI_CR_Set(u8 pclk,u8 hsync,u8 vsync);
+
+
+#endif
+
+
+
+
+

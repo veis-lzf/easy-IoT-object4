@@ -1,0 +1,2225 @@
+Component: ARM Compiler 5.05 update 2 (build 169) Tool: armlink [4d0f33]
+
+==============================================================================
+
+Section Cross References
+
+    system_stm32f4xx.o(.text) refers to system_stm32f4xx.o(.data) for SystemCoreClock
+    stm32f4x7_eth.o(.text) refers to timer.o(.text) for sleep
+    stm32f4x7_eth.o(.text) refers to stm32f4x7_eth.o(.data) for DMARxDescToGet
+    stm32f4x7_eth.o(.text) refers to stm32f4x7_eth.o(.bss) for RX_Frame_Descriptor
+    stm32f4xx_adc.o(.text) refers to stm32f4xx_rcc.o(.text) for RCC_APB2PeriphResetCmd
+    stm32f4xx_can.o(.text) refers to stm32f4xx_rcc.o(.text) for RCC_APB1PeriphResetCmd
+    stm32f4xx_dac.o(.text) refers to stm32f4xx_rcc.o(.text) for RCC_APB1PeriphResetCmd
+    stm32f4xx_gpio.o(.text) refers to stm32f4xx_rcc.o(.text) for RCC_AHB1PeriphResetCmd
+    stm32f4xx_i2c.o(.text) refers to stm32f4xx_rcc.o(.text) for RCC_APB1PeriphResetCmd
+    stm32f4xx_pwr.o(.text) refers to stm32f4xx_rcc.o(.text) for RCC_APB1PeriphResetCmd
+    stm32f4xx_rcc.o(.text) refers to stm32f4xx_rcc.o(.data) for APBAHBPrescTable
+    stm32f4xx_rng.o(.text) refers to stm32f4xx_rcc.o(.text) for RCC_AHB2PeriphResetCmd
+    stm32f4xx_sdio.o(.text) refers to stm32f4xx_rcc.o(.text) for RCC_APB2PeriphResetCmd
+    stm32f4xx_spi.o(.text) refers to stm32f4xx_rcc.o(.text) for RCC_APB2PeriphResetCmd
+    stm32f4xx_syscfg.o(.text) refers to stm32f4xx_rcc.o(.text) for RCC_APB2PeriphResetCmd
+    stm32f4xx_tim.o(.text) refers to stm32f4xx_rcc.o(.text) for RCC_APB2PeriphResetCmd
+    stm32f4xx_usart.o(.text) refers to stm32f4xx_rcc.o(.text) for RCC_APB2PeriphResetCmd
+    stm32f4xx_wwdg.o(.text) refers to stm32f4xx_rcc.o(.text) for RCC_APB1PeriphResetCmd
+    startup_stm32f4xx.o(RESET) refers to startup_stm32f4xx.o(STACK) for __initial_sp
+    startup_stm32f4xx.o(RESET) refers to startup_stm32f4xx.o(.text) for Reset_Handler
+    startup_stm32f4xx.o(RESET) refers to stm32f4xx_it.o(.text) for NMI_Handler
+    startup_stm32f4xx.o(RESET) refers to stm32f4xx_it.o(.emb_text) for HardFault_Handler
+    startup_stm32f4xx.o(RESET) refers to os_cpu_a.o(.text) for PendSV_Handler
+    startup_stm32f4xx.o(RESET) refers to os_cpu_c.o(.text) for SysTick_Handler
+    startup_stm32f4xx.o(RESET) refers to hard_timer.o(.text) for TIM2_IRQHandler
+    startup_stm32f4xx.o(RESET) refers to w25p80.o(.text) for SPI2_IRQHandler
+    startup_stm32f4xx.o(RESET) refers to usart.o(.text) for USART1_IRQHandler
+    startup_stm32f4xx.o(RESET) refers to camera.o(.text) for DMA2_Stream1_IRQHandler
+    startup_stm32f4xx.o(RESET) refers to lan8720.o(.text) for ETH_IRQHandler
+    startup_stm32f4xx.o(.text) refers to system_stm32f4xx.o(.text) for SystemInit
+    startup_stm32f4xx.o(.text) refers to entry.o(.ARM.Collect$$$$00000000) for __main
+    os_core.o(.text) refers to os_cpu_a.o(.text) for OS_CPU_SR_Save
+    os_core.o(.text) refers to os_core.o(.data) for OSIntNesting
+    os_core.o(.text) refers to os_core.o(.constdata) for OSUnMapTbl
+    os_core.o(.text) refers to os_core.o(.bss) for OSTCBPrioTbl
+    os_core.o(.text) refers to os_task.o(.text) for OSTaskStkChk
+    os_core.o(.text) refers to os_time.o(.text) for OSTimeDly
+    os_core.o(.text) refers to os_cpu_c.o(.text) for OSTaskStatHook
+    os_core.o(.text) refers to os_flag.o(.text) for OS_FlagInit
+    os_core.o(.text) refers to os_q.o(.text) for OS_QInit
+    os_core.o(.text) refers to os_tmr.o(.text) for OSTmr_Init
+    os_flag.o(.text) refers to os_cpu_a.o(.text) for OS_CPU_SR_Save
+    os_flag.o(.text) refers to os_core.o(.text) for OS_Sched
+    os_flag.o(.text) refers to os_core.o(.data) for OSIntNesting
+    os_flag.o(.text) refers to os_core.o(.bss) for OSFlagTbl
+    os_mbox.o(.text) refers to os_cpu_a.o(.text) for OS_CPU_SR_Save
+    os_mbox.o(.text) refers to os_core.o(.text) for OS_EventWaitListInit
+    os_mbox.o(.text) refers to os_core.o(.data) for OSIntNesting
+    os_mutex.o(.text) refers to os_cpu_a.o(.text) for OS_CPU_SR_Save
+    os_mutex.o(.text) refers to os_core.o(.text) for OS_EventWaitListInit
+    os_mutex.o(.text) refers to os_core.o(.data) for OSIntNesting
+    os_mutex.o(.text) refers to os_core.o(.bss) for OSTCBPrioTbl
+    os_q.o(.text) refers to os_cpu_a.o(.text) for OS_CPU_SR_Save
+    os_q.o(.text) refers to os_core.o(.text) for OS_EventWaitListInit
+    os_q.o(.text) refers to os_core.o(.data) for OSIntNesting
+    os_q.o(.text) refers to os_core.o(.bss) for OSQTbl
+    os_sem.o(.text) refers to os_cpu_a.o(.text) for OS_CPU_SR_Save
+    os_sem.o(.text) refers to os_core.o(.text) for OS_EventWaitListInit
+    os_sem.o(.text) refers to os_core.o(.data) for OSIntNesting
+    os_task.o(.text) refers to os_cpu_a.o(.text) for OS_CPU_SR_Save
+    os_task.o(.text) refers to os_core.o(.text) for OS_Sched
+    os_task.o(.text) refers to os_cpu_c.o(.text) for OSTaskStkInit
+    os_task.o(.text) refers to os_flag.o(.text) for OS_FlagUnlink
+    os_task.o(.text) refers to os_core.o(.bss) for OSTCBPrioTbl
+    os_task.o(.text) refers to os_core.o(.data) for OSTCBCur
+    os_task.o(.text) refers to memory2.o(.text) for mem_free2
+    os_time.o(.text) refers to os_cpu_a.o(.text) for OS_CPU_SR_Save
+    os_time.o(.text) refers to os_core.o(.text) for OS_Sched
+    os_time.o(.text) refers to os_core.o(.data) for OSIntNesting
+    os_time.o(.text) refers to os_core.o(.bss) for OSTCBPrioTbl
+    os_tmr.o(.text) refers to timer.o(.text) for os_time_get
+    os_tmr.o(.text) refers to printf8.o(i.__0printf$8) for __2printf
+    os_tmr.o(.text) refers to os_core.o(.text) for OSSchedLock
+    os_tmr.o(.text) refers to os_core.o(.bss) for OSTmrTbl
+    os_tmr.o(.text) refers to os_core.o(.data) for OSTmrFreeList
+    os_tmr.o(.text) refers to os_sem.o(.text) for OSSemPost
+    os_tmr.o(.text) refers to os_task.o(.text) for OSTaskCreateExt
+    os_cpu_c.o(.text) refers to sys_misc.o(.text) for App_TaskCreateHook
+    os_cpu_c.o(.text) refers to os_tmr.o(.text) for OSTmrSignal
+    os_cpu_c.o(.text) refers to atomic.o(.text) for enter_interrupt
+    os_cpu_c.o(.text) refers to os_core.o(.text) for OSTimeTick
+    os_cpu_c.o(.text) refers to os_cpu_c.o(.data) for OSTmrCtr
+    os_cpu_c.o(.text) refers to os_task.o(.text) for OS_TaskReturn
+    os_cpu_a.o(.text) refers to os_core.o(.data) for OSRunning
+    os_cpu_a.o(.text) refers to os_cpu_c.o(.text) for OSTaskSwHook
+    atomic.o(.text) refers to os_core.o(.text) for OSIntExit
+    atomic.o(.text) refers to os_cpu_a.o(.text) for OS_CPU_SR_Save
+    atomic.o(.text) refers to os_core.o(.data) for OSIntNesting
+    memory.o(.text) refers to atomic.o(.text) for local_irq_save
+    memory.o(.text) refers to timer.o(.text) for os_time_get
+    memory.o(.text) refers to printf8.o(i.__0printf$8) for __2printf
+    memory.o(.text) refers to printf8.o(i.__0snprintf$8) for __2snprintf
+    memory.o(.text) refers to memory.o(.data) for ram_size
+    memory.o(.text) refers to usart.o(.bss) for u1_send
+    memory.o(.text) refers to memory.o(monitor_item_table) for mem_block
+    memory.o(.text) refers to memory.o(.constdata) for __FUNCTION__
+    memory.o(.text) refers to memseta.o(.text) for __aeabi_memclr
+    memory.o(.text) refers to memmovea.o(.text) for __aeabi_memcpy
+    memory.o(monitor_item_table) refers to memory.o(.conststrlit) for .conststrlit
+    task.o(.text) refers to memory2.o(.text) for mem_calloc2
+    task.o(.text) refers to os_task.o(.text) for OSTaskCreateExt
+    task.o(.text) refers to timer.o(.text) for os_time_get
+    task.o(.text) refers to printf8.o(i.__0printf$8) for __2printf
+    task.o(.text) refers to atomic.o(.text) for local_irq_save
+    task.o(.text) refers to wait.o(.text) for wait_event_timeout
+    task.o(.text) refers to memory.o(.text) for mem_calloc_ex
+    task.o(.text) refers to os_core.o(.data) for OSTCBCur
+    task.o(.text) refers to task.o(.constdata) for __FUNCTION__
+    task.o(.text) refers to task.o(.data) for timer_tasklet
+    memory2.o(.text) refers to atomic.o(.text) for local_irq_save
+    memory2.o(.text) refers to timer.o(.text) for os_time_get
+    memory2.o(.text) refers to printf8.o(i.__0printf$8) for __2printf
+    memory2.o(.text) refers to memseta.o(.text) for __aeabi_memclr
+    memory2.o(.text) refers to memmovea.o(.text) for __aeabi_memcpy
+    memory2.o(.text) refers to memory2.o(.data) for xStart
+    memory2.o(.text) refers to memory2.o(.conststring) for .conststring
+    mbox.o(.text) refers to os_mbox.o(.text) for OSMboxCreate
+    mbox.o(.text) refers to timer.o(.text) for os_time_get
+    mbox.o(.text) refers to printf8.o(i.__0printf$8) for __2printf
+    msg_q.o(.text) refers to timer.o(.text) for os_time_get
+    msg_q.o(.text) refers to printf8.o(i.__0printf$8) for __2printf
+    msg_q.o(.text) refers to memory.o(.text) for mem_malloc_ex
+    msg_q.o(.text) refers to os_q.o(.text) for OSQCreate
+    msg_q.o(.text) refers to msg_q.o(.bss) for q_man
+    msg_q.o(.text) refers to msg_q.o(.constdata) for __FUNCTION__
+    mutex.o(.text) refers to os_sem.o(.text) for OSSemCreate
+    mutex.o(.text) refers to os_core.o(.text) for OSEventNameSet
+    mutex.o(.text) refers to timer.o(.text) for os_time_get
+    mutex.o(.text) refers to printf8.o(i.__0printf$8) for __2printf
+    sem.o(.text) refers to os_sem.o(.text) for OSSemCreate
+    sem.o(.text) refers to timer.o(.text) for os_time_get
+    sem.o(.text) refers to printf8.o(i.__0printf$8) for __2printf
+    timer.o(.text) refers to task.o(.text) for timer_tasklet_callback
+    timer.o(.text) refers to printf8.o(i.__0printf$8) for __2printf
+    timer.o(.text) refers to os_tmr.o(.text) for OSTmrCreate
+    timer.o(.text) refers to sys_misc.o(.text) for delay_us
+    timer.o(.text) refers to os_time.o(.text) for OSTimeDlyHMSM
+    timer.o(.text) refers to os_cpu_c.o(.data) for tick_ms
+    timer.o(.text) refers to os_core.o(.data) for OSIntNesting
+    wait.o(.text) refers to os_sem.o(.text) for OSSemCreate
+    wait.o(.text) refers to timer.o(.text) for os_time_get
+    wait.o(.text) refers to printf8.o(i.__0printf$8) for __2printf
+    api_lib.o(.text) refers to api_msg.o(.text) for netconn_alloc
+    api_lib.o(.text) refers to tcpip.o(.text) for tcpip_apimsg
+    api_lib.o(.text) refers to printf8.o(i.__0printf$8) for __2printf
+    api_lib.o(.text) refers to sys_arch.o(.text) for sys_sem_valid
+    api_lib.o(.text) refers to memory.o(.text) for mem_free
+    api_lib.o(.text) refers to atomic.o(.text) for local_irq_save
+    api_lib.o(.text) refers to def.o(.constdata) for zero_ref
+    api_lib.o(.text) refers to memp.o(.constdata) for memp_sizes
+    api_lib.o(.text) refers to api_lib.o(.constdata) for __FUNCTION__
+    api_msg.o(.text) refers to sys_arch.o(.text) for sys_mbox_valid
+    api_msg.o(.text) refers to pbuf.o(.text) for pbuf_alloc
+    api_msg.o(.text) refers to memory.o(.text) for mem_malloc_ex
+    api_msg.o(.text) refers to netbuf.o(.text) for netbuf_delete
+    api_msg.o(.text) refers to printf8.o(i.__0printf$8) for __2printf
+    api_msg.o(.text) refers to tcp.o(.text) for tcp_recved
+    api_msg.o(.text) refers to atomic.o(.text) for local_irq_save
+    api_msg.o(.text) refers to memp.o(.constdata) for memp_sizes
+    api_msg.o(.text) refers to api_msg.o(.constdata) for __FUNCTION__
+    api_msg.o(.text) refers to ip.o(.data) for current_iphdr_src
+    api_msg.o(.text) refers to def.o(.constdata) for zero_ref
+    api_msg.o(.text) refers to tcp_out.o(.text) for tcp_write
+    api_msg.o(.text) refers to raw.o(.text) for raw_new
+    api_msg.o(.text) refers to udp.o(.text) for udp_new
+    api_msg.o(.text) refers to igmp.o(.text) for igmp_joingroup
+    api_msg.o(.text) refers to strcmp.o(.text) for strcmp
+    api_msg.o(.text) refers to dns.o(.text) for dns_gethostbyname
+    err.o(.text) refers to err.o(.data) for err_strerr
+    err.o(.data) refers to err.o(.conststring) for .conststring
+    netbuf.o(.text) refers to memory.o(.text) for mem_malloc_ex
+    netbuf.o(.text) refers to pbuf.o(.text) for pbuf_free
+    netbuf.o(.text) refers to printf8.o(i.__0printf$8) for __2printf
+    netbuf.o(.text) refers to memp.o(.constdata) for memp_sizes
+    netbuf.o(.text) refers to netbuf.o(.constdata) for __FUNCTION__
+    netbuf.o(.text) refers to def.o(.constdata) for zero_ref
+    netdb.o(.text) refers to api_lib.o(.text) for netconn_gethostbyname
+    netdb.o(.text) refers to printf8.o(i.__0printf$8) for __2printf
+    netdb.o(.text) refers to ip_addr.o(.text) for ipaddr_ntoa
+    netdb.o(.text) refers to strlen.o(.text) for strlen
+    netdb.o(.text) refers to memmovea.o(.text) for __aeabi_memcpy
+    netdb.o(.text) refers to memory.o(.text) for mem_free
+    netdb.o(.text) refers to atoi.o(.text) for atoi
+    netdb.o(.text) refers to memseta.o(.text) for __aeabi_memclr4
+    netdb.o(.text) refers to netdb.o(.data) for h_errno
+    netdb.o(.text) refers to netdb.o(.bss) for s_hostent
+    netdb.o(.text) refers to def.o(.constdata) for zero_ref
+    netdb.o(.text) refers to memp.o(.constdata) for memp_sizes
+    netdb.o(.text) refers to netdb.o(.constdata) for __FUNCTION__
+    sockets.o(.text) refers to atomic.o(.text) for local_irq_save
+    sockets.o(.text) refers to pbuf.o(.text) for pbuf_free
+    sockets.o(.text) refers to netbuf.o(.text) for netbuf_delete
+    sockets.o(.text) refers to printf8.o(i.__0printf$8) for __2printf
+    sockets.o(.text) refers to sys_arch.o(.text) for sys_sem_signal
+    sockets.o(.text) refers to api_lib.o(.text) for netconn_accept
+    sockets.o(.text) refers to sockets.o(.data) for errno
+    sockets.o(.text) refers to sockets.o(.bss) for sockets
+    sockets.o(.text) refers to def.o(.constdata) for zero_ref
+    sockets.o(.text) refers to sockets.o(.constdata) for err_to_errno_table
+    sockets.o(.text) refers to memmovea.o(.text) for __aeabi_memcpy
+    sockets.o(.text) refers to tcpip.o(.text) for tcpip_callback_with_block
+    sockets.o(.text) refers to igmp.o(.text) for igmp_joingroup
+    tcpip.o(.text) refers to _timers.o(.text) for sys_timeouts_mbox_fetch
+    tcpip.o(.text) refers to printf8.o(i.__0printf$8) for __2printf
+    tcpip.o(.text) refers to etharp.o(.text) for ethernet_input
+    tcpip.o(.text) refers to ip.o(.text) for ip_input
+    tcpip.o(.text) refers to memory.o(.text) for mem_free
+    tcpip.o(.text) refers to sys_arch.o(.text) for sys_mbox_valid
+    tcpip.o(.text) refers to init.o(.text) for lwip_init
+    tcpip.o(.text) refers to pbuf.o(.text) for pbuf_free
+    tcpip.o(.text) refers to tcpip.o(.data) for tcpip_init_done
+    tcpip.o(.text) refers to def.o(.constdata) for zero_ref
+    tcpip.o(.text) refers to memp.o(.constdata) for memp_sizes
+    tcpip.o(.text) refers to tcpip.o(.constdata) for __FUNCTION__
+    sys_arch.o(.text) refers to timer.o(.text) for os_time_get
+    sys_arch.o(.text) refers to sem.o(.text) for sem_init
+    sys_arch.o(.text) refers to printf8.o(i.__0printf$8) for __2printf
+    sys_arch.o(.text) refers to memory.o(.text) for mem_calloc_ex
+    sys_arch.o(.text) refers to msg_q.o(.text) for msgget
+    sys_arch.o(.text) refers to sys_arch.o(.bss) for nulltimeouts
+    sys_arch.o(.text) refers to sys_arch.o(.data) for timeoutslist
+    sys_arch.o(.text) refers to os_cpu_c.o(.data) for jiffies
+    sys_arch.o(.text) refers to sys_arch.o(.constdata) for __FUNCTION__
+    sys_arch.o(.text) refers to os_core.o(.data) for OSIntNesting
+    sys_arch.o(.text) refers to task.o(.text) for thread_create
+    def.o(.text) refers to strlen.o(.text) for strlen
+    def.o(.text) refers to strncmp.o(.text) for strncmp
+    def.o(.text) refers to def.o(.conststring) for .conststring
+    dhcp.o(.text) refers to printf8.o(i.__0printf$8) for __2printf
+    dhcp.o(.text) refers to pbuf.o(.text) for pbuf_free
+    dhcp.o(.text) refers to driver_misc.o(.text) for get_random
+    dhcp.o(.text) refers to def.o(.constdata) for zero_ref
+    dhcp.o(.text) refers to dhcp.o(.conststring) for .conststring
+    dhcp.o(.text) refers to dhcp.o(.data) for xid
+    dhcp.o(.text) refers to udp.o(.text) for udp_sendto_if
+    dhcp.o(.text) refers to netif.o(.text) for netif_set_down
+    dhcp.o(.text) refers to etharp.o(.text) for etharp_query
+    dhcp.o(.text) refers to ip_addr.o(.constdata) for ip_addr_broadcast
+    dhcp.o(.text) refers to dhcp.o(.bss) for dhcp_rx_options_given
+    dhcp.o(.text) refers to netif.o(.data) for netif_list
+    dhcp.o(.text) refers to dns.o(.text) for dns_setserver
+    dhcp.o(.text) refers to memseta.o(.text) for __aeabi_memclr4
+    dhcp.o(.text) refers to memory.o(.text) for mem_free
+    dhcp.o(.text) refers to dhcp.o(.constdata) for __FUNCTION__
+    dns.o(.text) refers to printf8.o(i.__0printf$8) for __2printf
+    dns.o(.text) refers to memory.o(.text) for mem_malloc_ex
+    dns.o(.text) refers to pbuf.o(.text) for pbuf_copy_partial
+    dns.o(.text) refers to ip_addr.o(.text) for ipaddr_addr
+    dns.o(.text) refers to udp.o(.text) for udp_new
+    dns.o(.text) refers to dns.o(.data) for dns_pcb
+    dns.o(.text) refers to dns.o(.constdata) for __FUNCTION__
+    dns.o(.text) refers to dns.o(.bss) for dns_table
+    dns.o(.text) refers to def.o(.constdata) for zero_ref
+    dns.o(.text) refers to dns.o(.conststring) for .conststring
+    dns.o(.text) refers to ip_addr.o(.constdata) for ip_addr_any
+    dns.o(.text) refers to err.o(.text) for lwip_strerr
+    dns.o(.text) refers to strcmp.o(.text) for strcmp
+    dns.o(.text) refers to strlen.o(.text) for strlen
+    dns.o(.text) refers to memmovea.o(.text) for __aeabi_memcpy
+    init.o(.text) refers to stats.o(.text) for stats_init
+    init.o(.text) refers to sys_arch.o(.text) for sys_init
+    init.o(.text) refers to netif.o(.text) for netif_init
+    init.o(.text) refers to sockets.o(.text) for lwip_socket_init
+    init.o(.text) refers to udp.o(.text) for udp_init
+    init.o(.text) refers to tcp.o(.text) for tcp_init
+    init.o(.text) refers to igmp.o(.text) for igmp_init
+    init.o(.text) refers to dns.o(.text) for dns_init
+    init.o(.text) refers to _timers.o(.text) for sys_timeouts_init
+    netif.o(.text) refers to tcp.o(.text) for tcp_abort
+    netif.o(.text) refers to printf8.o(i.__0printf$8) for __2printf
+    netif.o(.text) refers to igmp.o(.text) for igmp_start
+    netif.o(.text) refers to etharp.o(.text) for etharp_cleanup_netif
+    netif.o(.text) refers to dhcp.o(.text) for dhcp_network_changed
+    netif.o(.text) refers to tcp.o(.data) for tcp_active_pcbs
+    netif.o(.text) refers to def.o(.constdata) for zero_ref
+    netif.o(.text) refers to netif.o(.data) for netif_num
+    pbuf.o(.text) refers to atomic.o(.text) for local_irq_save
+    pbuf.o(.text) refers to tcp.o(.text) for tcp_segs_free
+    pbuf.o(.text) refers to tcpip.o(.text) for tcpip_callback_with_block
+    pbuf.o(.text) refers to printf8.o(i.__0printf$8) for __2printf
+    pbuf.o(.text) refers to memory.o(.text) for mem_free
+    pbuf.o(.text) refers to pbuf.o(.data) for pbuf_free_ooseq_pending
+    pbuf.o(.text) refers to tcp.o(.data) for tcp_active_pcbs
+    pbuf.o(.text) refers to def.o(.constdata) for zero_ref
+    pbuf.o(.text) refers to memp.o(.constdata) for memp_sizes
+    pbuf.o(.text) refers to pbuf.o(.constdata) for __FUNCTION__
+    pbuf.o(.text) refers to memmovea.o(.text) for __aeabi_memcpy
+    pbuf.o(.text) refers to strlen.o(.text) for strlen
+    raw.o(.text) refers to pbuf.o(.text) for pbuf_header
+    raw.o(.text) refers to printf8.o(i.__0printf$8) for __2printf
+    raw.o(.text) refers to ip.o(.text) for ip_route
+    raw.o(.text) refers to memory.o(.text) for mem_free
+    raw.o(.text) refers to memseta.o(.text) for __aeabi_memclr4
+    raw.o(.text) refers to raw.o(.data) for raw_pcbs
+    raw.o(.text) refers to ip.o(.data) for current_iphdr_dest
+    raw.o(.text) refers to def.o(.constdata) for zero_ref
+    raw.o(.text) refers to memp.o(.constdata) for memp_sizes
+    raw.o(.text) refers to raw.o(.constdata) for __FUNCTION__
+    stats.o(.text) refers to stats.o(.bss) for lwip_stats
+    sys.o(.text) refers to sys_arch.o(.text) for sys_sem_new
+    tcp.o(.text) refers to pbuf.o(.text) for pbuf_free
+    tcp.o(.text) refers to memory.o(.text) for mem_free
+    tcp.o(.text) refers to printf8.o(i.__0printf$8) for __2printf
+    tcp.o(.text) refers to tcp_out.o(.text) for tcp_zero_window_probe
+    tcp.o(.text) refers to tcp.o(.data) for tcp_ticks
+    tcp.o(.text) refers to def.o(.constdata) for zero_ref
+    tcp.o(.text) refers to tcp.o(.constdata) for tcp_persist_backoff
+    tcp.o(.text) refers to tcp.o(.conststring) for .conststring
+    tcp.o(.text) refers to _timers.o(.text) for tcp_timer_needed
+    tcp.o(.text) refers to memp.o(.constdata) for memp_sizes
+    tcp.o(.text) refers to ip.o(.text) for ip_route
+    tcp.o(.text) refers to memmovea.o(.text) for __aeabi_memcpy4
+    tcp.o(.text) refers to memseta.o(.text) for __aeabi_memclr4
+    tcp.o(.constdata) refers to tcp.o(.conststring) for .conststring
+    tcp.o(.constdata) refers to tcp.o(.data) for tcp_listen_pcbs
+    tcp_in.o(.text) refers to tcp.o(.text) for tcp_segs_free
+    tcp_in.o(.text) refers to pbuf.o(.text) for pbuf_realloc
+    tcp_in.o(.text) refers to printf8.o(i.__0printf$8) for __2printf
+    tcp_in.o(.text) refers to tcp_out.o(.text) for tcp_rexmit_fast
+    tcp_in.o(.text) refers to tcp_in.o(.data) for seqno
+    tcp_in.o(.text) refers to def.o(.constdata) for zero_ref
+    tcp_in.o(.text) refers to tcp.o(.data) for tcp_ticks
+    tcp_in.o(.text) refers to tcp_in.o(.bss) for inseg
+    tcp_in.o(.text) refers to tcp_in.o(.conststring) for .conststring
+    tcp_in.o(.text) refers to _timers.o(.text) for tcp_timer_needed
+    tcp_in.o(.text) refers to ip.o(.data) for current_iphdr_src
+    tcp_in.o(.text) refers to ip_addr.o(.text) for ip4_addr_isbroadcast
+    tcp_in.o(.text) refers to inet_chksum.o(.text) for inet_chksum_pseudo
+    tcp_in.o(.text) refers to stats.o(.bss) for lwip_stats
+    tcp_in.o(.text) refers to memory.o(.text) for mem_free
+    tcp_out.o(.text) refers to pbuf.o(.text) for pbuf_alloc
+    tcp_out.o(.text) refers to printf8.o(i.__0printf$8) for __2printf
+    tcp_out.o(.text) refers to memory.o(.text) for mem_malloc_ex
+    tcp_out.o(.text) refers to tcp.o(.text) for tcp_seg_free
+    tcp_out.o(.text) refers to def.o(.constdata) for zero_ref
+    tcp_out.o(.text) refers to memp.o(.constdata) for memp_sizes
+    tcp_out.o(.text) refers to tcp_out.o(.constdata) for __FUNCTION__
+    tcp_out.o(.text) refers to stats.o(.bss) for lwip_stats
+    tcp_out.o(.text) refers to tcp_out.o(.conststring) for .conststring
+    tcp_out.o(.text) refers to memmovea.o(.text) for __aeabi_memcpy
+    tcp_out.o(.text) refers to inet_chksum.o(.text) for inet_chksum_pseudo
+    tcp_out.o(.text) refers to ip.o(.text) for ip_output
+    tcp_out.o(.text) refers to tcp.o(.data) for tcp_ticks
+    tcp_out.o(.text) refers to tcp_in.o(.data) for tcp_input_pcb
+    _timers.o(.text) refers to memory.o(.text) for mem_malloc_ex
+    _timers.o(.text) refers to printf8.o(i.__0printf$8) for __2printf
+    _timers.o(.text) refers to tcp.o(.text) for tcp_tmr
+    _timers.o(.text) refers to ip_frag.o(.text) for ip_reass_tmr
+    _timers.o(.text) refers to etharp.o(.text) for etharp_tmr
+    _timers.o(.text) refers to dhcp.o(.text) for dhcp_coarse_tmr
+    _timers.o(.text) refers to igmp.o(.text) for igmp_tmr
+    _timers.o(.text) refers to dns.o(.text) for dns_tmr
+    _timers.o(.text) refers to sys_arch.o(.text) for sys_arch_mbox_fetch
+    _timers.o(.text) refers to memp.o(.constdata) for memp_sizes
+    _timers.o(.text) refers to _timers.o(.constdata) for __FUNCTION__
+    _timers.o(.text) refers to def.o(.constdata) for zero_ref
+    _timers.o(.text) refers to _timers.o(.data) for next_timeout
+    _timers.o(.text) refers to tcp.o(.data) for tcp_active_pcbs
+    udp.o(.text) refers to pbuf.o(.text) for pbuf_header
+    udp.o(.text) refers to ip_addr.o(.text) for ip4_addr_isbroadcast
+    udp.o(.text) refers to inet_chksum.o(.text) for inet_chksum_pseudo
+    udp.o(.text) refers to printf8.o(i.__0printf$8) for __2printf
+    udp.o(.text) refers to icmp.o(.text) for icmp_dest_unreach
+    udp.o(.text) refers to udp.o(.data) for udp_port
+    udp.o(.text) refers to stats.o(.bss) for lwip_stats
+    udp.o(.text) refers to ip.o(.data) for current_iphdr_dest
+    udp.o(.text) refers to def.o(.constdata) for zero_ref
+    udp.o(.text) refers to ip.o(.text) for ip_output_if
+    udp.o(.text) refers to memory.o(.text) for mem_free
+    udp.o(.text) refers to memseta.o(.text) for __aeabi_memclr4
+    udp.o(.text) refers to memp.o(.constdata) for memp_sizes
+    udp.o(.text) refers to udp.o(.constdata) for __FUNCTION__
+    icmp.o(.text) refers to pbuf.o(.text) for pbuf_header
+    icmp.o(.text) refers to ip_addr.o(.text) for ip4_addr_isbroadcast
+    icmp.o(.text) refers to inet_chksum.o(.text) for inet_chksum_pbuf
+    icmp.o(.text) refers to printf8.o(i.__0printf$8) for __2printf
+    icmp.o(.text) refers to ip.o(.text) for ip_output_if
+    icmp.o(.text) refers to memmovea.o(.text) for __aeabi_memcpy
+    icmp.o(.text) refers to stats.o(.bss) for lwip_stats
+    icmp.o(.text) refers to ip.o(.data) for current_iphdr_dest
+    icmp.o(.text) refers to def.o(.constdata) for zero_ref
+    igmp.o(.text) refers to memory.o(.text) for mem_malloc_ex
+    igmp.o(.text) refers to driver_misc.o(.text) for get_random
+    igmp.o(.text) refers to pbuf.o(.text) for pbuf_header
+    igmp.o(.text) refers to inet_chksum.o(.text) for inet_chksum
+    igmp.o(.text) refers to igmp.o(.data) for allsystems
+    igmp.o(.text) refers to memp.o(.constdata) for memp_sizes
+    igmp.o(.text) refers to igmp.o(.constdata) for __FUNCTION__
+    igmp.o(.text) refers to stats.o(.bss) for lwip_stats
+    igmp.o(.text) refers to ip.o(.text) for ip_output_if_opt
+    igmp.o(.text) refers to printf8.o(i.__0printf$8) for __2printf
+    igmp.o(.text) refers to ip_addr.o(.constdata) for ip_addr_any
+    igmp.o(.text) refers to def.o(.constdata) for zero_ref
+    igmp.o(.text) refers to netif.o(.data) for netif_list
+    inet_chksum.o(.text) refers to printf8.o(i.__0printf$8) for __2printf
+    inet_chksum.o(.text) refers to def.o(.constdata) for zero_ref
+    ip.o(.text) refers to printf8.o(i.__0printf$8) for __2printf
+    ip.o(.text) refers to pbuf.o(.text) for pbuf_free
+    ip.o(.text) refers to inet_chksum.o(.text) for inet_chksum
+    ip.o(.text) refers to igmp.o(.text) for igmp_lookfor_group
+    ip.o(.text) refers to ip_addr.o(.text) for ip4_addr_isbroadcast
+    ip.o(.text) refers to netif.o(.data) for netif_list
+    ip.o(.text) refers to stats.o(.bss) for lwip_stats
+    ip.o(.text) refers to ip.o(.conststring) for .conststring
+    ip.o(.text) refers to ip.o(.data) for current_iphdr_dest
+    ip.o(.text) refers to ip_frag.o(.text) for ip_reass
+    ip.o(.text) refers to raw.o(.text) for raw_input
+    ip.o(.text) refers to udp.o(.text) for udp_input
+    ip.o(.text) refers to tcp_in.o(.text) for tcp_input
+    ip.o(.text) refers to icmp.o(.text) for icmp_input
+    ip.o(.text) refers to memmovea.o(.text) for __aeabi_memcpy
+    ip.o(.text) refers to memseta.o(.text) for __aeabi_memclr
+    ip.o(.text) refers to def.o(.constdata) for zero_ref
+    ip_addr.o(.text) refers to printf8.o(i.__0printf$8) for __2printf
+    ip_addr.o(.text) refers to def.o(.constdata) for zero_ref
+    ip_addr.o(.text) refers to ip_addr.o(.bss) for str
+    ip_frag.o(.text) refers to printf8.o(i.__0printf$8) for __2printf
+    ip_frag.o(.text) refers to memory.o(.text) for mem_free
+    ip_frag.o(.text) refers to memmovea.o(.text) for __aeabi_memcpy
+    ip_frag.o(.text) refers to icmp.o(.text) for icmp_time_exceeded
+    ip_frag.o(.text) refers to pbuf.o(.text) for pbuf_clen
+    ip_frag.o(.text) refers to memseta.o(.text) for __aeabi_memclr4
+    ip_frag.o(.text) refers to ip_frag.o(.data) for reassdatagrams
+    ip_frag.o(.text) refers to def.o(.constdata) for zero_ref
+    ip_frag.o(.text) refers to memp.o(.constdata) for memp_sizes
+    ip_frag.o(.text) refers to ip_frag.o(.constdata) for __FUNCTION__
+    ip_frag.o(.text) refers to stats.o(.bss) for lwip_stats
+    ip_frag.o(.text) refers to inet_chksum.o(.text) for inet_chksum
+    etharp.o(.text) refers to pbuf.o(.text) for pbuf_free
+    etharp.o(.text) refers to printf8.o(i.__0printf$8) for __2printf
+    etharp.o(.text) refers to ip_addr.o(.text) for ip4_addr_isbroadcast
+    etharp.o(.text) refers to etharp.o(.bss) for arp_table
+    etharp.o(.text) refers to etharp.o(.constdata) for ethzero
+    etharp.o(.text) refers to def.o(.constdata) for zero_ref
+    etharp.o(.text) refers to etharp.o(.conststring) for .conststring
+    etharp.o(.text) refers to dhcp.o(.text) for dhcp_arp_reply
+    etharp.o(.text) refers to stats.o(.bss) for lwip_stats
+    etharp.o(.text) refers to etharp.o(.data) for etharp_cached_entry
+    etharp.o(.text) refers to memcmp.o(.text) for memcmp
+    etharp.o(.text) refers to ip.o(.text) for ip_input
+    eth_ethernetif.o(.text) refers to stm32f4x7_eth.o(.text) for ETH_Get_Received_Frame
+    eth_ethernetif.o(.text) refers to pbuf.o(.text) for pbuf_alloc
+    eth_ethernetif.o(.text) refers to memmovea.o(.text) for __aeabi_memcpy
+    eth_ethernetif.o(.text) refers to timer.o(.text) for os_time_get
+    eth_ethernetif.o(.text) refers to printf8.o(i.__0printf$8) for __2printf
+    eth_ethernetif.o(.text) refers to wait.o(.text) for init_event
+    eth_ethernetif.o(.text) refers to lan8720.o(.text) for ETH_MACDMA_Config
+    eth_ethernetif.o(.text) refers to tcpapp.o(.text) for lwip_eth_netif_init
+    eth_ethernetif.o(.text) refers to work.o(.text) for send_work_event
+    eth_ethernetif.o(.text) refers to task.o(.text) for thread_myself
+    eth_ethernetif.o(.text) refers to memory.o(.text) for mem_malloc_ex
+    eth_ethernetif.o(.text) refers to stm32f4x7_eth.o(.data) for DMA_RX_FRAME_infos
+    eth_ethernetif.o(.text) refers to lan8720.o(.data) for Tx_Buff
+    eth_ethernetif.o(.text) refers to eth_ethernetif.o(.data) for eth_int_event
+    eth_ethernetif.o(.text) refers to web_cfg.o(.bss) for web_cfg
+    eth_ethernetif.o(.text) refers to tcpapp.o(.data) for p_eth_netif
+    eth_ethernetif.o(.text) refers to debug.o(.data) for dbg_level
+    eth_ethernetif.o(.text) refers to eth_ethernetif.o(.constdata) for __FUNCTION__
+    eth_ethernetif.o(.text) refers to def.o(.constdata) for zero_ref
+    eth_ethernetif.o(.text) refers to etharp.o(.text) for etharp_output
+    logging_mosq.o(.text) refers to timer.o(.text) for os_time_get
+    logging_mosq.o(.text) refers to printf8.o(i.__0printf$8) for __2printf
+    logging_mosq.o(.text) refers to mutex.o(.text) for mutex_lock
+    logging_mosq.o(.text) refers to strlen.o(.text) for strlen
+    logging_mosq.o(.text) refers to memory_mosq.o(.text) for _mosquitto_malloc
+    logging_mosq.o(.text) refers to printfa.o(i.__0vsnprintf) for __c89vsnprintf
+    memory_mosq.o(.text) refers to memory.o(.text) for mem_calloc_ex
+    memory_mosq.o(.text) refers to strlen.o(.text) for strlen
+    memory_mosq.o(.text) refers to strcpy.o(.text) for strcpy
+    memory_mosq.o(.text) refers to memory_mosq.o(.constdata) for __FUNCTION__
+    messages_mosq.o(.text) refers to memory_mosq.o(.text) for _mosquitto_free
+    messages_mosq.o(.text) refers to timer.o(.text) for os_time_get
+    messages_mosq.o(.text) refers to printf8.o(i.__0printf$8) for __2printf
+    messages_mosq.o(.text) refers to memmovea.o(.text) for __aeabi_memcpy
+    messages_mosq.o(.text) refers to mutex.o(.text) for mutex_lock
+    messages_mosq.o(.text) refers to send_mosq.o(.text) for _mosquitto_send_publish
+    messages_mosq.o(.text) refers to time_mosq.o(.text) for mosquitto_time
+    mosquitto.o(.text) refers to net_mosq.o(.text) for _mosquitto_net_init
+    mosquitto.o(.text) refers to mutex.o(.text) for mutex_destory
+    mosquitto.o(.text) refers to messages_mosq.o(.text) for _mosquitto_message_cleanup_all
+    mosquitto.o(.text) refers to will_mosq.o(.text) for _mosquitto_will_clear
+    mosquitto.o(.text) refers to memory_mosq.o(.text) for _mosquitto_free
+    mosquitto.o(.text) refers to sockets.o(.text) for lwip_close
+    mosquitto.o(.text) refers to memseta.o(.text) for __aeabi_memclr4
+    mosquitto.o(.text) refers to strlen.o(.text) for strlen
+    mosquitto.o(.text) refers to rand.o(.text) for rand
+    mosquitto.o(.text) refers to time_mosq.o(.text) for mosquitto_time
+    mosquitto.o(.text) refers to task.o(.text) for thread_myself
+    mosquitto.o(.text) refers to mosquitto.o(.constdata) for __FUNCTION__
+    mosquitto.o(.text) refers to sockets.o(.data) for errno
+    mosquitto.o(.text) refers to send_client_mosq.o(.text) for _mosquitto_send_connect
+    mosquitto.o(.text) refers to util_mosq.o(.text) for _mosquitto_topic_wildcard_len_check
+    mosquitto.o(.text) refers to send_mosq.o(.text) for _mosquitto_send_publish
+    mosquitto.o(.text) refers to memmovea.o(.text) for __aeabi_memcpy
+    mosquitto.o(.text) refers to timer.o(.text) for sleep
+    mosquitto.o(.text) refers to strerror.o(.text) for strerror
+    mosquitto.o(.text) refers to mosquitto.o(.conststring) for .conststring
+    net_mosq.o(.text) refers to memory_mosq.o(.text) for _mosquitto_free
+    net_mosq.o(.text) refers to timer.o(.text) for os_time_get
+    net_mosq.o(.text) refers to printf8.o(i.__0printf$8) for __2printf
+    net_mosq.o(.text) refers to sockets.o(.text) for lwip_close
+    net_mosq.o(.text) refers to mutex.o(.text) for mutex_lock
+    net_mosq.o(.text) refers to time_mosq.o(.text) for mosquitto_time
+    net_mosq.o(.text) refers to sockets.o(.data) for errno
+    net_mosq.o(.text) refers to tcpapp.o(.data) for socket_mutex
+    net_mosq.o(.text) refers to memseta.o(.text) for __aeabi_memclr4
+    net_mosq.o(.text) refers to netdb.o(.text) for lwip_getaddrinfo
+    net_mosq.o(.text) refers to memmovea.o(.text) for __aeabi_memcpy
+    net_mosq.o(.text) refers to net_mosq.o(.constdata) for __FUNCTION__
+    net_mosq.o(.text) refers to read_handle.o(.text) for _mosquitto_packet_handle
+    read_handle.o(.text) refers to timer.o(.text) for os_time_get
+    read_handle.o(.text) refers to printf8.o(i.__0printf$8) for __2printf
+    read_handle.o(.text) refers to memory_mosq.o(.text) for _mosquitto_calloc
+    read_handle.o(.text) refers to net_mosq.o(.text) for _mosquitto_read_string
+    read_handle.o(.text) refers to messages_mosq.o(.text) for _mosquitto_message_cleanup
+    read_handle.o(.text) refers to strlen.o(.text) for strlen
+    read_handle.o(.text) refers to logging_mosq.o(.text) for _mosquitto_log_printf
+    read_handle.o(.text) refers to time_mosq.o(.text) for mosquitto_time
+    read_handle.o(.text) refers to mutex.o(.text) for mutex_lock
+    read_handle.o(.text) refers to send_mosq.o(.text) for _mosquitto_send_puback
+    read_handle.o(.text) refers to read_handle_shared.o(.text) for _mosquitto_handle_pingreq
+    read_handle.o(.text) refers to read_handle_client.o(.text) for _mosquitto_handle_connack
+    read_handle.o(.text) refers to read_handle.o(.conststring) for .conststring
+    read_handle_client.o(.text) refers to timer.o(.text) for os_time_get
+    read_handle_client.o(.text) refers to printf8.o(i.__0printf$8) for __2printf
+    read_handle_client.o(.text) refers to logging_mosq.o(.text) for _mosquitto_log_printf
+    read_handle_client.o(.text) refers to net_mosq.o(.text) for _mosquitto_read_byte
+    read_handle_client.o(.text) refers to mutex.o(.text) for mutex_lock
+    read_handle_shared.o(.text) refers to timer.o(.text) for os_time_get
+    read_handle_shared.o(.text) refers to printf8.o(i.__0printf$8) for __2printf
+    read_handle_shared.o(.text) refers to logging_mosq.o(.text) for _mosquitto_log_printf
+    read_handle_shared.o(.text) refers to send_mosq.o(.text) for _mosquitto_send_pingresp
+    read_handle_shared.o(.text) refers to net_mosq.o(.text) for _mosquitto_read_uint16
+    read_handle_shared.o(.text) refers to messages_mosq.o(.text) for _mosquitto_message_delete
+    read_handle_shared.o(.text) refers to mutex.o(.text) for mutex_lock
+    read_handle_shared.o(.text) refers to memory_mosq.o(.text) for _mosquitto_malloc
+    send_client_mosq.o(.text) refers to timer.o(.text) for os_time_get
+    send_client_mosq.o(.text) refers to printf8.o(i.__0printf$8) for __2printf
+    send_client_mosq.o(.text) refers to memory_mosq.o(.text) for _mosquitto_calloc
+    send_client_mosq.o(.text) refers to strlen.o(.text) for strlen
+    send_client_mosq.o(.text) refers to util_mosq.o(.text) for _mosquitto_packet_alloc
+    send_client_mosq.o(.text) refers to net_mosq.o(.text) for _mosquitto_write_string
+    send_client_mosq.o(.text) refers to logging_mosq.o(.text) for _mosquitto_log_printf
+    send_client_mosq.o(.text) refers to send_mosq.o(.text) for _mosquitto_send_simple_command
+    send_mosq.o(.text) refers to timer.o(.text) for os_time_get
+    send_mosq.o(.text) refers to printf8.o(i.__0printf$8) for __2printf
+    send_mosq.o(.text) refers to memory_mosq.o(.text) for _mosquitto_calloc
+    send_mosq.o(.text) refers to util_mosq.o(.text) for _mosquitto_packet_alloc
+    send_mosq.o(.text) refers to net_mosq.o(.text) for _mosquitto_packet_queue
+    send_mosq.o(.text) refers to logging_mosq.o(.text) for _mosquitto_log_printf
+    send_mosq.o(.text) refers to time_mosq.o(.text) for mosquitto_time
+    send_mosq.o(.text) refers to strlen.o(.text) for strlen
+    send_mosq.o(.text) refers to send_mosq.o(.conststring) for .conststring
+    thread_mosq.o(.text) refers to timer.o(.text) for os_time_get
+    thread_mosq.o(.text) refers to printf8.o(i.__0printf$8) for __2printf
+    thread_mosq.o(.text) refers to sockets.o(.text) for lwip_write
+    thread_mosq.o(.text) refers to task.o(.text) for thread_myself
+    thread_mosq.o(.text) refers to mutex.o(.text) for mutex_lock
+    thread_mosq.o(.text) refers to mosquitto.o(.text) for mosquitto_reconnect
+    thread_mosq.o(.text) refers to thread_mosq.o(.constdata) for __FUNCTION__
+    time_mosq.o(.text) refers to timer.o(.text) for os_time_get
+    util_mosq.o(.text) refers to timer.o(.text) for os_time_get
+    util_mosq.o(.text) refers to printf8.o(i.__0printf$8) for __2printf
+    util_mosq.o(.text) refers to memory_mosq.o(.text) for _mosquitto_malloc
+    util_mosq.o(.text) refers to time_mosq.o(.text) for mosquitto_time
+    util_mosq.o(.text) refers to mutex.o(.text) for mutex_lock
+    util_mosq.o(.text) refers to send_mosq.o(.text) for _mosquitto_send_pingreq
+    util_mosq.o(.text) refers to net_mosq.o(.text) for _mosquitto_socket_close
+    util_mosq.o(.text) refers to strlen.o(.text) for strlen
+    will_mosq.o(.text) refers to util_mosq.o(.text) for _mosquitto_topic_wildcard_pos_check
+    will_mosq.o(.text) refers to memory_mosq.o(.text) for _mosquitto_free
+    will_mosq.o(.text) refers to memmovea.o(.text) for __aeabi_memcpy
+    buffer.o(.text) refers to memmovea.o(.text) for __aeabi_memcpy
+    buffer.o(.text) refers to memseta.o(.text) for __aeabi_memclr
+    buffer.o(.text) refers to memory.o(.text) for mem_calloc_ex
+    buffer.o(.text) refers to buffer.o(.constdata) for __FUNCTION__
+    cb_search.o(.text) refers to memory.o(.text) for mem_malloc_ex
+    cb_search.o(.text) refers to memmovea.o(.text) for __aeabi_memcpy
+    cb_search.o(.text) refers to vq.o(.text) for vq_nbest_sign
+    cb_search.o(.text) refers to bits.o(.text) for speex_bits_pack
+    cb_search.o(.text) refers to filters.o(.text) for syn_percep_zero16
+    cb_search.o(.text) refers to cb_search.o(.constdata) for __FUNCTION__
+    cb_search.o(.text) refers to memseta.o(.text) for __aeabi_memclr
+    fftwrap.o(.text) refers to memory.o(.text) for mem_calloc_ex
+    fftwrap.o(.text) refers to kiss_fftr.o(.text) for kiss_fftr_alloc
+    fftwrap.o(.text) refers to f2d.o(.text) for __aeabi_f2d
+    fftwrap.o(.text) refers to dadd.o(.text) for __aeabi_dadd
+    fftwrap.o(.text) refers to floor.o(i.__hardfp_floor) for __hardfp_floor
+    fftwrap.o(.text) refers to dfixi.o(.text) for __aeabi_d2iz
+    fftwrap.o(.text) refers to fftwrap.o(.constdata) for __FUNCTION__
+    filterbank.o(.text) refers to memory.o(.text) for mem_calloc_ex
+    filterbank.o(.text) refers to filterbank.o(.constdata) for __FUNCTION__
+    filters.o(.text) refers to memmovea.o(.text) for __aeabi_memcpy4
+    filters.o(.text) refers to filters.o(.constdata) for .constdata
+    filters.o(.text) refers to memory.o(.text) for mem_malloc_ex
+    filters.o(.text) refers to ltp.o(.text) for inner_prod
+    jitter.o(.text) refers to timer.o(.text) for os_time_get
+    jitter.o(.text) refers to printf8.o(i.__0printf$8) for __2printf
+    jitter.o(.text) refers to memmovea.o(.text) for __aeabi_memmove4
+    jitter.o(.text) refers to memory.o(.text) for mem_calloc_ex
+    jitter.o(.text) refers to printf8.o(i.__0fprintf$8) for __2fprintf
+    jitter.o(.text) refers to jitter.o(.conststring) for .conststring
+    jitter.o(.text) refers to jitter.o(.constdata) for __FUNCTION__
+    jitter.o(.text) refers to stderr.o(.data) for __stderr
+    kiss_fft.o(.text) refers to timer.o(.text) for os_time_get
+    kiss_fft.o(.text) refers to printf8.o(i.__0printf$8) for __2printf
+    kiss_fft.o(.text) refers to memory.o(.text) for mem_calloc_ex
+    kiss_fft.o(.text) refers to kiss_fft.o(.constdata) for __FUNCTION__
+    kiss_fftr.o(.text) refers to timer.o(.text) for os_time_get
+    kiss_fftr.o(.text) refers to printf8.o(i.__0printf$8) for __2printf
+    kiss_fftr.o(.text) refers to printf8.o(i.__0fprintf$8) for __2fprintf
+    kiss_fftr.o(.text) refers to kiss_fft.o(.text) for kiss_fft_alloc
+    kiss_fftr.o(.text) refers to memory.o(.text) for mem_calloc_ex
+    kiss_fftr.o(.text) refers to stderr.o(.data) for __stderr
+    kiss_fftr.o(.text) refers to kiss_fftr.o(.constdata) for __FUNCTION__
+    lsp.o(.text) refers to memory.o(.text) for mem_malloc_ex
+    lsp.o(.text) refers to lsp.o(.constdata) for __FUNCTION__
+    ltp.o(.text) refers to memory.o(.text) for mem_malloc_ex
+    ltp.o(.text) refers to filters.o(.text) for normalize16
+    ltp.o(.text) refers to ltp.o(.constdata) for __FUNCTION__
+    ltp.o(.text) refers to memseta.o(.text) for __aeabi_memclr4
+    ltp.o(.text) refers to bits.o(.text) for speex_bits_pack
+    ltp.o(.text) refers to memmovea.o(.text) for __aeabi_memcpy4
+    mdf.o(.text) refers to mdf.o(.constdata) for FLOAT_ZERO
+    mdf.o(.text) refers to fftwrap.o(.text) for spx_fft_init
+    mdf.o(.text) refers to mdf.o(.conststring) for .conststring
+    mdf.o(.text) refers to memory.o(.text) for mem_calloc_ex
+    mdf.o(.text) refers to printf8.o(i.__0fprintf$8) for __2fprintf
+    mdf.o(.text) refers to stderr.o(.data) for __stderr
+    modes.o(.constdata) refers to gain_table.o(.constdata) for gain_cdbk_nb
+    modes.o(.constdata) refers to gain_table_lbr.o(.constdata) for gain_cdbk_lbr
+    modes.o(.constdata) refers to exc_10_16_table.o(.constdata) for exc_10_16_table
+    modes.o(.constdata) refers to exc_20_32_table.o(.constdata) for exc_20_32_table
+    modes.o(.constdata) refers to exc_10_32_table.o(.constdata) for exc_10_32_table
+    modes.o(.constdata) refers to exc_5_64_table.o(.constdata) for exc_5_64_table
+    modes.o(.constdata) refers to exc_8_128_table.o(.constdata) for exc_8_128_table
+    modes.o(.constdata) refers to exc_5_256_table.o(.constdata) for exc_5_256_table
+    modes.o(.constdata) refers to quant_lsp.o(.text) for lsp_quant_lbr
+    modes.o(.constdata) refers to ltp.o(.text) for forced_pitch_quant
+    modes.o(.constdata) refers to cb_search.o(.text) for noise_codebook_quant
+    modes.o(.constdata) refers to speex.o(.text) for nb_mode_query
+    modes.o(.constdata) refers to modes.o(.conststring) for .conststring
+    modes.o(.constdata) refers to nb_celp.o(.text) for nb_encoder_init
+    modes_wb.o(.text) refers to printf8.o(i.__0fprintf$8) for __2fprintf
+    modes_wb.o(.text) refers to stderr.o(.data) for __stderr
+    modes_wb.o(.text) refers to modes_wb.o(.constdata) for speex_mode_list
+    modes_wb.o(.constdata) refers to modes.o(.constdata) for speex_nb_mode
+    modes_wb.o(.constdata) refers to hexc_table.o(.constdata) for hexc_table
+    modes_wb.o(.constdata) refers to hexc_10_32_table.o(.constdata) for hexc_10_32_table
+    modes_wb.o(.constdata) refers to quant_lsp.o(.text) for lsp_quant_high
+    modes_wb.o(.constdata) refers to cb_search.o(.text) for split_cb_search_shape_sign
+    modes_wb.o(.constdata) refers to vbr.o(.constdata) for vbr_hb_thresh
+    modes_wb.o(.constdata) refers to modes_wb.o(.text) for wb_mode_query
+    modes_wb.o(.constdata) refers to modes_wb.o(.conststring) for .conststring
+    modes_wb.o(.constdata) refers to sb_celp.o(.text) for sb_encoder_init
+    nb_celp.o(.text) refers to timer.o(.text) for os_time_get
+    nb_celp.o(.text) refers to printf8.o(i.__0printf$8) for __2printf
+    nb_celp.o(.text) refers to vbr.o(.text) for vbr_init
+    nb_celp.o(.text) refers to speex.o(.text) for speex_encoder_ctl
+    nb_celp.o(.text) refers to window.o(.constdata) for lpc_window
+    nb_celp.o(.text) refers to filters.o(.text) for compute_rms16
+    nb_celp.o(.text) refers to memory.o(.text) for mem_malloc_ex
+    nb_celp.o(.text) refers to memmovea.o(.text) for __aeabi_memmove
+    nb_celp.o(.text) refers to lpc.o(.text) for _spx_autocorr
+    nb_celp.o(.text) refers to lsp.o(.text) for lpc_to_lsp
+    nb_celp.o(.text) refers to ltp.o(.text) for open_loop_nbest_pitch
+    nb_celp.o(.text) refers to nb_celp.o(.constdata) for __FUNCTION__
+    nb_celp.o(.text) refers to f2d.o(.text) for __aeabi_f2d
+    nb_celp.o(.text) refers to ddiv.o(.text) for __aeabi_ddiv
+    nb_celp.o(.text) refers to d2f.o(.text) for __aeabi_d2f
+    nb_celp.o(.text) refers to dmul.o(.text) for __aeabi_dmul
+    nb_celp.o(.text) refers to cdrcmple.o(.text) for __aeabi_cdrcmple
+    nb_celp.o(.text) refers to cdcmple.o(.text) for __aeabi_cdcmple
+    nb_celp.o(.text) refers to dflti.o(.text) for __aeabi_i2d
+    nb_celp.o(.text) refers to floor.o(i.__hardfp_floor) for __hardfp_floor
+    nb_celp.o(.text) refers to dfixi.o(.text) for __aeabi_d2iz
+    nb_celp.o(.text) refers to vbr.o(.constdata) for vbr_nb_thresh
+    nb_celp.o(.text) refers to dadd.o(.text) for __aeabi_dadd
+    nb_celp.o(.text) refers to bits.o(.text) for speex_bits_pack
+    nb_celp.o(.text) refers to vq.o(.text) for scal_quant32
+    nb_celp.o(.text) refers to memseta.o(.text) for __aeabi_memclr4
+    nb_celp.o(.text) refers to cb_search.o(.text) for noise_codebook_quant
+    nb_celp.o(.text) refers to speex_callbacks.o(.text) for speex_default_user_handler
+    nb_celp.o(.text) refers to log.o(i.__hardfp_log) for __hardfp_log
+    nb_celp.o(.text) refers to printf8.o(i.__0fprintf$8) for __2fprintf
+    nb_celp.o(.text) refers to stderr.o(.data) for __stderr
+    preprocess.o(.text) refers to preprocess.o(.constdata) for table
+    preprocess.o(.text) refers to filterbank.o(.text) for filterbank_new
+    preprocess.o(.text) refers to fftwrap.o(.text) for spx_fft_init
+    preprocess.o(.text) refers to mdf.o(.text) for speex_echo_get_residual
+    preprocess.o(.text) refers to printf8.o(i.__0fprintf$8) for __2fprintf
+    preprocess.o(.text) refers to memory.o(.text) for mem_calloc_ex
+    preprocess.o(.text) refers to stderr.o(.data) for __stderr
+    quant_lsp.o(.text) refers to bits.o(.text) for speex_bits_pack
+    quant_lsp.o(.text) refers to lsp_tables_nb.o(.constdata) for cdbk_nb
+    quant_lsp.o(.text) refers to high_lsp_tables.o(.constdata) for high_lsp_cdbk
+    resample.o(.text) refers to f2d.o(.text) for __aeabi_f2d
+    resample.o(.text) refers to floor.o(i.__hardfp_floor) for __hardfp_floor
+    resample.o(.text) refers to dfixi.o(.text) for __aeabi_d2iz
+    resample.o(.text) refers to dmul.o(.text) for __aeabi_dmul
+    resample.o(.text) refers to dadd.o(.text) for __aeabi_dadd
+    resample.o(.text) refers to fabs.o(i.__hardfp_fabs) for __hardfp_fabs
+    resample.o(.text) refers to cdcmple.o(.text) for __aeabi_cdcmple
+    resample.o(.text) refers to cdrcmple.o(.text) for __aeabi_cdrcmple
+    resample.o(.text) refers to dflti.o(.text) for __aeabi_i2d
+    resample.o(.text) refers to ddiv.o(.text) for __aeabi_ddiv
+    resample.o(.text) refers to d2f.o(.text) for __aeabi_d2f
+    resample.o(.text) refers to sin.o(i.__hardfp_sin) for __hardfp_sin
+    resample.o(.text) refers to resample.o(.constdata) for quality_map
+    resample.o(.text) refers to memory.o(.text) for mem_free
+    resample.o(.constdata) refers to resample.o(.data) for _KAISER6
+    sb_celp.o(.text) refers to speex.o(.text) for speex_encoder_init
+    sb_celp.o(.text) refers to f2d.o(.text) for __aeabi_f2d
+    sb_celp.o(.text) refers to dadd.o(.text) for __aeabi_dadd
+    sb_celp.o(.text) refers to d2f.o(.text) for __aeabi_d2f
+    sb_celp.o(.text) refers to floor.o(i.__hardfp_floor) for __hardfp_floor
+    sb_celp.o(.text) refers to dfixi.o(.text) for __aeabi_d2iz
+    sb_celp.o(.text) refers to window.o(.constdata) for lpc_window
+    sb_celp.o(.text) refers to filters.o(.text) for qmf_decomp
+    sb_celp.o(.text) refers to memory.o(.text) for mem_malloc_ex
+    sb_celp.o(.text) refers to memmovea.o(.text) for __aeabi_memcpy
+    sb_celp.o(.text) refers to lpc.o(.text) for _spx_autocorr
+    sb_celp.o(.text) refers to lsp.o(.text) for lpc_to_lsp
+    sb_celp.o(.text) refers to sb_celp.o(.constdata) for h0
+    sb_celp.o(.text) refers to dmul.o(.text) for __aeabi_dmul
+    sb_celp.o(.text) refers to ddiv.o(.text) for __aeabi_ddiv
+    sb_celp.o(.text) refers to cdrcmple.o(.text) for __aeabi_cdrcmple
+    sb_celp.o(.text) refers to cdcmple.o(.text) for __aeabi_cdcmple
+    sb_celp.o(.text) refers to log.o(i.__hardfp_log) for __hardfp_log
+    sb_celp.o(.text) refers to dflti.o(.text) for __aeabi_i2d
+    sb_celp.o(.text) refers to bits.o(.text) for speex_bits_pack
+    sb_celp.o(.text) refers to vq.o(.text) for scal_quant
+    sb_celp.o(.text) refers to memseta.o(.text) for __aeabi_memclr4
+    sb_celp.o(.text) refers to printf8.o(i.__0fprintf$8) for __2fprintf
+    sb_celp.o(.text) refers to stderr.o(.data) for __stderr
+    smallft.o(.text) refers to f2d.o(.text) for __aeabi_f2d
+    smallft.o(.text) refers to cos.o(i.__hardfp_cos) for __hardfp_cos
+    smallft.o(.text) refers to d2f.o(.text) for __aeabi_d2f
+    smallft.o(.text) refers to sin.o(i.__hardfp_sin) for __hardfp_sin
+    smallft.o(.text) refers to smallft.o(.data) for ntryh
+    smallft.o(.text) refers to memory.o(.text) for mem_calloc_ex
+    smallft.o(.text) refers to smallft.o(.constdata) for __FUNCTION__
+    speex.o(.text) refers to f2d.o(.text) for __aeabi_f2d
+    speex.o(.text) refers to dadd.o(.text) for __aeabi_dadd
+    speex.o(.text) refers to floor.o(i.__hardfp_floor) for __hardfp_floor
+    speex.o(.text) refers to dfixi.o(.text) for __aeabi_d2iz
+    speex.o(.text) refers to printf8.o(i.__0fprintf$8) for __2fprintf
+    speex.o(.text) refers to stderr.o(.data) for __stderr
+    speex_callbacks.o(.text) refers to bits.o(.text) for speex_bits_unpack_unsigned
+    speex_callbacks.o(.text) refers to speex.o(.text) for speex_encoder_ctl
+    speex_callbacks.o(.text) refers to usart.o(.text) for fputc
+    speex_header.o(.text) refers to printf8.o(i.__0fprintf$8) for __2fprintf
+    speex_header.o(.text) refers to modes.o(.text) for speex_mode_query
+    speex_header.o(.text) refers to memmovea.o(.text) for __aeabi_memcpy4
+    speex_header.o(.text) refers to memory.o(.text) for mem_calloc_ex
+    speex_header.o(.text) refers to stderr.o(.data) for __stderr
+    speex_header.o(.text) refers to speex_header.o(.constdata) for __FUNCTION__
+    stereo.o(.text) refers to memory.o(.text) for mem_calloc_ex
+    stereo.o(.text) refers to f2d.o(.text) for __aeabi_f2d
+    stereo.o(.text) refers to dmul.o(.text) for __aeabi_dmul
+    stereo.o(.text) refers to d2f.o(.text) for __aeabi_d2f
+    stereo.o(.text) refers to bits.o(.text) for speex_bits_pack
+    stereo.o(.text) refers to log.o(i.__hardfp_log) for __hardfp_log
+    stereo.o(.text) refers to fabs.o(i.__hardfp_fabs) for __hardfp_fabs
+    stereo.o(.text) refers to dadd.o(.text) for __aeabi_dadd
+    stereo.o(.text) refers to floor.o(i.__hardfp_floor) for __hardfp_floor
+    stereo.o(.text) refers to vq.o(.text) for scal_quant
+    stereo.o(.text) refers to stereo.o(.constdata) for __FUNCTION__
+    vbr.o(.text) refers to pow.o(i.__hardfp_pow) for __hardfp_pow
+    vbr.o(.text) refers to dmul.o(.text) for __aeabi_dmul
+    vbr.o(.text) refers to d2f.o(.text) for __aeabi_d2f
+    vbr.o(.text) refers to log.o(i.__hardfp_log) for __hardfp_log
+    vbr.o(.text) refers to f2d.o(.text) for __aeabi_f2d
+    vbr.o(.text) refers to dadd.o(.text) for __aeabi_dsub
+    vbr.o(.text) refers to fabs.o(i.__hardfp_fabs) for __hardfp_fabs
+    vbr.o(.text) refers to cdcmple.o(.text) for __aeabi_cdcmple
+    vbr.o(.text) refers to cdrcmple.o(.text) for __aeabi_cdrcmple
+    vbr.o(.text) refers to dflti.o(.text) for __aeabi_i2d
+    vbr.o(.text) refers to ddiv.o(.text) for __aeabi_ddiv
+    bits.o(.text) refers to memory.o(.text) for mem_calloc_ex
+    bits.o(.text) refers to memmovea.o(.text) for __aeabi_memmove
+    bits.o(.text) refers to bits.o(.constdata) for __FUNCTION__
+    bits.o(.text) refers to printf8.o(i.__0fprintf$8) for __2fprintf
+    bits.o(.text) refers to stderr.o(.data) for __stderr
+    camera.o(.text) refers to stm32f4xx_dma.o(.text) for DMA_ITConfig
+    camera.o(.text) refers to memseta.o(.text) for __aeabi_memclr4
+    camera.o(.text) refers to misc.o(.text) for NVIC_Init
+    camera.o(.text) refers to stm32f4xx_dcmi.o(.text) for DCMI_Cmd
+    camera.o(.text) refers to stm32f4xx_rcc.o(.text) for RCC_AHB2PeriphClockCmd
+    camera.o(.text) refers to timer.o(.text) for os_time_get
+    camera.o(.text) refers to printf8.o(i.__0printf$8) for __2printf
+    camera.o(.text) refers to msg_q.o(.text) for msgget
+    camera.o(.text) refers to mutex.o(.text) for mutex_init
+    camera.o(.text) refers to memory2.o(.text) for mem_free2
+    camera.o(.text) refers to stm32f4xx_gpio.o(.text) for GPIO_PinAFConfig
+    camera.o(.text) refers to driver_misc.o(.text) for gpio_cfg
+    camera.o(.text) refers to memory.o(.text) for mem_malloc_ex
+    camera.o(.text) refers to ov2640.o(.text) for ov2640_Init
+    camera.o(.text) refers to wait.o(.text) for init_event
+    camera.o(.text) refers to task.o(.text) for thread_create
+    camera.o(.text) refers to debug.o(.data) for dbg_level
+    camera.o(.text) refers to camera.o(.constdata) for __FUNCTION__
+    camera.o(.text) refers to camera.o(.bss) for camera_cfg
+    camera.o(.text) refers to camera.o(.data) for img_send_thread_id
+    camera.o(.text) refers to memmovea.o(.text) for __aeabi_memcpy
+    camera.o(.text) refers to atomic.o(.text) for enter_interrupt
+    camera.o(.text) refers to tcpapp.o(.text) for send_data
+    camera.o(.text) refers to mqtt_app.o(.text) for mqtt_pub
+    camera.o(.text) refers to test_tcpip.o(.data) for remote_socket_fd
+    dht11.o(.text) refers to driver_misc.o(.text) for gpio_cfg
+    dht11.o(.text) refers to stm32f4xx_syscfg.o(.text) for SYSCFG_EXTILineConfig
+    dht11.o(.text) refers to stm32f4xx_exti.o(.text) for EXTI_Init
+    dht11.o(.text) refers to misc.o(.text) for NVIC_Init
+    dht11.o(.text) refers to timer.o(.text) for sleep
+    dht11.o(.text) refers to dht11.o(.data) for rcv_data
+    driver_misc.o(.text) refers to memory.o(.text) for sys_meminit
+    driver_misc.o(.text) refers to memory2.o(.text) for sys_meminit2
+    driver_misc.o(.text) refers to misc.o(.text) for NVIC_PriorityGroupConfig
+    driver_misc.o(.text) refers to stm32f4xx_rcc.o(.text) for RCC_AHB2PeriphClockCmd
+    driver_misc.o(.text) refers to stm32f4xx_rng.o(.text) for RNG_Cmd
+    driver_misc.o(.text) refers to stm32f4xx_gpio.o(.text) for GPIO_Init
+    driver_misc.o(.text) refers to timer.o(.text) for os_time_get
+    driver_misc.o(.text) refers to printf8.o(i.__0printf$8) for __2printf
+    driver_misc.o(.text) refers to stm32f4xx_tim.o(.text) for TIM_DeInit
+    driver_misc.o(.text) refers to system_stm32f4xx.o(.data) for SystemCoreClock
+    hard_timer.o(.text) refers to stm32f4xx_rcc.o(.text) for RCC_APB1PeriphClockCmd
+    hard_timer.o(.text) refers to stm32f4xx_tim.o(.text) for TIM_DeInit
+    hard_timer.o(.text) refers to misc.o(.text) for NVIC_Init
+    hard_timer.o(.text) refers to hard_timer.o(.data) for hard_timer_call_back
+    ir_control.o(.text) refers to stm32f4xx_tim.o(.text) for TIM_SelectOCxM
+    ir_control.o(.text) refers to timer.o(.text) for os_time_get
+    ir_control.o(.text) refers to printf8.o(i.__0printf$8) for __2printf
+    ir_control.o(.text) refers to driver_misc.o(.text) for gpio_cfg
+    ir_control.o(.text) refers to stm32f4xx_syscfg.o(.text) for SYSCFG_EXTILineConfig
+    ir_control.o(.text) refers to stm32f4xx_exti.o(.text) for EXTI_Init
+    ir_control.o(.text) refers to misc.o(.text) for NVIC_Init
+    ir_control.o(.text) refers to hard_timer.o(.text) for mode_timer_by_counter
+    ir_control.o(.text) refers to stm32f4xx_rcc.o(.text) for RCC_APB2PeriphClockCmd
+    ir_control.o(.text) refers to stm32f4xx_gpio.o(.text) for GPIO_PinAFConfig
+    ir_control.o(.text) refers to ir_control.o(.data) for ir_dbg
+    ir_control.o(.text) refers to debug.o(.data) for dbg_level
+    ir_control.o(.text) refers to ir_control.o(.bss) for send_seq
+    lan8720.o(.text) refers to memory.o(.text) for mem_free
+    lan8720.o(.text) refers to stm32f4xx_syscfg.o(.text) for SYSCFG_ETH_MediaInterfaceConfig
+    lan8720.o(.text) refers to driver_misc.o(.text) for gpio_cfg
+    lan8720.o(.text) refers to stm32f4xx_gpio.o(.text) for GPIO_PinAFConfig
+    lan8720.o(.text) refers to timer.o(.text) for sleep
+    lan8720.o(.text) refers to misc.o(.text) for NVIC_Init
+    lan8720.o(.text) refers to task.o(.text) for thread_create
+    lan8720.o(.text) refers to stm32f4x7_eth.o(.text) for ETH_ReadPHYRegister
+    lan8720.o(.text) refers to stm32f4xx_rcc.o(.text) for RCC_AHB1PeriphClockCmd
+    lan8720.o(.text) refers to wait.o(.text) for wake_up
+    lan8720.o(.text) refers to lan8720.o(.data) for DMARxDscrTab
+    lan8720.o(.text) refers to lan8720.o(.constdata) for __FUNCTION__
+    lan8720.o(.text) refers to eth_ethernetif.o(.text) for eth_int_thread
+    lan8720.o(.text) refers to eth_ethernetif.o(.data) for eth_int_pending
+    lan8720.o(.text) refers to stm32f4x7_eth.o(.data) for DMARxDescToGet
+    mfrc522.o(.text) refers to sys_misc.o(.text) for delay_us
+    mfrc522.o(.text) refers to timer.o(.text) for sleep
+    mfrc522.o(.text) refers to printf8.o(i.__0printf$8) for __2printf
+    mfrc522.o(.text) refers to stm32f4xx_rcc.o(.text) for RCC_APB1PeriphClockCmd
+    mfrc522.o(.text) refers to driver_misc.o(.text) for gpio_cfg
+    mfrc522.o(.text) refers to mfrc522.o(.data) for cur_type
+    mfrc522.o(.text) refers to debug.o(.data) for dbg_level
+    rtc.o(.text) refers to stm32f4xx_rtc.o(.text) for RTC_GetAlarm
+    rtc.o(.text) refers to printf8.o(i.__0printf$8) for __2printf
+    rtc.o(.text) refers to stm32f4xx_rcc.o(.text) for RCC_APB1PeriphClockCmd
+    rtc.o(.text) refers to stm32f4xx_pwr.o(.text) for PWR_BackupAccessCmd
+    rtc.o(.text) refers to stm32f4xx_exti.o(.text) for EXTI_ClearITPendingBit
+    rtc.o(.text) refers to timer.o(.text) for os_time_get
+    rtc.o(.text) refers to rtc.o(.data) for SynchPrediv
+    sccb.o(.text) refers to driver_misc.o(.text) for gpio_cfg
+    sccb.o(.text) refers to sys_misc.o(.text) for delay_us
+    usart.o(.text) refers to memseta.o(.text) for __aeabi_memclr4
+    usart.o(.text) refers to stm32f4xx_rcc.o(.text) for RCC_APB2PeriphClockCmd
+    usart.o(.text) refers to driver_misc.o(.text) for gpio_cfg
+    usart.o(.text) refers to stm32f4xx_gpio.o(.text) for GPIO_PinAFConfig
+    usart.o(.text) refers to wait.o(.text) for init_event
+    usart.o(.text) refers to timer.o(.text) for os_time_get
+    usart.o(.text) refers to printf8.o(i.__0printf$8) for __2printf
+    usart.o(.text) refers to stm32f4xx_usart.o(.text) for USART_Init
+    usart.o(.text) refers to misc.o(.text) for NVIC_Init
+    usart.o(.text) refers to atomic.o(.text) for local_irq_save
+    usart.o(.text) refers to usart.o(.bss) for u1_recv
+    usart.o(.text) refers to usart.o(.data) for dbg_uart
+    usart.o(.text) refers to work.o(.text) for send_work_event
+    usart.o(.text) refers to test.o(.data) for command
+    w25p80.o(.text) refers to stm32f4xx_spi.o(.text) for SPI_I2S_GetFlagStatus
+    w25p80.o(.text) refers to sys_misc.o(.text) for delay_us
+    w25p80.o(.text) refers to timer.o(.text) for os_time_get
+    w25p80.o(.text) refers to printf8.o(i.__0printf$8) for __2printf
+    w25p80.o(.text) refers to memory.o(.text) for mem_malloc_ex
+    w25p80.o(.text) refers to memcmp.o(.text) for memcmp
+    w25p80.o(.text) refers to os_cpu_c.o(.data) for jiffies
+    w25p80.o(.text) refers to w25p80.o(.bss) for m25_flash
+    w25p80.o(.text) refers to w25p80.o(.constdata) for __FUNCTION__
+    w25p80.o(.text) refers to memseta.o(.text) for __aeabi_memclr4
+    w25p80.o(.text) refers to mutex.o(.text) for mutex_init
+    w25p80.o(.text) refers to stm32f4xx_rcc.o(.text) for RCC_APB1PeriphClockCmd
+    w25p80.o(.text) refers to driver_misc.o(.text) for gpio_cfg
+    w25p80.o(.text) refers to stm32f4xx_gpio.o(.text) for GPIO_PinAFConfig
+    ov2640.o(.text) refers to sccb.o(.text) for startSCCB
+    ov2640.o(.text) refers to sys_misc.o(.text) for delay_us
+    ov2640.o(.text) refers to timer.o(.text) for os_time_get
+    ov2640.o(.text) refers to printf8.o(i.__0printf$8) for __2printf
+    ov2640.o(.text) refers to driver_misc.o(.text) for gpio_cfg
+    ov2640.o(.text) refers to ov2640.o(.constdata) for OV2640_JPEG_INIT
+    ov2640.o(.text) refers to debug.o(.data) for dbg_level
+    stm32f4xx_it.o(.emb_text) refers to stm32f4xx_it.o(.text) for hard_fault_handler_c
+    stm32f4xx_it.o(.text) refers to printf8.o(i.__0printf$8) for __2printf
+    stm32f4xx_it.o(.text) refers to stm32f4xx_exti.o(.text) for EXTI_GetITStatus
+    stm32f4xx_it.o(.text) refers to ir_control.o(.text) for __EXTI14_IRQHandler
+    stm32f4xx_it.o(.text) refers to 24l01.o(.text) for __EXTI11_IRQHandler
+    stm32f4xx_it.o(.text) refers to dht11.o(.text) for __DHT11_IRQHandler
+    key.o(.text) refers to stm32f4xx_tim.o(.text) for TIM_GetCounter
+    key.o(.text) refers to timer.o(.text) for os_time_get
+    key.o(.text) refers to printf8.o(i.__0printf$8) for __2printf
+    key.o(.text) refers to driver_misc.o(.text) for gpio_cfg
+    key.o(.text) refers to key.o(.bss) for ctl_key
+    key.o(.text) refers to debug.o(.data) for dbg_level
+    key.o(.text) refers to key.o(.data) for key_detect_timer
+    24l01.o(.text) refers to wait.o(.text) for wait_event_timeout
+    24l01.o(.text) refers to timer.o(.text) for os_time_get
+    24l01.o(.text) refers to printf8.o(i.__0printf$8) for __2printf
+    24l01.o(.text) refers to driver_misc.o(.text) for gpio_cfg
+    24l01.o(.text) refers to 24l01.o(.data) for nrf_event
+    24l01.o(.text) refers to debug.o(.data) for dbg_level
+    24l01.o(.text) refers to 24l01.o(.bss) for nrf_recv_buff
+    24l01.o(.text) refers to 24l01.o(.constdata) for __FUNCTION__
+    24l01.o(.text) refers to stm32f4xx_syscfg.o(.text) for SYSCFG_EXTILineConfig
+    24l01.o(.text) refers to stm32f4xx_exti.o(.text) for EXTI_Init
+    24l01.o(.text) refers to misc.o(.text) for NVIC_Init
+    24l01.o(.text) refers to task.o(.text) for thread_create
+    debug.o(.text) refers to timer.o(.text) for os_time_get
+    debug.o(.text) refers to printf8.o(i.__0printf$8) for __2printf
+    debug.o(.text) refers to memory2.o(.text) for mem_malloc2
+    debug.o(.text) refers to usart.o(.text) for uart1_send
+    debug.o(.text) refers to memseta.o(.text) for __aeabi_memclr
+    debug.o(.text) refers to printf8.o(i.__0snprintf$8) for __2snprintf
+    debug.o(.text) refers to strlen.o(.text) for strlen
+    debug.o(.text) refers to strcat.o(.text) for strcat
+    debug.o(.text) refers to debug.o(.data) for monitor_enable
+    debug.o(.text) refers to debug.o(monitor_item_table) for monitor_send_cnt
+    debug.o(.text) refers to os_core.o(.data) for OSCPUUsage
+    debug.o(.text) refers to os_core.o(.bss) for OSEventTbl
+    debug.o(.text) refers to printf8.o(i.__0sprintf$8) for __2sprintf
+    debug.o(.text) refers to atomic.o(.text) for local_irq_save
+    debug.o(.text) refers to memmovea.o(.text) for __aeabi_memcpy4
+    debug.o(.text) refers to stats.o(.bss) for lwip_stats
+    debug.o(.text) refers to debug.o(.conststring) for .conststring
+    debug.o(.text) refers to sockets.o(.bss) for sockets
+    debug.o(.data) refers to debug.o(.conststring) for .conststring
+    debug.o(monitor_item_table) refers to debug.o(.conststrlit) for .conststrlit
+    sys_misc.o(.text) refers to timer.o(.text) for os_time_get
+    sys_misc.o(.text) refers to printf8.o(i.__0printf$8) for __2printf
+    sys_misc.o(.text) refers to test_tcpip.o(.text) for show_tcpip_info
+    sys_misc.o(.text) refers to memory.o(.text) for mem_slide_check
+    sys_misc.o(.text) refers to sys_misc.o(.data) for led_value
+    sys_misc.o(.text) refers to debug.o(.data) for dbg_level
+    sys_misc.o(.text) refers to driver_misc.o(.text) for gpio_cfg
+    main.o(.text) refers to umem.o(.text) for uMEM_Init
+    main.o(.text) refers to driver_misc.o(.text) for driver_misc_init
+    main.o(.text) refers to sys_misc.o(.text) for usr_gpio_init
+    main.o(.text) refers to os_core.o(.text) for OSStatInit
+    main.o(.text) refers to usart.o(.text) for uart1_init
+    main.o(.text) refers to stm32f4xx_rcc.o(.text) for RCC_GetClocksFreq
+    main.o(.text) refers to timer.o(.text) for os_time_get
+    main.o(.text) refers to printf8.o(i.__0printf$8) for __2printf
+    main.o(.text) refers to w25p80.o(.text) for m25p80_init
+    main.o(.text) refers to task.o(.text) for init_work_thread
+    main.o(.text) refers to web_cfg.o(.text) for load_web_cfg
+    main.o(.text) refers to tcpapp.o(.text) for init_lwip
+    main.o(.text) refers to lan8720.o(.text) for LAN8720_Init
+    main.o(.text) refers to key.o(.text) for init_key_dev
+    main.o(.text) refers to rtc.o(.text) for init_rtc
+    main.o(.text) refers to camera.o(.text) for open_camera
+    main.o(.text) refers to memory.o(.text) for mem_get_size
+    main.o(.text) refers to memory2.o(.text) for mem_get_size2
+    main.o(.text) refers to sensers.o(.text) for init_sensers
+    main.o(.text) refers to work.o(.text) for work_process
+    main.o(.text) refers to msg_q.o(.text) for msg_q_init
+    main.o(.text) refers to debug.o(.data) for dbg_level
+    main.o(.text) refers to main.o(.conststring) for .conststring
+    main.o(.text) refers to web_cfg.o(.bss) for web_cfg
+    test_tcpip.o(.text) refers to timer.o(.text) for os_time_get
+    test_tcpip.o(.text) refers to printf8.o(i.__0printf$8) for __2printf
+    test_tcpip.o(.text) refers to tcpapp.o(.text) for tcp_client_create
+    test_tcpip.o(.text) refers to strlen.o(.text) for strlen
+    test_tcpip.o(.text) refers to sockets.o(.text) for lwip_send
+    test_tcpip.o(.text) refers to ip_addr.o(.text) for ipaddr_addr
+    test_tcpip.o(.text) refers to mutex.o(.text) for mutex_lock
+    test_tcpip.o(.text) refers to debug.o(.data) for dbg_level
+    test_tcpip.o(.text) refers to test_tcpip.o(.constdata) for __FUNCTION__
+    test_tcpip.o(.text) refers to sockets.o(.data) for errno
+    test_tcpip.o(.text) refers to tcpapp.o(.data) for socket_mutex
+    test_tcpip.o(.text) refers to memory.o(.text) for mem_malloc_ex
+    test_tcpip.o(.text) refers to test_tcpip.o(monitor_item_table) for tcp_totol_send
+    test_tcpip.o(.text) refers to test_tcpip.o(.data) for tcp_send_stop
+    test_tcpip.o(.text) refers to task.o(.text) for thread_myself
+    test_tcpip.o(.text) refers to camera.o(.text) for start_capture_img
+    test_tcpip.o(.text) refers to dns.o(.text) for dns_getserver
+    test_tcpip.o(monitor_item_table) refers to test_tcpip.o(.conststrlit) for .conststrlit
+    tcpapp.o(.text) refers to timer.o(.text) for os_time_get
+    tcpapp.o(.text) refers to printf8.o(i.__0printf$8) for __2printf
+    tcpapp.o(.text) refers to netif.o(.text) for netif_remove
+    tcpapp.o(.text) refers to dns.o(.text) for dns_setserver
+    tcpapp.o(.text) refers to dhcp.o(.text) for dhcp_start
+    tcpapp.o(.text) refers to sockets.o(.text) for get_socket
+    tcpapp.o(.text) refers to mutex.o(.text) for mutex_lock
+    tcpapp.o(.text) refers to debug.o(.data) for dbg_level
+    tcpapp.o(.text) refers to tcpapp.o(.constdata) for __FUNCTION__
+    tcpapp.o(.text) refers to web_cfg.o(.bss) for web_cfg
+    tcpapp.o(.text) refers to tcpapp.o(.data) for p_eth_netif
+    tcpapp.o(.text) refers to tcpapp.o(.bss) for if_eth
+    tcpapp.o(.text) refers to tcpip.o(.text) for tcpip_input
+    tcpapp.o(.text) refers to eth_ethernetif.o(.text) for eth_ethernetif_init
+    tcpapp.o(.text) refers to api_lib.o(.text) for netconn_gethostbyname
+    tcpapp.o(.text) refers to ip_addr.o(.text) for ipaddr_addr
+    tcpapp.o(.text) refers to sockets.o(.data) for errno
+    tcpapp.o(.text) refers to sockets.o(.bss) for sockets
+    sensers.o(.text) refers to mutex.o(.text) for mutex_lock
+    sensers.o(.text) refers to stm32f4xx_rtc.o(.text) for RTC_GetTime
+    sensers.o(.text) refers to dht11.o(.text) for dht11_read_data
+    sensers.o(.text) refers to timer.o(.text) for os_time_get
+    sensers.o(.text) refers to printf8.o(i.__0printf$8) for __2printf
+    sensers.o(.text) refers to mfrc522.o(.text) for init_rc522
+    sensers.o(.text) refers to sensers.o(.data) for senser_poll_mutex
+    sensers.o(.text) refers to sensers.o(.bss) for sensers_pkg
+    sensers.o(.text) refers to debug.o(.data) for dbg_level
+    work.o(.text) refers to wait.o(.text) for wake_up
+    work.o(.text) refers to tcpapp.o(.text) for set_ipaddr
+    work.o(.text) refers to sockets.o(.text) for lwip_socket
+    work.o(.text) refers to timer.o(.text) for os_time_get
+    work.o(.text) refers to printf8.o(i.__0printf$8) for __2printf
+    work.o(.text) refers to ip_addr.o(.text) for ipaddr_addr
+    work.o(.text) refers to mutex.o(.text) for mutex_lock
+    work.o(.text) refers to memcmp.o(.text) for memcmp
+    work.o(.text) refers to memmovea.o(.text) for __aeabi_memcpy
+    work.o(.text) refers to memseta.o(.text) for __aeabi_memset
+    work.o(.text) refers to printf8.o(i.__0snprintf$8) for __2snprintf
+    work.o(.text) refers to sha1.o(.text) for md5_vector
+    work.o(.text) refers to mqtt_app.o(.text) for init_mqtt
+    work.o(.text) refers to memory.o(.text) for mem_calloc_ex
+    work.o(.text) refers to work.o(.bss) for iot_work
+    work.o(.text) refers to web_cfg.o(.bss) for web_cfg
+    work.o(.text) refers to tcpapp.o(.data) for p_netif
+    work.o(.text) refers to work.o(.data) for local_udp_client
+    work.o(.text) refers to work.o(.constdata) for __FUNCTION__
+    work.o(.text) refers to work.o(.conststring) for .conststring
+    work.o(.text) refers to debug.o(.data) for dbg_level
+    work.o(.text) refers to memory2.o(.text) for mem_malloc2
+    work.o(.text) refers to test_tcpip.o(.text) for handle_test_recv
+    work.o(.text) refers to task.o(.text) for thread_create
+    work.o(.text) refers to netif.o(.text) for netif_set_default
+    work.o(.text) refers to test.o(.text) for handle_cmd
+    work.o(.text) refers to sockets.o(.data) for errno
+    work.o(.text) refers to work.o(monitor_item_table) for tcp_totol_recv
+    work.o(.text) refers to sensers.o(.bss) for sensers_pkg
+    work.o(.text) refers to test.o(.data) for command
+    work.o(monitor_item_table) refers to work.o(.conststrlit) for .conststrlit
+    mqtt_app.o(.text) refers to timer.o(.text) for os_time_get
+    mqtt_app.o(.text) refers to printf8.o(i.__0printf$8) for __2printf
+    mqtt_app.o(.text) refers to rtc.o(.text) for RTC_Time_Set
+    mqtt_app.o(.text) refers to ir_control.o(.text) for ir_send_kelon_cmd
+    mqtt_app.o(.text) refers to cjson.o(.text) for cJSON_Parse
+    mqtt_app.o(.text) refers to memory.o(.text) for mem_free
+    mqtt_app.o(.text) refers to util_mosq.o(.text) for mosquitto_topic_matches_sub
+    mqtt_app.o(.text) refers to mosquitto.o(.text) for mosquitto_subscribe
+    mqtt_app.o(.text) refers to debug.o(.data) for dbg_level
+    mqtt_app.o(.text) refers to camera.o(.bss) for camera_cfg
+    mqtt_app.o(.text) refers to mqtt_app.o(.constdata) for __FUNCTION__
+    mqtt_app.o(.text) refers to mqtt_app.o(.data) for mqtt_connected
+    mqtt_app.o(.text) refers to memseta.o(.text) for __aeabi_memclr4
+    mqtt_app.o(.text) refers to messages_mosq.o(.text) for mosquitto_max_inflight_messages_set
+    mqtt_app.o(.text) refers to task.o(.text) for thread_create
+    mqtt_app.o(.text) refers to mqtt_app.o(.bss) for ud
+    mqtt_app.o(.text) refers to printf8.o(i.__0snprintf$8) for __2snprintf
+    mqtt_app.o(.data) refers to mqtt_app.o(.conststring) for .conststring
+    test.o(.text) refers to timer.o(.text) for os_time_get
+    test.o(.text) refers to printf8.o(i.__0printf$8) for __2printf
+    test.o(.text) refers to printf8.o(i.__0sprintf$8) for __2sprintf
+    test.o(.text) refers to test_tcpip.o(.text) for test_tcp_client
+    test.o(.text) refers to sys_misc.o(.text) for show_sys_info
+    test.o(.text) refers to memory.o(.text) for mem_slide_check
+    test.o(.text) refers to debug.o(.text) for monitor_switch
+    test.o(.text) refers to camera.o(.text) for start_capture_img
+    test.o(.text) refers to ir_control.o(.text) for ir_send_nec_data
+    test.o(.text) refers to 24l01.o(.text) for nrf2401_tx
+    test.o(.text) refers to debug.o(.data) for dbg_level
+    test.o(.text) refers to test.o(.conststring) for .conststring
+    test.o(.text) refers to test.o(.bss) for cmd_str
+    test.o(.text) refers to tcpapp.o(.data) for p_netif
+    test.o(.text) refers to test.o(.data) for test_ir_data
+    sha1.o(.text) refers to memmovea.o(.text) for __aeabi_memcpy
+    sha1.o(.text) refers to memseta.o(.text) for __aeabi_memclr4
+    sha1.o(.text) refers to strlen.o(.text) for strlen
+    sha1.o(.text) refers to sha1.o(.constdata) for sha1_padding
+    web_cfg.o(.text) refers to printf8.o(i.__0printf$8) for __2printf
+    web_cfg.o(.text) refers to strcpy.o(.text) for strcpy
+    web_cfg.o(.text) refers to memseta.o(.text) for __aeabi_memclr
+    web_cfg.o(.text) refers to ip_addr.o(.text) for ipaddr_addr
+    web_cfg.o(.text) refers to timer.o(.text) for os_time_get
+    web_cfg.o(.text) refers to w25p80.o(.text) for m25p80_erase
+    web_cfg.o(.text) refers to web_cfg.o(.bss) for web_cfg
+    web_cfg.o(.text) refers to debug.o(.data) for dbg_level
+    web_cfg.o(.text) refers to web_cfg.o(.constdata) for __FUNCTION__
+    cjson.o(.text) refers to tolower.o(.text) for tolower
+    cjson.o(.text) refers to strlen.o(.text) for strlen
+    cjson.o(.text) refers to memmovea.o(.text) for __aeabi_memcpy
+    cjson.o(.text) refers to memseta.o(.text) for __aeabi_memclr4
+    cjson.o(.text) refers to printf8.o(i.__0sprintf$8) for __2sprintf
+    cjson.o(.text) refers to cjson.o(.data) for ep
+    cjson.o(.text) refers to umem.o(.text) for uMEM_New
+    cjson.o(.text) refers to strchr.o(.text) for strchr
+    cjson.o(.text) refers to strncmp.o(.text) for strncmp
+    cjson.o(.text) refers to cjson.o(.constdata) for firstByteMark
+    cjson.o(.text) refers to strcpy.o(.text) for strcpy
+    cjson.o(.data) refers to umem.o(.text) for uMEM_New
+    edpkit.o(.text) refers to printf8.o(i.__0sprintf$8) for __2sprintf
+    edpkit.o(.text) refers to umem.o(.text) for uMEM_New
+    edpkit.o(.text) refers to memmovea.o(.text) for __aeabi_memcpy
+    edpkit.o(.text) refers to memseta.o(.text) for __aeabi_memclr
+    edpkit.o(.text) refers to strncpy.o(.text) for strncpy
+    edpkit.o(.text) refers to strlen.o(.text) for strlen
+    edpkit.o(.text) refers to cjson.o(.text) for cJSON_Print
+    edpkit.o(.text) refers to dfixi.o(.text) for __aeabi_d2iz
+    edpkit.o(.text) refers to dflti.o(.text) for __aeabi_i2d
+    umem.o(.text) refers to atomic.o(.text) for local_irq_save
+    umem.o(.text) refers to umem.o(.bss) for umem
+    umem.o(.text) refers to umem.o(.data) for uMEM_FreeMem
+    cos.o(i.__hardfp_cos) refers (Special) to iusefp.o(.text) for __I$use$fp
+    cos.o(i.__hardfp_cos) refers to errno.o(i.__set_errno) for __set_errno
+    cos.o(i.__hardfp_cos) refers to dunder.o(i.__mathlib_dbl_invalid) for __mathlib_dbl_invalid
+    cos.o(i.__hardfp_cos) refers to dunder.o(i.__mathlib_dbl_infnan) for __mathlib_dbl_infnan
+    cos.o(i.__hardfp_cos) refers to rred.o(i.__ieee754_rem_pio2) for __ieee754_rem_pio2
+    cos.o(i.__hardfp_cos) refers to sin_i.o(i.__kernel_sin) for __kernel_sin
+    cos.o(i.__hardfp_cos) refers to cos_i.o(i.__kernel_cos) for __kernel_cos
+    cos.o(i.__softfp_cos) refers (Special) to iusefp.o(.text) for __I$use$fp
+    cos.o(i.__softfp_cos) refers to cos.o(i.__hardfp_cos) for __hardfp_cos
+    cos.o(i.cos) refers (Special) to iusefp.o(.text) for __I$use$fp
+    cos.o(i.cos) refers to cos.o(i.__hardfp_cos) for __hardfp_cos
+    cos_x.o(i.____hardfp_cos$lsc) refers (Special) to iusefp.o(.text) for __I$use$fp
+    cos_x.o(i.____hardfp_cos$lsc) refers to errno.o(i.__set_errno) for __set_errno
+    cos_x.o(i.____hardfp_cos$lsc) refers to dunder.o(i.__mathlib_dbl_infnan) for __mathlib_dbl_infnan
+    cos_x.o(i.____hardfp_cos$lsc) refers to rred.o(i.__ieee754_rem_pio2) for __ieee754_rem_pio2
+    cos_x.o(i.____hardfp_cos$lsc) refers to sin_i.o(i.__kernel_sin) for __kernel_sin
+    cos_x.o(i.____hardfp_cos$lsc) refers to cos_i.o(i.__kernel_cos) for __kernel_cos
+    cos_x.o(i.____softfp_cos$lsc) refers (Special) to iusefp.o(.text) for __I$use$fp
+    cos_x.o(i.____softfp_cos$lsc) refers to cos_x.o(i.____hardfp_cos$lsc) for ____hardfp_cos$lsc
+    cos_x.o(i.__cos$lsc) refers (Special) to iusefp.o(.text) for __I$use$fp
+    cos_x.o(i.__cos$lsc) refers to cos_x.o(i.____hardfp_cos$lsc) for ____hardfp_cos$lsc
+    fabs.o(i.__hardfp_fabs) refers (Special) to iusefp.o(.text) for __I$use$fp
+    fabs.o(i.__softfp_fabs) refers (Special) to iusefp.o(.text) for __I$use$fp
+    fabs.o(i.fabs) refers (Special) to iusefp.o(.text) for __I$use$fp
+    floor.o(i.__hardfp_floor) refers (Special) to iusefp.o(.text) for __I$use$fp
+    floor.o(i.__hardfp_floor) refers to dadd.o(.text) for __aeabi_dadd
+    floor.o(i.__hardfp_floor) refers to cdrcmple.o(.text) for __aeabi_cdrcmple
+    floor.o(i.__softfp_floor) refers (Special) to iusefp.o(.text) for __I$use$fp
+    floor.o(i.__softfp_floor) refers to floor.o(i.__hardfp_floor) for __hardfp_floor
+    floor.o(i.floor) refers (Special) to iusefp.o(.text) for __I$use$fp
+    floor.o(i.floor) refers to floor.o(i.__hardfp_floor) for __hardfp_floor
+    log.o(i.__hardfp_log) refers (Special) to iusefp.o(.text) for __I$use$fp
+    log.o(i.__hardfp_log) refers to dunder.o(i.__mathlib_dbl_infnan) for __mathlib_dbl_infnan
+    log.o(i.__hardfp_log) refers to errno.o(i.__set_errno) for __set_errno
+    log.o(i.__hardfp_log) refers to dunder.o(i.__mathlib_dbl_invalid) for __mathlib_dbl_invalid
+    log.o(i.__hardfp_log) refers to dunder.o(i.__mathlib_dbl_divzero) for __mathlib_dbl_divzero
+    log.o(i.__hardfp_log) refers to dmul.o(.text) for __aeabi_dmul
+    log.o(i.__hardfp_log) refers to dadd.o(.text) for __aeabi_dsub
+    log.o(i.__hardfp_log) refers to cdcmple.o(.text) for __aeabi_cdcmpeq
+    log.o(i.__hardfp_log) refers to dflti.o(.text) for __aeabi_i2d
+    log.o(i.__hardfp_log) refers to ddiv.o(.text) for __aeabi_ddiv
+    log.o(i.__hardfp_log) refers to poly.o(i.__kernel_poly) for __kernel_poly
+    log.o(i.__hardfp_log) refers to qnan.o(.constdata) for __mathlib_zero
+    log.o(i.__hardfp_log) refers to log.o(.constdata) for .constdata
+    log.o(i.__softfp_log) refers (Special) to iusefp.o(.text) for __I$use$fp
+    log.o(i.__softfp_log) refers to log.o(i.__hardfp_log) for __hardfp_log
+    log.o(i.log) refers (Special) to iusefp.o(.text) for __I$use$fp
+    log.o(i.log) refers to log.o(i.__hardfp_log) for __hardfp_log
+    log.o(.constdata) refers (Special) to iusefp.o(.text) for __I$use$fp
+    log_x.o(i.____hardfp_log$lsc) refers (Special) to iusefp.o(.text) for __I$use$fp
+    log_x.o(i.____hardfp_log$lsc) refers to dunder.o(i.__mathlib_dbl_infnan) for __mathlib_dbl_infnan
+    log_x.o(i.____hardfp_log$lsc) refers to errno.o(i.__set_errno) for __set_errno
+    log_x.o(i.____hardfp_log$lsc) refers to dmul.o(.text) for __aeabi_dmul
+    log_x.o(i.____hardfp_log$lsc) refers to dadd.o(.text) for __aeabi_dsub
+    log_x.o(i.____hardfp_log$lsc) refers to cdcmple.o(.text) for __aeabi_cdcmpeq
+    log_x.o(i.____hardfp_log$lsc) refers to dflti.o(.text) for __aeabi_i2d
+    log_x.o(i.____hardfp_log$lsc) refers to ddiv.o(.text) for __aeabi_ddiv
+    log_x.o(i.____hardfp_log$lsc) refers to poly.o(i.__kernel_poly) for __kernel_poly
+    log_x.o(i.____hardfp_log$lsc) refers to qnan.o(.constdata) for __mathlib_zero
+    log_x.o(i.____hardfp_log$lsc) refers to log_x.o(.constdata) for .constdata
+    log_x.o(i.____softfp_log$lsc) refers (Special) to iusefp.o(.text) for __I$use$fp
+    log_x.o(i.____softfp_log$lsc) refers to log_x.o(i.____hardfp_log$lsc) for ____hardfp_log$lsc
+    log_x.o(i.__log$lsc) refers (Special) to iusefp.o(.text) for __I$use$fp
+    log_x.o(i.__log$lsc) refers to log_x.o(i.____hardfp_log$lsc) for ____hardfp_log$lsc
+    log_x.o(.constdata) refers (Special) to iusefp.o(.text) for __I$use$fp
+    pow.o(i.__hardfp_pow) refers (Special) to iusefp.o(.text) for __I$use$fp
+    pow.o(i.__hardfp_pow) refers to dunder.o(i.__mathlib_dbl_infnan2) for __mathlib_dbl_infnan2
+    pow.o(i.__hardfp_pow) refers to errno.o(i.__set_errno) for __set_errno
+    pow.o(i.__hardfp_pow) refers to dunder.o(i.__mathlib_dbl_divzero) for __mathlib_dbl_divzero
+    pow.o(i.__hardfp_pow) refers to dunder.o(i.__mathlib_dbl_overflow) for __mathlib_dbl_overflow
+    pow.o(i.__hardfp_pow) refers to ddiv.o(.text) for __aeabi_ddiv
+    pow.o(i.__hardfp_pow) refers to sqrt.o(i.sqrt) for sqrt
+    pow.o(i.__hardfp_pow) refers to fabs.o(i.fabs) for fabs
+    pow.o(i.__hardfp_pow) refers to dunder.o(i.__mathlib_dbl_invalid) for __mathlib_dbl_invalid
+    pow.o(i.__hardfp_pow) refers to dunder.o(i.__mathlib_dbl_underflow) for __mathlib_dbl_underflow
+    pow.o(i.__hardfp_pow) refers to dadd.o(.text) for __aeabi_dsub
+    pow.o(i.__hardfp_pow) refers to dmul.o(.text) for __aeabi_dmul
+    pow.o(i.__hardfp_pow) refers to qnan.o(.constdata) for __mathlib_zero
+    pow.o(i.__hardfp_pow) refers to poly.o(i.__kernel_poly) for __kernel_poly
+    pow.o(i.__hardfp_pow) refers to dflti.o(.text) for __aeabi_i2d
+    pow.o(i.__hardfp_pow) refers to pow.o(.constdata) for .constdata
+    pow.o(i.__hardfp_pow) refers to cdrcmple.o(.text) for __aeabi_cdrcmple
+    pow.o(i.__hardfp_pow) refers to dscalb.o(.text) for __ARM_scalbn
+    pow.o(i.__hardfp_pow) refers to fpclassify.o(i.__ARM_fpclassify) for __ARM_fpclassify
+    pow.o(i.__softfp_pow) refers (Special) to iusefp.o(.text) for __I$use$fp
+    pow.o(i.__softfp_pow) refers to pow.o(i.__hardfp_pow) for __hardfp_pow
+    pow.o(i.pow) refers (Special) to iusefp.o(.text) for __I$use$fp
+    pow.o(i.pow) refers to pow.o(i.__hardfp_pow) for __hardfp_pow
+    pow.o(.constdata) refers (Special) to iusefp.o(.text) for __I$use$fp
+    pow_x.o(i.____hardfp_pow$lsc) refers (Special) to iusefp.o(.text) for __I$use$fp
+    pow_x.o(i.____hardfp_pow$lsc) refers to dunder.o(i.__mathlib_dbl_infnan2) for __mathlib_dbl_infnan2
+    pow_x.o(i.____hardfp_pow$lsc) refers to errno.o(i.__set_errno) for __set_errno
+    pow_x.o(i.____hardfp_pow$lsc) refers to ddiv.o(.text) for __aeabi_ddiv
+    pow_x.o(i.____hardfp_pow$lsc) refers to sqrt.o(i.sqrt) for sqrt
+    pow_x.o(i.____hardfp_pow$lsc) refers to fabs.o(i.fabs) for fabs
+    pow_x.o(i.____hardfp_pow$lsc) refers to dflti.o(.text) for __aeabi_i2d
+    pow_x.o(i.____hardfp_pow$lsc) refers to dadd.o(.text) for __aeabi_dsub
+    pow_x.o(i.____hardfp_pow$lsc) refers to dmul.o(.text) for __aeabi_dmul
+    pow_x.o(i.____hardfp_pow$lsc) refers to qnan.o(.constdata) for __mathlib_zero
+    pow_x.o(i.____hardfp_pow$lsc) refers to poly.o(i.__kernel_poly) for __kernel_poly
+    pow_x.o(i.____hardfp_pow$lsc) refers to pow_x.o(.constdata) for .constdata
+    pow_x.o(i.____hardfp_pow$lsc) refers to cdrcmple.o(.text) for __aeabi_cdrcmple
+    pow_x.o(i.____hardfp_pow$lsc) refers to dscalb.o(.text) for __ARM_scalbn
+    pow_x.o(i.____softfp_pow$lsc) refers (Special) to iusefp.o(.text) for __I$use$fp
+    pow_x.o(i.____softfp_pow$lsc) refers to pow_x.o(i.____hardfp_pow$lsc) for ____hardfp_pow$lsc
+    pow_x.o(i.__pow$lsc) refers (Special) to iusefp.o(.text) for __I$use$fp
+    pow_x.o(i.__pow$lsc) refers to pow_x.o(i.____hardfp_pow$lsc) for ____hardfp_pow$lsc
+    pow_x.o(.constdata) refers (Special) to iusefp.o(.text) for __I$use$fp
+    sin.o(i.__hardfp_sin) refers (Special) to iusefp.o(.text) for __I$use$fp
+    sin.o(i.__hardfp_sin) refers to errno.o(i.__set_errno) for __set_errno
+    sin.o(i.__hardfp_sin) refers to dunder.o(i.__mathlib_dbl_invalid) for __mathlib_dbl_invalid
+    sin.o(i.__hardfp_sin) refers to dunder.o(i.__mathlib_dbl_infnan) for __mathlib_dbl_infnan
+    sin.o(i.__hardfp_sin) refers to rred.o(i.__ieee754_rem_pio2) for __ieee754_rem_pio2
+    sin.o(i.__hardfp_sin) refers to cos_i.o(i.__kernel_cos) for __kernel_cos
+    sin.o(i.__hardfp_sin) refers to sin_i.o(i.__kernel_sin) for __kernel_sin
+    sin.o(i.__softfp_sin) refers (Special) to iusefp.o(.text) for __I$use$fp
+    sin.o(i.__softfp_sin) refers to sin.o(i.__hardfp_sin) for __hardfp_sin
+    sin.o(i.sin) refers (Special) to iusefp.o(.text) for __I$use$fp
+    sin.o(i.sin) refers to sin.o(i.__hardfp_sin) for __hardfp_sin
+    sin_x.o(i.____hardfp_sin$lsc) refers (Special) to iusefp.o(.text) for __I$use$fp
+    sin_x.o(i.____hardfp_sin$lsc) refers to errno.o(i.__set_errno) for __set_errno
+    sin_x.o(i.____hardfp_sin$lsc) refers to dunder.o(i.__mathlib_dbl_infnan) for __mathlib_dbl_infnan
+    sin_x.o(i.____hardfp_sin$lsc) refers to rred.o(i.__ieee754_rem_pio2) for __ieee754_rem_pio2
+    sin_x.o(i.____hardfp_sin$lsc) refers to cos_i.o(i.__kernel_cos) for __kernel_cos
+    sin_x.o(i.____hardfp_sin$lsc) refers to sin_i.o(i.__kernel_sin) for __kernel_sin
+    sin_x.o(i.____softfp_sin$lsc) refers (Special) to iusefp.o(.text) for __I$use$fp
+    sin_x.o(i.____softfp_sin$lsc) refers to sin_x.o(i.____hardfp_sin$lsc) for ____hardfp_sin$lsc
+    sin_x.o(i.__sin$lsc) refers (Special) to iusefp.o(.text) for __I$use$fp
+    sin_x.o(i.__sin$lsc) refers to sin_x.o(i.____hardfp_sin$lsc) for ____hardfp_sin$lsc
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry10a.o(.ARM.Collect$$$$0000000D) for __rt_final_cpp
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry11a.o(.ARM.Collect$$$$0000000F) for __rt_final_exit
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry7b.o(.ARM.Collect$$$$00000008) for _main_clock
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry8b.o(.ARM.Collect$$$$0000000A) for _main_cpp_init
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry9a.o(.ARM.Collect$$$$0000000B) for _main_init
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry5.o(.ARM.Collect$$$$00000004) for _main_scatterload
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry2.o(.ARM.Collect$$$$00000001) for _main_stk
+    rand.o(.text) refers to rand.o(.data) for .data
+    printfb.o(i.__0fprintf$bare) refers to printfb.o(i._printf_core) for _printf_core
+    printfb.o(i.__0fprintf$bare) refers to usart.o(.text) for fputc
+    printfb.o(i.__0printf$bare) refers to printfb.o(i._printf_core) for _printf_core
+    printfb.o(i.__0printf$bare) refers to usart.o(.text) for fputc
+    printfb.o(i.__0printf$bare) refers to stdout.o(.data) for __stdout
+    printfb.o(i.__0snprintf$bare) refers to printfb.o(i._printf_core) for _printf_core
+    printfb.o(i.__0snprintf$bare) refers to printfb.o(i._snputc) for _snputc
+    printfb.o(i.__0sprintf$bare) refers to printfb.o(i._printf_core) for _printf_core
+    printfb.o(i.__0sprintf$bare) refers to printfb.o(i._sputc) for _sputc
+    printfb.o(i.__0vfprintf$bare) refers to printfb.o(i._printf_core) for _printf_core
+    printfb.o(i.__0vfprintf$bare) refers to usart.o(.text) for fputc
+    printfb.o(i.__0vprintf$bare) refers to printfb.o(i._printf_core) for _printf_core
+    printfb.o(i.__0vprintf$bare) refers to usart.o(.text) for fputc
+    printfb.o(i.__0vprintf$bare) refers to stdout.o(.data) for __stdout
+    printfb.o(i.__0vsnprintf$bare) refers to printfb.o(i._printf_core) for _printf_core
+    printfb.o(i.__0vsnprintf$bare) refers to printfb.o(i._snputc) for _snputc
+    printfb.o(i.__0vsprintf$bare) refers to printfb.o(i._printf_core) for _printf_core
+    printfb.o(i.__0vsprintf$bare) refers to printfb.o(i._sputc) for _sputc
+    printf0.o(i.__0fprintf$0) refers to printf0.o(i._printf_core) for _printf_core
+    printf0.o(i.__0fprintf$0) refers to usart.o(.text) for fputc
+    printf0.o(i.__0printf$0) refers to printf0.o(i._printf_core) for _printf_core
+    printf0.o(i.__0printf$0) refers to usart.o(.text) for fputc
+    printf0.o(i.__0printf$0) refers to stdout.o(.data) for __stdout
+    printf0.o(i.__0snprintf$0) refers to printf0.o(i._printf_core) for _printf_core
+    printf0.o(i.__0snprintf$0) refers to printf0.o(i._snputc) for _snputc
+    printf0.o(i.__0sprintf$0) refers to printf0.o(i._printf_core) for _printf_core
+    printf0.o(i.__0sprintf$0) refers to printf0.o(i._sputc) for _sputc
+    printf0.o(i.__0vfprintf$0) refers to printf0.o(i._printf_core) for _printf_core
+    printf0.o(i.__0vfprintf$0) refers to usart.o(.text) for fputc
+    printf0.o(i.__0vprintf$0) refers to printf0.o(i._printf_core) for _printf_core
+    printf0.o(i.__0vprintf$0) refers to usart.o(.text) for fputc
+    printf0.o(i.__0vprintf$0) refers to stdout.o(.data) for __stdout
+    printf0.o(i.__0vsnprintf$0) refers to printf0.o(i._printf_core) for _printf_core
+    printf0.o(i.__0vsnprintf$0) refers to printf0.o(i._snputc) for _snputc
+    printf0.o(i.__0vsprintf$0) refers to printf0.o(i._printf_core) for _printf_core
+    printf0.o(i.__0vsprintf$0) refers to printf0.o(i._sputc) for _sputc
+    printf1.o(i.__0fprintf$1) refers to printf1.o(i._printf_core) for _printf_core
+    printf1.o(i.__0fprintf$1) refers to usart.o(.text) for fputc
+    printf1.o(i.__0printf$1) refers to printf1.o(i._printf_core) for _printf_core
+    printf1.o(i.__0printf$1) refers to usart.o(.text) for fputc
+    printf1.o(i.__0printf$1) refers to stdout.o(.data) for __stdout
+    printf1.o(i.__0snprintf$1) refers to printf1.o(i._printf_core) for _printf_core
+    printf1.o(i.__0snprintf$1) refers to printf1.o(i._snputc) for _snputc
+    printf1.o(i.__0sprintf$1) refers to printf1.o(i._printf_core) for _printf_core
+    printf1.o(i.__0sprintf$1) refers to printf1.o(i._sputc) for _sputc
+    printf1.o(i.__0vfprintf$1) refers to printf1.o(i._printf_core) for _printf_core
+    printf1.o(i.__0vfprintf$1) refers to usart.o(.text) for fputc
+    printf1.o(i.__0vprintf$1) refers to printf1.o(i._printf_core) for _printf_core
+    printf1.o(i.__0vprintf$1) refers to usart.o(.text) for fputc
+    printf1.o(i.__0vprintf$1) refers to stdout.o(.data) for __stdout
+    printf1.o(i.__0vsnprintf$1) refers to printf1.o(i._printf_core) for _printf_core
+    printf1.o(i.__0vsnprintf$1) refers to printf1.o(i._snputc) for _snputc
+    printf1.o(i.__0vsprintf$1) refers to printf1.o(i._printf_core) for _printf_core
+    printf1.o(i.__0vsprintf$1) refers to printf1.o(i._sputc) for _sputc
+    printf1.o(i._printf_core) refers to uidiv.o(.text) for __aeabi_uidivmod
+    printf2.o(i.__0fprintf$2) refers to printf2.o(i._printf_core) for _printf_core
+    printf2.o(i.__0fprintf$2) refers to usart.o(.text) for fputc
+    printf2.o(i.__0printf$2) refers to printf2.o(i._printf_core) for _printf_core
+    printf2.o(i.__0printf$2) refers to usart.o(.text) for fputc
+    printf2.o(i.__0printf$2) refers to stdout.o(.data) for __stdout
+    printf2.o(i.__0snprintf$2) refers to printf2.o(i._printf_core) for _printf_core
+    printf2.o(i.__0snprintf$2) refers to printf2.o(i._snputc) for _snputc
+    printf2.o(i.__0sprintf$2) refers to printf2.o(i._printf_core) for _printf_core
+    printf2.o(i.__0sprintf$2) refers to printf2.o(i._sputc) for _sputc
+    printf2.o(i.__0vfprintf$2) refers to printf2.o(i._printf_core) for _printf_core
+    printf2.o(i.__0vfprintf$2) refers to usart.o(.text) for fputc
+    printf2.o(i.__0vprintf$2) refers to printf2.o(i._printf_core) for _printf_core
+    printf2.o(i.__0vprintf$2) refers to usart.o(.text) for fputc
+    printf2.o(i.__0vprintf$2) refers to stdout.o(.data) for __stdout
+    printf2.o(i.__0vsnprintf$2) refers to printf2.o(i._printf_core) for _printf_core
+    printf2.o(i.__0vsnprintf$2) refers to printf2.o(i._snputc) for _snputc
+    printf2.o(i.__0vsprintf$2) refers to printf2.o(i._printf_core) for _printf_core
+    printf2.o(i.__0vsprintf$2) refers to printf2.o(i._sputc) for _sputc
+    printf3.o(i.__0fprintf$3) refers to printf3.o(i._printf_core) for _printf_core
+    printf3.o(i.__0fprintf$3) refers to usart.o(.text) for fputc
+    printf3.o(i.__0printf$3) refers to printf3.o(i._printf_core) for _printf_core
+    printf3.o(i.__0printf$3) refers to usart.o(.text) for fputc
+    printf3.o(i.__0printf$3) refers to stdout.o(.data) for __stdout
+    printf3.o(i.__0snprintf$3) refers to printf3.o(i._printf_core) for _printf_core
+    printf3.o(i.__0snprintf$3) refers to printf3.o(i._snputc) for _snputc
+    printf3.o(i.__0sprintf$3) refers to printf3.o(i._printf_core) for _printf_core
+    printf3.o(i.__0sprintf$3) refers to printf3.o(i._sputc) for _sputc
+    printf3.o(i.__0vfprintf$3) refers to printf3.o(i._printf_core) for _printf_core
+    printf3.o(i.__0vfprintf$3) refers to usart.o(.text) for fputc
+    printf3.o(i.__0vprintf$3) refers to printf3.o(i._printf_core) for _printf_core
+    printf3.o(i.__0vprintf$3) refers to usart.o(.text) for fputc
+    printf3.o(i.__0vprintf$3) refers to stdout.o(.data) for __stdout
+    printf3.o(i.__0vsnprintf$3) refers to printf3.o(i._printf_core) for _printf_core
+    printf3.o(i.__0vsnprintf$3) refers to printf3.o(i._snputc) for _snputc
+    printf3.o(i.__0vsprintf$3) refers to printf3.o(i._printf_core) for _printf_core
+    printf3.o(i.__0vsprintf$3) refers to printf3.o(i._sputc) for _sputc
+    printf3.o(i._printf_core) refers to uidiv.o(.text) for __aeabi_uidivmod
+    printf4.o(i.__0fprintf$4) refers to printf4.o(i._printf_core) for _printf_core
+    printf4.o(i.__0fprintf$4) refers to usart.o(.text) for fputc
+    printf4.o(i.__0printf$4) refers to printf4.o(i._printf_core) for _printf_core
+    printf4.o(i.__0printf$4) refers to usart.o(.text) for fputc
+    printf4.o(i.__0printf$4) refers to stdout.o(.data) for __stdout
+    printf4.o(i.__0snprintf$4) refers to printf4.o(i._printf_core) for _printf_core
+    printf4.o(i.__0snprintf$4) refers to printf4.o(i._snputc) for _snputc
+    printf4.o(i.__0sprintf$4) refers to printf4.o(i._printf_core) for _printf_core
+    printf4.o(i.__0sprintf$4) refers to printf4.o(i._sputc) for _sputc
+    printf4.o(i.__0vfprintf$4) refers to printf4.o(i._printf_core) for _printf_core
+    printf4.o(i.__0vfprintf$4) refers to usart.o(.text) for fputc
+    printf4.o(i.__0vprintf$4) refers to printf4.o(i._printf_core) for _printf_core
+    printf4.o(i.__0vprintf$4) refers to usart.o(.text) for fputc
+    printf4.o(i.__0vprintf$4) refers to stdout.o(.data) for __stdout
+    printf4.o(i.__0vsnprintf$4) refers to printf4.o(i._printf_core) for _printf_core
+    printf4.o(i.__0vsnprintf$4) refers to printf4.o(i._snputc) for _snputc
+    printf4.o(i.__0vsprintf$4) refers to printf4.o(i._printf_core) for _printf_core
+    printf4.o(i.__0vsprintf$4) refers to printf4.o(i._sputc) for _sputc
+    printf4.o(i._printf_core) refers to uldiv.o(.text) for __aeabi_uldivmod
+    printf5.o(i.__0fprintf$5) refers to printf5.o(i._printf_core) for _printf_core
+    printf5.o(i.__0fprintf$5) refers to usart.o(.text) for fputc
+    printf5.o(i.__0printf$5) refers to printf5.o(i._printf_core) for _printf_core
+    printf5.o(i.__0printf$5) refers to usart.o(.text) for fputc
+    printf5.o(i.__0printf$5) refers to stdout.o(.data) for __stdout
+    printf5.o(i.__0snprintf$5) refers to printf5.o(i._printf_core) for _printf_core
+    printf5.o(i.__0snprintf$5) refers to printf5.o(i._snputc) for _snputc
+    printf5.o(i.__0sprintf$5) refers to printf5.o(i._printf_core) for _printf_core
+    printf5.o(i.__0sprintf$5) refers to printf5.o(i._sputc) for _sputc
+    printf5.o(i.__0vfprintf$5) refers to printf5.o(i._printf_core) for _printf_core
+    printf5.o(i.__0vfprintf$5) refers to usart.o(.text) for fputc
+    printf5.o(i.__0vprintf$5) refers to printf5.o(i._printf_core) for _printf_core
+    printf5.o(i.__0vprintf$5) refers to usart.o(.text) for fputc
+    printf5.o(i.__0vprintf$5) refers to stdout.o(.data) for __stdout
+    printf5.o(i.__0vsnprintf$5) refers to printf5.o(i._printf_core) for _printf_core
+    printf5.o(i.__0vsnprintf$5) refers to printf5.o(i._snputc) for _snputc
+    printf5.o(i.__0vsprintf$5) refers to printf5.o(i._printf_core) for _printf_core
+    printf5.o(i.__0vsprintf$5) refers to printf5.o(i._sputc) for _sputc
+    printf5.o(i._printf_core) refers to uldiv.o(.text) for __aeabi_uldivmod
+    printf6.o(i.__0fprintf$6) refers to printf6.o(i._printf_core) for _printf_core
+    printf6.o(i.__0fprintf$6) refers to usart.o(.text) for fputc
+    printf6.o(i.__0printf$6) refers to printf6.o(i._printf_core) for _printf_core
+    printf6.o(i.__0printf$6) refers to usart.o(.text) for fputc
+    printf6.o(i.__0printf$6) refers to stdout.o(.data) for __stdout
+    printf6.o(i.__0snprintf$6) refers to printf6.o(i._printf_core) for _printf_core
+    printf6.o(i.__0snprintf$6) refers to printf6.o(i._snputc) for _snputc
+    printf6.o(i.__0sprintf$6) refers to printf6.o(i._printf_core) for _printf_core
+    printf6.o(i.__0sprintf$6) refers to printf6.o(i._sputc) for _sputc
+    printf6.o(i.__0vfprintf$6) refers to printf6.o(i._printf_core) for _printf_core
+    printf6.o(i.__0vfprintf$6) refers to usart.o(.text) for fputc
+    printf6.o(i.__0vprintf$6) refers to printf6.o(i._printf_core) for _printf_core
+    printf6.o(i.__0vprintf$6) refers to usart.o(.text) for fputc
+    printf6.o(i.__0vprintf$6) refers to stdout.o(.data) for __stdout
+    printf6.o(i.__0vsnprintf$6) refers to printf6.o(i._printf_core) for _printf_core
+    printf6.o(i.__0vsnprintf$6) refers to printf6.o(i._snputc) for _snputc
+    printf6.o(i.__0vsprintf$6) refers to printf6.o(i._printf_core) for _printf_core
+    printf6.o(i.__0vsprintf$6) refers to printf6.o(i._sputc) for _sputc
+    printf6.o(i._printf_core) refers to printf6.o(i._printf_pre_padding) for _printf_pre_padding
+    printf6.o(i._printf_core) refers to uidiv.o(.text) for __aeabi_uidivmod
+    printf6.o(i._printf_core) refers to printf6.o(i._printf_post_padding) for _printf_post_padding
+    printf7.o(i.__0fprintf$7) refers to printf7.o(i._printf_core) for _printf_core
+    printf7.o(i.__0fprintf$7) refers to usart.o(.text) for fputc
+    printf7.o(i.__0printf$7) refers to printf7.o(i._printf_core) for _printf_core
+    printf7.o(i.__0printf$7) refers to usart.o(.text) for fputc
+    printf7.o(i.__0printf$7) refers to stdout.o(.data) for __stdout
+    printf7.o(i.__0snprintf$7) refers to printf7.o(i._printf_core) for _printf_core
+    printf7.o(i.__0snprintf$7) refers to printf7.o(i._snputc) for _snputc
+    printf7.o(i.__0sprintf$7) refers to printf7.o(i._printf_core) for _printf_core
+    printf7.o(i.__0sprintf$7) refers to printf7.o(i._sputc) for _sputc
+    printf7.o(i.__0vfprintf$7) refers to printf7.o(i._printf_core) for _printf_core
+    printf7.o(i.__0vfprintf$7) refers to usart.o(.text) for fputc
+    printf7.o(i.__0vprintf$7) refers to printf7.o(i._printf_core) for _printf_core
+    printf7.o(i.__0vprintf$7) refers to usart.o(.text) for fputc
+    printf7.o(i.__0vprintf$7) refers to stdout.o(.data) for __stdout
+    printf7.o(i.__0vsnprintf$7) refers to printf7.o(i._printf_core) for _printf_core
+    printf7.o(i.__0vsnprintf$7) refers to printf7.o(i._snputc) for _snputc
+    printf7.o(i.__0vsprintf$7) refers to printf7.o(i._printf_core) for _printf_core
+    printf7.o(i.__0vsprintf$7) refers to printf7.o(i._sputc) for _sputc
+    printf7.o(i._printf_core) refers to printf7.o(i._printf_pre_padding) for _printf_pre_padding
+    printf7.o(i._printf_core) refers to uldiv.o(.text) for __aeabi_uldivmod
+    printf7.o(i._printf_core) refers to printf7.o(i._printf_post_padding) for _printf_post_padding
+    printf8.o(i.__0fprintf$8) refers to printf8.o(i._printf_core) for _printf_core
+    printf8.o(i.__0fprintf$8) refers to usart.o(.text) for fputc
+    printf8.o(i.__0printf$8) refers to printf8.o(i._printf_core) for _printf_core
+    printf8.o(i.__0printf$8) refers to usart.o(.text) for fputc
+    printf8.o(i.__0printf$8) refers to stdout.o(.data) for __stdout
+    printf8.o(i.__0snprintf$8) refers to printf8.o(i._printf_core) for _printf_core
+    printf8.o(i.__0snprintf$8) refers to printf8.o(i._snputc) for _snputc
+    printf8.o(i.__0sprintf$8) refers to printf8.o(i._printf_core) for _printf_core
+    printf8.o(i.__0sprintf$8) refers to printf8.o(i._sputc) for _sputc
+    printf8.o(i.__0vfprintf$8) refers to printf8.o(i._printf_core) for _printf_core
+    printf8.o(i.__0vfprintf$8) refers to usart.o(.text) for fputc
+    printf8.o(i.__0vprintf$8) refers to printf8.o(i._printf_core) for _printf_core
+    printf8.o(i.__0vprintf$8) refers to usart.o(.text) for fputc
+    printf8.o(i.__0vprintf$8) refers to stdout.o(.data) for __stdout
+    printf8.o(i.__0vsnprintf$8) refers to printf8.o(i._printf_core) for _printf_core
+    printf8.o(i.__0vsnprintf$8) refers to printf8.o(i._snputc) for _snputc
+    printf8.o(i.__0vsprintf$8) refers to printf8.o(i._printf_core) for _printf_core
+    printf8.o(i.__0vsprintf$8) refers to printf8.o(i._sputc) for _sputc
+    printf8.o(i._printf_core) refers to printf8.o(i._printf_pre_padding) for _printf_pre_padding
+    printf8.o(i._printf_core) refers to uldiv.o(.text) for __aeabi_uldivmod
+    printf8.o(i._printf_core) refers to printf8.o(i._printf_post_padding) for _printf_post_padding
+    printfa.o(i.__0fprintf) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i.__0fprintf) refers to printfa.o(i._printf_core) for _printf_core
+    printfa.o(i.__0fprintf) refers to usart.o(.text) for fputc
+    printfa.o(i.__0printf) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i.__0printf) refers to printfa.o(i._printf_core) for _printf_core
+    printfa.o(i.__0printf) refers to usart.o(.text) for fputc
+    printfa.o(i.__0printf) refers to stdout.o(.data) for __stdout
+    printfa.o(i.__0snprintf) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i.__0snprintf) refers to printfa.o(i._printf_core) for _printf_core
+    printfa.o(i.__0snprintf) refers to printfa.o(i._snputc) for _snputc
+    printfa.o(i.__0sprintf) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i.__0sprintf) refers to printfa.o(i._printf_core) for _printf_core
+    printfa.o(i.__0sprintf) refers to printfa.o(i._sputc) for _sputc
+    printfa.o(i.__0vfprintf) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i.__0vfprintf) refers to printfa.o(i._printf_core) for _printf_core
+    printfa.o(i.__0vfprintf) refers to usart.o(.text) for fputc
+    printfa.o(i.__0vprintf) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i.__0vprintf) refers to printfa.o(i._printf_core) for _printf_core
+    printfa.o(i.__0vprintf) refers to usart.o(.text) for fputc
+    printfa.o(i.__0vprintf) refers to stdout.o(.data) for __stdout
+    printfa.o(i.__0vsnprintf) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i.__0vsnprintf) refers to printfa.o(i._printf_core) for _printf_core
+    printfa.o(i.__0vsnprintf) refers to printfa.o(i._snputc) for _snputc
+    printfa.o(i.__0vsprintf) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i.__0vsprintf) refers to printfa.o(i._printf_core) for _printf_core
+    printfa.o(i.__0vsprintf) refers to printfa.o(i._sputc) for _sputc
+    printfa.o(i._fp_digits) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i._fp_digits) refers to dmul.o(.text) for __aeabi_dmul
+    printfa.o(i._fp_digits) refers to ddiv.o(.text) for __aeabi_ddiv
+    printfa.o(i._fp_digits) refers to cdrcmple.o(.text) for __aeabi_cdrcmple
+    printfa.o(i._fp_digits) refers to dadd.o(.text) for __aeabi_dadd
+    printfa.o(i._fp_digits) refers to dfixul.o(.text) for __aeabi_d2ulz
+    printfa.o(i._fp_digits) refers to uldiv.o(.text) for __aeabi_uldivmod
+    printfa.o(i._printf_core) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i._printf_core) refers to printfa.o(i._printf_pre_padding) for _printf_pre_padding
+    printfa.o(i._printf_core) refers to uldiv.o(.text) for __aeabi_uldivmod
+    printfa.o(i._printf_core) refers to printfa.o(i._printf_post_padding) for _printf_post_padding
+    printfa.o(i._printf_core) refers to printfa.o(i._fp_digits) for _fp_digits
+    printfa.o(i._printf_core) refers to uidiv.o(.text) for __aeabi_uidivmod
+    printfa.o(i._printf_post_padding) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i._printf_pre_padding) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i._snputc) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i._sputc) refers (Special) to iusefp.o(.text) for __I$use$fp
+    atoi.o(.text) refers to errno.o(i.__aeabi_errno_addr) for __aeabi_errno_addr
+    atoi.o(.text) refers to strtol.o(.text) for strtol
+    dadd.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    dadd.o(.text) refers to llshl.o(.text) for __aeabi_llsl
+    dadd.o(.text) refers to llsshr.o(.text) for __aeabi_lasr
+    dadd.o(.text) refers to depilogue.o(.text) for _double_epilogue
+    dmul.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    dmul.o(.text) refers to depilogue.o(.text) for _double_epilogue
+    ddiv.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    ddiv.o(.text) refers to depilogue.o(.text) for _double_round
+    dflti.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    dflti.o(.text) refers to depilogue.o(.text) for _double_epilogue
+    dfixi.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    dfixi.o(.text) refers to llushr.o(.text) for __aeabi_llsr
+    f2d.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    cdcmple.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    cdrcmple.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    d2f.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    d2f.o(.text) refers to fepilogue.o(.text) for _float_round
+    cos_i.o(i.__kernel_cos) refers (Special) to iusefp.o(.text) for __I$use$fp
+    cos_i.o(i.__kernel_cos) refers to dfixi.o(.text) for __aeabi_d2iz
+    cos_i.o(i.__kernel_cos) refers to dmul.o(.text) for __aeabi_dmul
+    cos_i.o(i.__kernel_cos) refers to poly.o(i.__kernel_poly) for __kernel_poly
+    cos_i.o(i.__kernel_cos) refers to dadd.o(.text) for __aeabi_dsub
+    cos_i.o(i.__kernel_cos) refers to cos_i.o(.constdata) for .constdata
+    cos_i.o(.constdata) refers (Special) to iusefp.o(.text) for __I$use$fp
+    dunder.o(i.__mathlib_dbl_divzero) refers to ddiv.o(.text) for __aeabi_ddiv
+    dunder.o(i.__mathlib_dbl_infnan) refers to dadd.o(.text) for __aeabi_dadd
+    dunder.o(i.__mathlib_dbl_infnan2) refers to dadd.o(.text) for __aeabi_dadd
+    dunder.o(i.__mathlib_dbl_invalid) refers to ddiv.o(.text) for __aeabi_ddiv
+    dunder.o(i.__mathlib_dbl_overflow) refers to dmul.o(.text) for __aeabi_dmul
+    dunder.o(i.__mathlib_dbl_posinfnan) refers to dmul.o(.text) for __aeabi_dmul
+    dunder.o(i.__mathlib_dbl_underflow) refers to dmul.o(.text) for __aeabi_dmul
+    fpclassify.o(i.__ARM_fpclassify) refers (Special) to iusefp.o(.text) for __I$use$fp
+    poly.o(i.__kernel_poly) refers (Special) to iusefp.o(.text) for __I$use$fp
+    poly.o(i.__kernel_poly) refers to dmul.o(.text) for __aeabi_dmul
+    poly.o(i.__kernel_poly) refers to dadd.o(.text) for __aeabi_dadd
+    qnan.o(.constdata) refers (Special) to iusefp.o(.text) for __I$use$fp
+    rred.o(i.__ieee754_rem_pio2) refers (Special) to iusefp.o(.text) for __I$use$fp
+    rred.o(i.__ieee754_rem_pio2) refers to dadd.o(.text) for __aeabi_dsub
+    rred.o(i.__ieee754_rem_pio2) refers to fabs.o(i.fabs) for fabs
+    rred.o(i.__ieee754_rem_pio2) refers to dmul.o(.text) for __aeabi_dmul
+    rred.o(i.__ieee754_rem_pio2) refers to dfixi.o(.text) for __aeabi_d2iz
+    rred.o(i.__ieee754_rem_pio2) refers to dflti.o(.text) for __aeabi_i2d
+    rred.o(i.__ieee754_rem_pio2) refers to dfltui.o(.text) for __aeabi_ui2d
+    rred.o(i.__ieee754_rem_pio2) refers to rred.o(.constdata) for .constdata
+    rred.o(i.__use_accurate_range_reduction) refers (Special) to iusefp.o(.text) for __I$use$fp
+    rred.o(.constdata) refers (Special) to iusefp.o(.text) for __I$use$fp
+    sin_i.o(i.__kernel_sin) refers (Special) to iusefp.o(.text) for __I$use$fp
+    sin_i.o(i.__kernel_sin) refers to fpclassify.o(i.__ARM_fpclassify) for __ARM_fpclassify
+    sin_i.o(i.__kernel_sin) refers to dunder.o(i.__mathlib_dbl_underflow) for __mathlib_dbl_underflow
+    sin_i.o(i.__kernel_sin) refers to dmul.o(.text) for __aeabi_dmul
+    sin_i.o(i.__kernel_sin) refers to poly.o(i.__kernel_poly) for __kernel_poly
+    sin_i.o(i.__kernel_sin) refers to dadd.o(.text) for __aeabi_dsub
+    sin_i.o(i.__kernel_sin) refers to sin_i.o(.constdata) for .constdata
+    sin_i.o(.constdata) refers (Special) to iusefp.o(.text) for __I$use$fp
+    sin_i_x.o(i.____kernel_sin$lsc) refers (Special) to iusefp.o(.text) for __I$use$fp
+    sin_i_x.o(i.____kernel_sin$lsc) refers to dmul.o(.text) for __aeabi_dmul
+    sin_i_x.o(i.____kernel_sin$lsc) refers to poly.o(i.__kernel_poly) for __kernel_poly
+    sin_i_x.o(i.____kernel_sin$lsc) refers to dadd.o(.text) for __aeabi_dsub
+    sin_i_x.o(i.____kernel_sin$lsc) refers to sin_i_x.o(.constdata) for .constdata
+    sin_i_x.o(.constdata) refers (Special) to iusefp.o(.text) for __I$use$fp
+    sqrt.o(i.__hardfp_sqrt) refers (Special) to iusefp.o(.text) for __I$use$fp
+    sqrt.o(i.__hardfp_sqrt) refers to dsqrt.o(.text) for _dsqrt
+    sqrt.o(i.__hardfp_sqrt) refers to errno.o(i.__set_errno) for __set_errno
+    sqrt.o(i.__softfp_sqrt) refers (Special) to iusefp.o(.text) for __I$use$fp
+    sqrt.o(i.__softfp_sqrt) refers to dsqrt.o(.text) for _dsqrt
+    sqrt.o(i.__softfp_sqrt) refers to errno.o(i.__set_errno) for __set_errno
+    sqrt.o(i.sqrt) refers (Special) to iusefp.o(.text) for __I$use$fp
+    sqrt.o(i.sqrt) refers to dsqrt.o(.text) for _dsqrt
+    sqrt.o(i.sqrt) refers to errno.o(i.__set_errno) for __set_errno
+    sqrt_x.o(i.____hardfp_sqrt$lsc) refers (Special) to iusefp.o(.text) for __I$use$fp
+    sqrt_x.o(i.____hardfp_sqrt$lsc) refers to cdcmple.o(.text) for __aeabi_cdcmple
+    sqrt_x.o(i.____hardfp_sqrt$lsc) refers to errno.o(i.__set_errno) for __set_errno
+    sqrt_x.o(i.____hardfp_sqrt$lsc) refers to dsqrt.o(.text) for _dsqrt
+    sqrt_x.o(i.____softfp_sqrt$lsc) refers (Special) to iusefp.o(.text) for __I$use$fp
+    sqrt_x.o(i.____softfp_sqrt$lsc) refers to cdcmple.o(.text) for __aeabi_cdcmple
+    sqrt_x.o(i.____softfp_sqrt$lsc) refers to errno.o(i.__set_errno) for __set_errno
+    sqrt_x.o(i.____softfp_sqrt$lsc) refers to dsqrt.o(.text) for _dsqrt
+    sqrt_x.o(i.__sqrt$lsc) refers (Special) to iusefp.o(.text) for __I$use$fp
+    sqrt_x.o(i.__sqrt$lsc) refers to cdcmple.o(.text) for __aeabi_cdcmple
+    sqrt_x.o(i.__sqrt$lsc) refers to errno.o(i.__set_errno) for __set_errno
+    sqrt_x.o(i.__sqrt$lsc) refers to dsqrt.o(.text) for _dsqrt
+    entry2.o(.ARM.Collect$$$$00000001) refers to entry2.o(.ARM.Collect$$$$00002712) for __lit__00000000
+    entry2.o(.ARM.Collect$$$$00002712) refers to startup_stm32f4xx.o(STACK) for __initial_sp
+    entry2.o(__vectab_stack_and_reset_area) refers to startup_stm32f4xx.o(STACK) for __initial_sp
+    entry2.o(__vectab_stack_and_reset_area) refers to entry.o(.ARM.Collect$$$$00000000) for __main
+    entry5.o(.ARM.Collect$$$$00000004) refers to init.o(.text) for __scatterload
+    entry9a.o(.ARM.Collect$$$$0000000B) refers to main.o(.text) for main
+    entry9b.o(.ARM.Collect$$$$0000000C) refers to main.o(.text) for main
+    uldiv.o(.text) refers to llushr.o(.text) for __aeabi_llsr
+    uldiv.o(.text) refers to llshl.o(.text) for __aeabi_llsl
+    errno.o(i.__aeabi_errno_addr) refers to errno.o(.data) for .data
+    errno.o(i.__read_errno) refers to errno.o(.data) for .data
+    errno.o(i.__set_errno) refers to errno.o(.data) for .data
+    strtol.o(.text) refers to ctype_o.o(.text) for __rt_ctype_table
+    strtol.o(.text) refers to _strtoul.o(.text) for _strtoul
+    strtol.o(.text) refers to errno.o(i.__aeabi_errno_addr) for __aeabi_errno_addr
+    depilogue.o(.text) refers to llshl.o(.text) for __aeabi_llsl
+    depilogue.o(.text) refers to llushr.o(.text) for __aeabi_llsr
+    dfixul.o(.text) refers to llushr.o(.text) for __aeabi_llsr
+    dfixul.o(.text) refers to llshl.o(.text) for __aeabi_llsl
+    init.o(.text) refers to entry5.o(.ARM.Collect$$$$00000004) for __main_after_scatterload
+    ctype_o.o(.text) refers to ctype_o.o(.constdata) for .constdata
+    ctype_o.o(.constdata) refers to ctype_o.o(.constdata) for __ctype_table
+    isalnum_o.o(.text) refers to ctype_o.o(.text) for __rt_ctype_table
+    isalpha_o.o(.text) refers to ctype_o.o(.text) for __rt_ctype_table
+    isblank_o.o(.text) refers to ctype_o.o(.constdata) for __ctype_table
+    iscntrl_o.o(.text) refers to ctype_o.o(.text) for __rt_ctype_table
+    isdigit_o.o(.text) refers to ctype_o.o(.text) for __rt_ctype_table
+    isgraph_o.o(.text) refers to ctype_o.o(.text) for __rt_ctype_table
+    islower_o.o(.text) refers to ctype_o.o(.text) for __rt_ctype_table
+    isprint_o.o(.text) refers to ctype_o.o(.text) for __rt_ctype_table
+    ispunct_o.o(.text) refers to ctype_o.o(.text) for __rt_ctype_table
+    isspace_o.o(.text) refers to ctype_o.o(.text) for __rt_ctype_table
+    isupper_o.o(.text) refers to ctype_o.o(.text) for __rt_ctype_table
+    isxdigit_o.o(.text) refers to ctype_o.o(.text) for __rt_ctype_table
+    _strtoul.o(.text) refers to _chval.o(.text) for _chval
+    _strtoul.o(.text) refers to errno.o(i.__aeabi_errno_addr) for __aeabi_errno_addr
+    dsqrt.o(.text) refers to llushr.o(.text) for __aeabi_llsr
+    dsqrt.o(.text) refers to depilogue.o(.text) for _double_round
+    dfltui.o(.text) refers to depilogue.o(.text) for _double_epilogue
+
+
+==============================================================================
+
+Removing Unused input sections from the image.
+
+    Removing system_stm32f4xx.o(.rev16_text), (4 bytes).
+    Removing system_stm32f4xx.o(.revsh_text), (4 bytes).
+    Removing misc.o(.rev16_text), (4 bytes).
+    Removing misc.o(.revsh_text), (4 bytes).
+    Removing stm32f4x7_eth.o(.rev16_text), (4 bytes).
+    Removing stm32f4x7_eth.o(.revsh_text), (4 bytes).
+    Removing stm32f4xx_adc.o(.rev16_text), (4 bytes).
+    Removing stm32f4xx_adc.o(.revsh_text), (4 bytes).
+    Removing stm32f4xx_adc.o(.text), (1144 bytes).
+    Removing stm32f4xx_can.o(.rev16_text), (4 bytes).
+    Removing stm32f4xx_can.o(.revsh_text), (4 bytes).
+    Removing stm32f4xx_can.o(.text), (2544 bytes).
+    Removing stm32f4xx_crc.o(.rev16_text), (4 bytes).
+    Removing stm32f4xx_crc.o(.revsh_text), (4 bytes).
+    Removing stm32f4xx_crc.o(.text), (72 bytes).
+    Removing stm32f4xx_dac.o(.rev16_text), (4 bytes).
+    Removing stm32f4xx_dac.o(.revsh_text), (4 bytes).
+    Removing stm32f4xx_dac.o(.text), (528 bytes).
+    Removing stm32f4xx_dbgmcu.o(.rev16_text), (4 bytes).
+    Removing stm32f4xx_dbgmcu.o(.revsh_text), (4 bytes).
+    Removing stm32f4xx_dbgmcu.o(.text), (100 bytes).
+    Removing stm32f4xx_dcmi.o(.rev16_text), (4 bytes).
+    Removing stm32f4xx_dcmi.o(.revsh_text), (4 bytes).
+    Removing stm32f4xx_dma.o(.rev16_text), (4 bytes).
+    Removing stm32f4xx_dma.o(.revsh_text), (4 bytes).
+    Removing stm32f4xx_exti.o(.rev16_text), (4 bytes).
+    Removing stm32f4xx_exti.o(.revsh_text), (4 bytes).
+    Removing stm32f4xx_flash.o(.rev16_text), (4 bytes).
+    Removing stm32f4xx_flash.o(.revsh_text), (4 bytes).
+    Removing stm32f4xx_flash.o(.text), (1212 bytes).
+    Removing stm32f4xx_fsmc.o(.rev16_text), (4 bytes).
+    Removing stm32f4xx_fsmc.o(.revsh_text), (4 bytes).
+    Removing stm32f4xx_fsmc.o(.text), (1544 bytes).
+    Removing stm32f4xx_gpio.o(.rev16_text), (4 bytes).
+    Removing stm32f4xx_gpio.o(.revsh_text), (4 bytes).
+    Removing stm32f4xx_i2c.o(.rev16_text), (4 bytes).
+    Removing stm32f4xx_i2c.o(.revsh_text), (4 bytes).
+    Removing stm32f4xx_i2c.o(.text), (1064 bytes).
+    Removing stm32f4xx_iwdg.o(.rev16_text), (4 bytes).
+    Removing stm32f4xx_iwdg.o(.revsh_text), (4 bytes).
+    Removing stm32f4xx_iwdg.o(.text), (64 bytes).
+    Removing stm32f4xx_pwr.o(.rev16_text), (4 bytes).
+    Removing stm32f4xx_pwr.o(.revsh_text), (4 bytes).
+    Removing stm32f4xx_rcc.o(.rev16_text), (4 bytes).
+    Removing stm32f4xx_rcc.o(.revsh_text), (4 bytes).
+    Removing stm32f4xx_rng.o(.rev16_text), (4 bytes).
+    Removing stm32f4xx_rng.o(.revsh_text), (4 bytes).
+    Removing stm32f4xx_rtc.o(.rev16_text), (4 bytes).
+    Removing stm32f4xx_rtc.o(.revsh_text), (4 bytes).
+    Removing stm32f4xx_sdio.o(.rev16_text), (4 bytes).
+    Removing stm32f4xx_sdio.o(.revsh_text), (4 bytes).
+    Removing stm32f4xx_sdio.o(.text), (476 bytes).
+    Removing stm32f4xx_spi.o(.rev16_text), (4 bytes).
+    Removing stm32f4xx_spi.o(.revsh_text), (4 bytes).
+    Removing stm32f4xx_syscfg.o(.rev16_text), (4 bytes).
+    Removing stm32f4xx_syscfg.o(.revsh_text), (4 bytes).
+    Removing stm32f4xx_tim.o(.rev16_text), (4 bytes).
+    Removing stm32f4xx_tim.o(.revsh_text), (4 bytes).
+    Removing stm32f4xx_usart.o(.rev16_text), (4 bytes).
+    Removing stm32f4xx_usart.o(.revsh_text), (4 bytes).
+    Removing stm32f4xx_wwdg.o(.rev16_text), (4 bytes).
+    Removing stm32f4xx_wwdg.o(.revsh_text), (4 bytes).
+    Removing stm32f4xx_wwdg.o(.text), (144 bytes).
+    Removing startup_stm32f4xx.o(HEAP), (0 bytes).
+    Removing os_mbox.o(.text), (996 bytes).
+    Removing os_mutex.o(.text), (1548 bytes).
+    Removing os_cpu_c.o(.rev16_text), (4 bytes).
+    Removing os_cpu_c.o(.revsh_text), (4 bytes).
+    Removing memory.o(.rev16_text), (4 bytes).
+    Removing memory.o(.revsh_text), (4 bytes).
+    Removing memory2.o(.rev16_text), (4 bytes).
+    Removing memory2.o(.revsh_text), (4 bytes).
+    Removing mbox.o(.text), (460 bytes).
+    Removing def.o(.text), (308 bytes).
+    Removing def.o(.conststring), (72 bytes).
+    Removing sys.o(.text), (36 bytes).
+    Removing eth_ethernetif.o(.rev16_text), (4 bytes).
+    Removing eth_ethernetif.o(.revsh_text), (4 bytes).
+    Removing srv_mosq.o(.text), (8 bytes).
+    Removing thread_mosq.o(.text), (400 bytes).
+    Removing thread_mosq.o(.constdata), (41 bytes).
+    Removing buffer.o(.text), (612 bytes).
+    Removing buffer.o(.constdata), (12 bytes).
+    Removing cb_search.o(.text), (3416 bytes).
+    Removing cb_search.o(.constdata), (132 bytes).
+    Removing exc_5_64_table.o(.constdata), (320 bytes).
+    Removing exc_5_256_table.o(.constdata), (1280 bytes).
+    Removing exc_8_128_table.o(.constdata), (1024 bytes).
+    Removing exc_10_16_table.o(.constdata), (160 bytes).
+    Removing exc_10_32_table.o(.constdata), (320 bytes).
+    Removing exc_20_32_table.o(.constdata), (640 bytes).
+    Removing fftwrap.o(.text), (648 bytes).
+    Removing fftwrap.o(.constdata), (12 bytes).
+    Removing filterbank.o(.text), (936 bytes).
+    Removing filterbank.o(.constdata), (12 bytes).
+    Removing filters.o(.text), (4804 bytes).
+    Removing filters.o(.constdata), (202 bytes).
+    Removing gain_table.o(.constdata), (512 bytes).
+    Removing gain_table_lbr.o(.constdata), (128 bytes).
+    Removing hexc_10_32_table.o(.constdata), (320 bytes).
+    Removing hexc_table.o(.constdata), (1024 bytes).
+    Removing high_lsp_tables.o(.constdata), (1024 bytes).
+    Removing jitter.o(.text), (4132 bytes).
+    Removing jitter.o(.constdata), (12 bytes).
+    Removing jitter.o(.conststring), (76 bytes).
+    Removing kiss_fft.o(.text), (5842 bytes).
+    Removing kiss_fft.o(.constdata), (12 bytes).
+    Removing kiss_fftr.o(.text), (2476 bytes).
+    Removing kiss_fftr.o(.constdata), (12 bytes).
+    Removing lpc.o(.text), (332 bytes).
+    Removing lsp.o(.text), (2180 bytes).
+    Removing lsp.o(.constdata), (22 bytes).
+    Removing lsp_tables_nb.o(.constdata), (1920 bytes).
+    Removing ltp.o(.text), (3980 bytes).
+    Removing ltp.o(.constdata), (82 bytes).
+    Removing mdf.o(.text), (12760 bytes).
+    Removing mdf.o(.constdata), (44 bytes).
+    Removing mdf.o(.conststring), (321 bytes).
+    Removing modes.o(.text), (20 bytes).
+    Removing modes.o(.constdata), (808 bytes).
+    Removing modes.o(.conststring), (11 bytes).
+    Removing modes_wb.o(.text), (184 bytes).
+    Removing modes_wb.o(.constdata), (692 bytes).
+    Removing modes_wb.o(.conststring), (59 bytes).
+    Removing nb_celp.o(.text), (13128 bytes).
+    Removing nb_celp.o(.constdata), (248 bytes).
+    Removing preprocess.o(.text), (6692 bytes).
+    Removing preprocess.o(.constdata), (54 bytes).
+    Removing quant_lsp.o(.text), (1708 bytes).
+    Removing resample.o(.text), (6316 bytes).
+    Removing resample.o(.constdata), (232 bytes).
+    Removing resample.o(.data), (1440 bytes).
+    Removing sb_celp.o(.text), (9392 bytes).
+    Removing sb_celp.o(.constdata), (256 bytes).
+    Removing smallft.o(.text), (11220 bytes).
+    Removing smallft.o(.constdata), (12 bytes).
+    Removing smallft.o(.data), (44 bytes).
+    Removing speex.o(.text), (788 bytes).
+    Removing speex_callbacks.o(.text), (378 bytes).
+    Removing speex_header.o(.text), (696 bytes).
+    Removing speex_header.o(.constdata), (12 bytes).
+    Removing stereo.o(.text), (1896 bytes).
+    Removing stereo.o(.constdata), (88 bytes).
+    Removing vbr.o(.text), (4252 bytes).
+    Removing vbr.o(.constdata), (704 bytes).
+    Removing vq.o(.text), (398 bytes).
+    Removing window.o(.constdata), (422 bytes).
+    Removing bits.o(.text), (1572 bytes).
+    Removing bits.o(.constdata), (12 bytes).
+    Removing audio_low_level.o(.rev16_text), (4 bytes).
+    Removing audio_low_level.o(.revsh_text), (4 bytes).
+    Removing camera.o(.rev16_text), (4 bytes).
+    Removing camera.o(.revsh_text), (4 bytes).
+    Removing dht11.o(.rev16_text), (4 bytes).
+    Removing dht11.o(.revsh_text), (4 bytes).
+    Removing driver_misc.o(.rev16_text), (4 bytes).
+    Removing driver_misc.o(.revsh_text), (4 bytes).
+    Removing hard_timer.o(.rev16_text), (4 bytes).
+    Removing hard_timer.o(.revsh_text), (4 bytes).
+    Removing ir_control.o(.rev16_text), (4 bytes).
+    Removing ir_control.o(.revsh_text), (4 bytes).
+    Removing lan8720.o(.rev16_text), (4 bytes).
+    Removing lan8720.o(.revsh_text), (4 bytes).
+    Removing mfrc522.o(.rev16_text), (4 bytes).
+    Removing mfrc522.o(.revsh_text), (4 bytes).
+    Removing rtc.o(.rev16_text), (4 bytes).
+    Removing rtc.o(.revsh_text), (4 bytes).
+    Removing sccb.o(.rev16_text), (4 bytes).
+    Removing sccb.o(.revsh_text), (4 bytes).
+    Removing usart.o(.rev16_text), (4 bytes).
+    Removing usart.o(.revsh_text), (4 bytes).
+    Removing w25p80.o(.rev16_text), (4 bytes).
+    Removing w25p80.o(.revsh_text), (4 bytes).
+    Removing ov2640.o(.rev16_text), (4 bytes).
+    Removing ov2640.o(.revsh_text), (4 bytes).
+    Removing stm32f4xx_it.o(.rev16_text), (4 bytes).
+    Removing stm32f4xx_it.o(.revsh_text), (4 bytes).
+    Removing key.o(.rev16_text), (4 bytes).
+    Removing key.o(.revsh_text), (4 bytes).
+    Removing 24l01.o(.rev16_text), (4 bytes).
+    Removing 24l01.o(.revsh_text), (4 bytes).
+    Removing debug.o(.rev16_text), (4 bytes).
+    Removing debug.o(.revsh_text), (4 bytes).
+    Removing sys_misc.o(.rev16_text), (4 bytes).
+    Removing sys_misc.o(.revsh_text), (4 bytes).
+    Removing main.o(.rev16_text), (4 bytes).
+    Removing main.o(.revsh_text), (4 bytes).
+    Removing test_tcpip.o(.rev16_text), (4 bytes).
+    Removing test_tcpip.o(.revsh_text), (4 bytes).
+    Removing test_tcpip.o(.bss), (16 bytes).
+    Removing audio.o(.rev16_text), (4 bytes).
+    Removing audio.o(.revsh_text), (4 bytes).
+    Removing adpcm.o(.rev16_text), (4 bytes).
+    Removing adpcm.o(.revsh_text), (4 bytes).
+    Removing tcpapp.o(.rev16_text), (4 bytes).
+    Removing tcpapp.o(.revsh_text), (4 bytes).
+    Removing sensers.o(.rev16_text), (4 bytes).
+    Removing sensers.o(.revsh_text), (4 bytes).
+    Removing work.o(.rev16_text), (4 bytes).
+    Removing work.o(.revsh_text), (4 bytes).
+    Removing mqtt_app.o(.rev16_text), (4 bytes).
+    Removing mqtt_app.o(.revsh_text), (4 bytes).
+    Removing test.o(.rev16_text), (4 bytes).
+    Removing test.o(.revsh_text), (4 bytes).
+    Removing web_cfg.o(.rev16_text), (4 bytes).
+    Removing web_cfg.o(.revsh_text), (4 bytes).
+    Removing edp_demo.o(.rev16_text), (4 bytes).
+    Removing edp_demo.o(.revsh_text), (4 bytes).
+    Removing edpkit.o(.text), (6008 bytes).
+    Removing dflti.o(.text), (34 bytes).
+    Removing dfixi.o(.text), (62 bytes).
+    Removing f2d.o(.text), (38 bytes).
+    Removing cdcmple.o(.text), (48 bytes).
+    Removing d2f.o(.text), (56 bytes).
+    Removing fepilogue.o(.text), (110 bytes).
+    Removing dneg.o(.text), (6 bytes).
+    Removing dscalb.o(.text), (46 bytes).
+    Removing dsqrt.o(.text), (162 bytes).
+    Removing dfltui.o(.text), (26 bytes).
+
+219 unused section(s) (total 135320 bytes) removed from the image.
+
+==============================================================================
+
+Memory Map of the image
+
+  Image Entry point : 0x00000000
+
+  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x000385f4, Max: 0x00100000, ABSOLUTE)
+
+    Execution Region ER_IROM1 (Base: 0x08000000, Size: 0x00038264, Max: 0x00100000, ABSOLUTE)
+
+    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x08000000   0x00000188   Data   RO          714    RESET               startup_stm32f4xx.o
+    0x08000188   0x00000000   Code   RO         4961  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
+    0x08000188   0x00000004   Code   RO         5326    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
+    0x0800018c   0x00000004   Code   RO         5329    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
+    0x08000190   0x00000000   Code   RO         5331    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
+    0x08000190   0x00000000   Code   RO         5333    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
+    0x08000190   0x00000008   Code   RO         5334    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
+    0x08000198   0x00000000   Code   RO         5336    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
+    0x08000198   0x00000000   Code   RO         5338    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
+    0x08000198   0x00000004   Code   RO         5327    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
+    0x0800019c   0x00000012   Code   RO         4093    .emb_text           stm32f4xx_it.o
+    0x080001ae   0x00000002   PAD
+    0x080001b0   0x00000210   Code   RO            3    .text               system_stm32f4xx.o
+    0x080003c0   0x000000e0   Code   RO           51    .text               misc.o
+    0x080004a0   0x00000e64   Code   RO           78    .text               stm32f4x7_eth.o
+    0x08001304   0x00000190   Code   RO          301    .text               stm32f4xx_dcmi.o
+    0x08001494   0x000003a8   Code   RO          324    .text               stm32f4xx_dma.o
+    0x0800183c   0x0000011c   Code   RO          347    .text               stm32f4xx_exti.o
+    0x08001958   0x0000025c   Code   RO          416    .text               stm32f4xx_gpio.o
+    0x08001bb4   0x000000fc   Code   RO          485    .text               stm32f4xx_pwr.o
+    0x08001cb0   0x00000588   Code   RO          508    .text               stm32f4xx_rcc.o
+    0x08002238   0x000000a0   Code   RO          530    .text               stm32f4xx_rng.o
+    0x080022d8   0x00000d30   Code   RO          553    .text               stm32f4xx_rtc.o
+    0x08003008   0x000003f8   Code   RO          599    .text               stm32f4xx_spi.o
+    0x08003400   0x0000008c   Code   RO          622    .text               stm32f4xx_syscfg.o
+    0x0800348c   0x00000ca2   Code   RO          645    .text               stm32f4xx_tim.o
+    0x0800412e   0x00000002   PAD
+    0x08004130   0x0000041a   Code   RO          668    .text               stm32f4xx_usart.o
+    0x0800454a   0x00000002   PAD
+    0x0800454c   0x00000024   Code   RO          715    .text               startup_stm32f4xx.o
+    0x08004570   0x00000ca8   Code   RO          719    .text               os_core.o
+    0x08005218   0x000007fc   Code   RO          752    .text               os_flag.o
+    0x08005a14   0x000005e8   Code   RO          798    .text               os_q.o
+    0x08005ffc   0x000003a8   Code   RO          810    .text               os_sem.o
+    0x080063a4   0x00000848   Code   RO          822    .text               os_task.o
+    0x08006bec   0x00000198   Code   RO          863    .text               os_time.o
+    0x08006d84   0x00000718   Code   RO          875    .text               os_tmr.o
+    0x0800749c   0x0000019c   Code   RO          900    .text               os_cpu_c.o
+    0x08007638   0x000000b8   Code   RO         1156    .text               os_cpu_a.o
+    0x080076f0   0x00000118   Code   RO         1159    .text               atomic.o
+    0x08007808   0x00001138   Code   RO         1173    .text               memory.o
+    0x08008940   0x000004a0   Code   RO         1226    .text               task.o
+    0x08008de0   0x00000450   Code   RO         1243    .text               memory2.o
+    0x08009230   0x00000414   Code   RO         1283    .text               msg_q.o
+    0x08009644   0x0000016c   Code   RO         1299    .text               mutex.o
+    0x080097b0   0x000001d4   Code   RO         1311    .text               sem.o
+    0x08009984   0x00000470   Code   RO         1323    .text               timer.o
+    0x08009df4   0x00000254   Code   RO         1335    .text               wait.o
+    0x0800a048   0x00000e60   Code   RO         1347    .text               api_lib.o
+    0x0800aea8   0x00001a10   Code   RO         1411    .text               api_msg.o
+    0x0800c8b8   0x00000010   Code   RO         1532    .text               err.o
+    0x0800c8c8   0x0000041c   Code   RO         1550    .text               netbuf.o
+    0x0800cce4   0x0000054c   Code   RO         1570    .text               netdb.o
+    0x0800d230   0x0000208c   Code   RO         1606    .text               sockets.o
+    0x0800f2bc   0x0000050c   Code   RO         1660    .text               tcpip.o
+    0x0800f7c8   0x000005a0   Code   RO         1695    .text               sys_arch.o
+    0x0800fd68   0x00001d72   Code   RO         1734    .text               dhcp.o
+    0x08011ada   0x00000002   PAD
+    0x08011adc   0x00000be0   Code   RO         1773    .text               dns.o
+    0x080126bc   0x00000028   Code   RO         1790    .text               init.o
+    0x080126e4   0x00000388   Code   RO         1861    .text               netif.o
+    0x08012a6c   0x000012c8   Code   RO         1886    .text               pbuf.o
+    0x08013d34   0x00000254   Code   RO         1914    .text               raw.o
+    0x08013f88   0x00000014   Code   RO         1929    .text               stats.o
+    0x08013f9c   0x00002174   Code   RO         1959    .text               tcp.o
+    0x08016110   0x00002af4   Code   RO         1986    .text               tcp_in.o
+    0x08018c04   0x00001f20   Code   RO         2013    .text               tcp_out.o
+    0x0801ab24   0x00000428   Code   RO         2027    .text               _timers.o
+    0x0801af4c   0x00000770   Code   RO         2072    .text               udp.o
+    0x0801b6bc   0x000004ec   Code   RO         2108    .text               icmp.o
+    0x0801bba8   0x0000090c   Code   RO         2120    .text               igmp.o
+    0x0801c4b4   0x000002d4   Code   RO         2144    .text               inet_chksum.o
+    0x0801c788   0x00000ca0   Code   RO         2156    .text               ip.o
+    0x0801d428   0x00000348   Code   RO         2206    .text               ip_addr.o
+    0x0801d770   0x00000bb0   Code   RO         2229    .text               ip_frag.o
+    0x0801e320   0x00001020   Code   RO         2244    .text               etharp.o
+    0x0801f340   0x000004e4   Code   RO         2290    .text               eth_ethernetif.o
+    0x0801f824   0x00000180   Code   RO         2320    .text               logging_mosq.o
+    0x0801f9a4   0x0000007c   Code   RO         2354    .text               memory_mosq.o
+    0x0801fa20   0x000008c0   Code   RO         2371    .text               messages_mosq.o
+    0x080202e0   0x0000124c   Code   RO         2444    .text               mosquitto.o
+    0x0802152c   0x00000d7c   Code   RO         2486    .text               net_mosq.o
+    0x080222a8   0x00000390   Code   RO         2511    .text               read_handle.o
+    0x08022638   0x00000158   Code   RO         2545    .text               read_handle_client.o
+    0x08022790   0x000005c4   Code   RO         2630    .text               read_handle_shared.o
+    0x08022d54   0x000006ac   Code   RO         2642    .text               send_client_mosq.o
+    0x08023400   0x000005b4   Code   RO         2717    .text               send_mosq.o
+    0x080239b4   0x00000010   Code   RO         2755    .text               time_mosq.o
+    0x080239c4   0x00000454   Code   RO         2825    .text               util_mosq.o
+    0x08023e18   0x00000158   Code   RO         2837    .text               will_mosq.o
+    0x08023f70   0x00000d44   Code   RO         3670    .text               camera.o
+    0x08024cb4   0x0000023c   Code   RO         3699    .text               dht11.o
+    0x08024ef0   0x00000458   Code   RO         3726    .text               driver_misc.o
+    0x08025348   0x000000e4   Code   RO         3754    .text               hard_timer.o
+    0x0802542c   0x0000075c   Code   RO         3777    .text               ir_control.o
+    0x08025b88   0x000003e0   Code   RO         3805    .text               lan8720.o
+    0x08025f68   0x00000a90   Code   RO         3947    .text               mfrc522.o
+    0x080269f8   0x000003bc   Code   RO         3969    .text               rtc.o
+    0x08026db4   0x00000194   Code   RO         3992    .text               sccb.o
+    0x08026f48   0x0000062c   Code   RO         4012    .text               usart.o
+    0x08027574   0x00000898   Code   RO         4044    .text               w25p80.o
+    0x08027e0c   0x000007e4   Code   RO         4069    .text               ov2640.o
+    0x080285f0   0x00000210   Code   RO         4094    .text               stm32f4xx_it.o
+    0x08028800   0x00000180   Code   RO         4128    .text               key.o
+    0x08028980   0x00000830   Code   RO         4159    .text               24l01.o
+    0x080291b0   0x000018dc   Code   RO         4184    .text               debug.o
+    0x0802aa8c   0x00000690   Code   RO         4224    .text               sys_misc.o
+    0x0802b11c   0x000002b0   Code   RO         4270    .text               main.o
+    0x0802b3cc   0x0000134c   Code   RO         4291    .text               test_tcpip.o
+    0x0802c718   0x00001154   Code   RO         4422    .text               tcpapp.o
+    0x0802d86c   0x0000027c   Code   RO         4497    .text               sensers.o
+    0x0802dae8   0x000009c6   Code   RO         4524    .text               work.o
+    0x0802e4ae   0x00000002   PAD
+    0x0802e4b0   0x000010f8   Code   RO         4606    .text               mqtt_app.o
+    0x0802f5a8   0x000001e0   Code   RO         4641    .text               test.o
+    0x0802f788   0x00003c8c   Code   RO         4671    .text               sha1.o
+    0x08033414   0x000004a0   Code   RO         4695    .text               web_cfg.o
+    0x080338b4   0x000012aa   Code   RO         4726    .text               cjson.o
+    0x08034b5e   0x00000002   PAD
+    0x08034b60   0x00000190   Code   RO         4875    .text               umem.o
+    0x08034cf0   0x0000000c   Code   RO         4967    .text               mc_w.l(tolower.o)
+    0x08034cfc   0x00000024   Code   RO         4969    .text               mc_w.l(rand.o)
+    0x08034d20   0x00000040   Code   RO         4974    .text               mc_w.l(memmovea.o)
+    0x08034d60   0x00000024   Code   RO         4976    .text               mc_w.l(memseta.o)
+    0x08034d84   0x00000018   Code   RO         4978    .text               mc_w.l(strcat.o)
+    0x08034d9c   0x00000014   Code   RO         4982    .text               mc_w.l(strchr.o)
+    0x08034db0   0x0000000e   Code   RO         4984    .text               mc_w.l(strlen.o)
+    0x08034dbe   0x0000001c   Code   RO         4986    .text               mc_w.l(strcmp.o)
+    0x08034dda   0x0000001a   Code   RO         4988    .text               mc_w.l(memcmp.o)
+    0x08034df4   0x00000012   Code   RO         4990    .text               mc_w.l(strcpy.o)
+    0x08034e06   0x0000001e   Code   RO         4992    .text               mc_w.l(strncmp.o)
+    0x08034e24   0x000000e4   Code   RO         4994    .text               mc_w.l(strerror.o)
+    0x08034f08   0x0000001a   Code   RO         5261    .text               mc_w.l(atoi.o)
+    0x08034f22   0x0000014e   Code   RO         5263    .text               mf_w.l(dadd.o)
+    0x08035070   0x000000e4   Code   RO         5265    .text               mf_w.l(dmul.o)
+    0x08035154   0x000000de   Code   RO         5267    .text               mf_w.l(ddiv.o)
+    0x08035232   0x00000002   PAD
+    0x08035234   0x00000030   Code   RO         5277    .text               mf_w.l(cdrcmple.o)
+    0x08035264   0x0000002c   Code   RO         5341    .text               mc_w.l(uidiv.o)
+    0x08035290   0x00000062   Code   RO         5343    .text               mc_w.l(uldiv.o)
+    0x080352f2   0x0000001e   Code   RO         5345    .text               mc_w.l(llshl.o)
+    0x08035310   0x00000020   Code   RO         5347    .text               mc_w.l(llushr.o)
+    0x08035330   0x00000024   Code   RO         5349    .text               mc_w.l(llsshr.o)
+    0x08035354   0x00000070   Code   RO         5358    .text               mc_w.l(strtol.o)
+    0x080353c4   0x00000000   Code   RO         5360    .text               mc_w.l(iusefp.o)
+    0x080353c4   0x000000ba   Code   RO         5363    .text               mf_w.l(depilogue.o)
+    0x0803547e   0x00000030   Code   RO         5369    .text               mf_w.l(dfixul.o)
+    0x080354ae   0x00000002   PAD
+    0x080354b0   0x00000024   Code   RO         5371    .text               mc_w.l(init.o)
+    0x080354d4   0x00000008   Code   RO         5373    .text               mc_w.l(ctype_o.o)
+    0x080354dc   0x0000009e   Code   RO         5401    .text               mc_w.l(_strtoul.o)
+    0x0803557a   0x0000001c   Code   RO         5407    .text               mc_w.l(_chval.o)
+    0x08035596   0x00000002   PAD
+    0x08035598   0x00000020   Code   RO         5207    i.__0printf$8       mc_w.l(printf8.o)
+    0x080355b8   0x00000028   Code   RO         5208    i.__0snprintf$8     mc_w.l(printf8.o)
+    0x080355e0   0x00000028   Code   RO         5209    i.__0sprintf$8      mc_w.l(printf8.o)
+    0x08035608   0x00000024   Code   RO         5238    i.__0vsnprintf      mc_w.l(printfa.o)
+    0x0803562c   0x00000008   Code   RO         5351    i.__aeabi_errno_addr  mc_w.l(errno.o)
+    0x08035634   0x00000164   Code   RO         5240    i._fp_digits        mc_w.l(printfa.o)
+    0x08035798   0x00000410   Code   RO         5214    i._printf_core      mc_w.l(printf8.o)
+    0x08035ba8   0x000006dc   Code   RO         5241    i._printf_core      mc_w.l(printfa.o)
+    0x08036284   0x00000024   Code   RO         5215    i._printf_post_padding  mc_w.l(printf8.o)
+    0x080362a8   0x00000024   Code   RO         5242    i._printf_post_padding  mc_w.l(printfa.o)
+    0x080362cc   0x0000002e   Code   RO         5216    i._printf_pre_padding  mc_w.l(printf8.o)
+    0x080362fa   0x0000002e   Code   RO         5243    i._printf_pre_padding  mc_w.l(printfa.o)
+    0x08036328   0x00000016   Code   RO         5217    i._snputc           mc_w.l(printf8.o)
+    0x0803633e   0x00000016   Code   RO         5244    i._snputc           mc_w.l(printfa.o)
+    0x08036354   0x0000000a   Code   RO         5218    i._sputc            mc_w.l(printf8.o)
+    0x0803635e   0x00000100   Data   RO          721    .constdata          os_core.o
+    0x0803645e   0x0000004a   Data   RO         1174    .constdata          memory.o
+    0x080364a8   0x00000011   Data   RO         1227    .constdata          task.o
+    0x080364b9   0x00000007   Data   RO         1285    .constdata          msg_q.o
+    0x080364c0   0x0000000d   Data   RO         1348    .constdata          api_lib.o
+    0x080364cd   0x00000020   Data   RO         1412    .constdata          api_msg.o
+    0x080364ed   0x0000000b   Data   RO         1551    .constdata          netbuf.o
+    0x080364f8   0x00000011   Data   RO         1572    .constdata          netdb.o
+    0x08036509   0x00000003   PAD
+    0x0803650c   0x00000040   Data   RO         1608    .constdata          sockets.o
+    0x0803654c   0x0000005a   Data   RO         1661    .constdata          tcpip.o
+    0x080365a6   0x00000002   PAD
+    0x080365a8   0x0000001f   Data   RO         1697    .constdata          sys_arch.o
+    0x080365c7   0x00000001   PAD
+    0x080365c8   0x00000004   Data   RO         1716    .constdata          def.o
+    0x080365cc   0x0000000b   Data   RO         1736    .constdata          dhcp.o
+    0x080365d7   0x00000009   Data   RO         1775    .constdata          dns.o
+    0x080365e0   0x00000020   Data   RO         1834    .constdata          memp.o
+    0x08036600   0x0000000b   Data   RO         1887    .constdata          pbuf.o
+    0x0803660b   0x00000008   Data   RO         1915    .constdata          raw.o
+    0x08036613   0x00000001   PAD
+    0x08036614   0x0000007f   Data   RO         1960    .constdata          tcp.o
+    0x08036693   0x00000013   Data   RO         2014    .constdata          tcp_out.o
+    0x080366a6   0x00000012   Data   RO         2028    .constdata          _timers.o
+    0x080366b8   0x00000008   Data   RO         2073    .constdata          udp.o
+    0x080366c0   0x00000012   Data   RO         2121    .constdata          igmp.o
+    0x080366d2   0x00000002   PAD
+    0x080366d4   0x00000008   Data   RO         2208    .constdata          ip_addr.o
+    0x080366dc   0x0000003c   Data   RO         2230    .constdata          ip_frag.o
+    0x08036718   0x0000000c   Data   RO         2246    .constdata          etharp.o
+    0x08036724   0x00000023   Data   RO         2291    .constdata          eth_ethernetif.o
+    0x08036747   0x00000036   Data   RO         2355    .constdata          memory_mosq.o
+    0x0803677d   0x0000002a   Data   RO         2445    .constdata          mosquitto.o
+    0x080367a7   0x00000017   Data   RO         2487    .constdata          net_mosq.o
+    0x080367be   0x0000003f   Data   RO         3672    .constdata          camera.o
+    0x080367fd   0x0000000f   Data   RO         3806    .constdata          lan8720.o
+    0x0803680c   0x0000001b   Data   RO         4046    .constdata          w25p80.o
+    0x08036827   0x00000810   Data   RO         4070    .constdata          ov2640.o
+    0x08037037   0x00000033   Data   RO         4161    .constdata          24l01.o
+    0x0803706a   0x000000c8   Data   RO         4293    .constdata          test_tcpip.o
+    0x08037132   0x00000089   Data   RO         4424    .constdata          tcpapp.o
+    0x080371bb   0x00000049   Data   RO         4526    .constdata          work.o
+    0x08037204   0x0000006f   Data   RO         4608    .constdata          mqtt_app.o
+    0x08037273   0x00000080   Data   RO         4672    .constdata          sha1.o
+    0x080372f3   0x0000001a   Data   RO         4697    .constdata          web_cfg.o
+    0x0803730d   0x00000007   Data   RO         4727    .constdata          cjson.o
+    0x08037314   0x00000081   Data   RO         5374    .constdata          mc_w.l(ctype_o.o)
+    0x08037395   0x00000003   PAD
+    0x08037398   0x00000004   Data   RO         5375    .constdata          mc_w.l(ctype_o.o)
+    0x0803739c   0x00000138   Data   RO         1244    .conststring        memory2.o
+    0x080374d4   0x00000125   Data   RO         1533    .conststring        err.o
+    0x080375f9   0x00000003   PAD
+    0x080375fc   0x0000008c   Data   RO         1737    .conststring        dhcp.o
+    0x08037688   0x00000044   Data   RO         1776    .conststring        dns.o
+    0x080376cc   0x000000bd   Data   RO         1961    .conststring        tcp.o
+    0x08037789   0x00000003   PAD
+    0x0803778c   0x0000004c   Data   RO         1988    .conststring        tcp_in.o
+    0x080377d8   0x00000129   Data   RO         2015    .conststring        tcp_out.o
+    0x08037901   0x00000003   PAD
+    0x08037904   0x000000ec   Data   RO         2157    .conststring        ip.o
+    0x080379f0   0x00000044   Data   RO         2247    .conststring        etharp.o
+    0x08037a34   0x00000046   Data   RO         2446    .conststring        mosquitto.o
+    0x08037a7a   0x00000002   PAD
+    0x08037a7c   0x00000047   Data   RO         2512    .conststring        read_handle.o
+    0x08037ac3   0x00000001   PAD
+    0x08037ac4   0x00000046   Data   RO         2718    .conststring        send_mosq.o
+    0x08037b0a   0x00000002   PAD
+    0x08037b0c   0x000002da   Data   RO         4185    .conststring        debug.o
+    0x08037de6   0x00000002   PAD
+    0x08037de8   0x00000061   Data   RO         4271    .conststring        main.o
+    0x08037e49   0x00000003   PAD
+    0x08037e4c   0x00000041   Data   RO         4527    .conststring        work.o
+    0x08037e8d   0x00000003   PAD
+    0x08037e90   0x00000021   Data   RO         4609    .conststring        mqtt_app.o
+    0x08037eb1   0x00000003   PAD
+    0x08037eb4   0x0000034f   Data   RO         4643    .conststring        test.o
+    0x08038203   0x00000001   PAD
+    0x08038204   0x00000026   Data   RO         1175    .conststrlit        memory.o
+    0x0803822a   0x00000002   PAD
+    0x0803822c   0x00000015   Data   RO         4186    .conststrlit        debug.o
+    0x08038241   0x00000003   PAD
+    0x08038244   0x0000000f   Data   RO         4294    .conststrlit        test_tcpip.o
+    0x08038253   0x00000001   PAD
+    0x08038254   0x0000000f   Data   RO         4528    .conststrlit        work.o
+    0x08038263   0x00000001   PAD
+    0x08038264   0x00000000   Data   RO         5409    Region$$Table       anon$$obj.o
+
+
+    Execution Region RW_IRAM1 (Base: 0x20000000, Size: 0x00008180, Max: 0x00020000, ABSOLUTE)
+
+    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x20000000   0x00000014   Data   RW            4    .data               system_stm32f4xx.o
+    0x20000014   0x00000010   Data   RW           80    .data               stm32f4x7_eth.o
+    0x20000024   0x00000010   Data   RW          509    .data               stm32f4xx_rcc.o
+    0x20000034   0x0000005c   Data   RW          722    .data               os_core.o
+    0x20000090   0x00000010   Data   RW          901    .data               os_cpu_c.o
+    0x200000a0   0x00000020   Data   RW         1176    .data               memory.o
+    0x200000c0   0x00000004   Data   RW         1228    .data               task.o
+    0x200000c4   0x00000020   Data   RW         1245    .data               memory2.o
+    0x200000e4   0x00000040   Data   RW         1534    .data               err.o
+    0x20000124   0x00000014   Data   RW         1573    .data               netdb.o
+    0x20000138   0x0000000c   Data   RW         1609    .data               sockets.o
+    0x20000144   0x00000010   Data   RW         1662    .data               tcpip.o
+    0x20000154   0x00000004   Data   RW         1698    .data               sys_arch.o
+    0x20000158   0x00000004   Data   RW         1738    .data               dhcp.o
+    0x2000015c   0x00000010   Data   RW         1777    .data               dns.o
+    0x2000016c   0x00000009   Data   RW         1862    .data               netif.o
+    0x20000175   0x00000001   Data   RW         1888    .data               pbuf.o
+    0x20000176   0x00000002   PAD
+    0x20000178   0x00000004   Data   RW         1916    .data               raw.o
+    0x2000017c   0x00000024   Data   RW         1962    .data               tcp.o
+    0x200001a0   0x00000020   Data   RW         1989    .data               tcp_in.o
+    0x200001c0   0x00000008   Data   RW         2029    .data               _timers.o
+    0x200001c8   0x00000008   Data   RW         2074    .data               udp.o
+    0x200001d0   0x0000000c   Data   RW         2122    .data               igmp.o
+    0x200001dc   0x00000012   Data   RW         2158    .data               ip.o
+    0x200001ee   0x00000002   PAD
+    0x200001f0   0x00000006   Data   RW         2231    .data               ip_frag.o
+    0x200001f6   0x00000001   Data   RW         2248    .data               etharp.o
+    0x200001f7   0x00000001   PAD
+    0x200001f8   0x00000005   Data   RW         2292    .data               eth_ethernetif.o
+    0x200001fd   0x00000003   PAD
+    0x20000200   0x00000019   Data   RW         3673    .data               camera.o
+    0x20000219   0x00000003   PAD
+    0x2000021c   0x00000017   Data   RW         3700    .data               dht11.o
+    0x20000233   0x00000001   PAD
+    0x20000234   0x00000004   Data   RW         3755    .data               hard_timer.o
+    0x20000238   0x0000001c   Data   RW         3779    .data               ir_control.o
+    0x20000254   0x00000010   Data   RW         3807    .data               lan8720.o
+    0x20000264   0x00000008   Data   RW         3948    .data               mfrc522.o
+    0x2000026c   0x00000008   Data   RW         3970    .data               rtc.o
+    0x20000274   0x00000010   Data   RW         4014    .data               usart.o
+    0x20000284   0x00000004   Data   RW         4130    .data               key.o
+    0x20000288   0x00000008   Data   RW         4162    .data               24l01.o
+    0x20000290   0x00000015   Data   RW         4187    .data               debug.o
+    0x200002a5   0x00000003   PAD
+    0x200002a8   0x0000000a   Data   RW         4225    .data               sys_misc.o
+    0x200002b2   0x00000002   PAD
+    0x200002b4   0x00000011   Data   RW         4295    .data               test_tcpip.o
+    0x200002c5   0x00000003   PAD
+    0x200002c8   0x0000000c   Data   RW         4425    .data               tcpapp.o
+    0x200002d4   0x00000010   Data   RW         4499    .data               sensers.o
+    0x200002e4   0x00000008   Data   RW         4529    .data               work.o
+    0x200002ec   0x00000048   Data   RW         4610    .data               mqtt_app.o
+    0x20000334   0x00000007   Data   RW         4644    .data               test.o
+    0x2000033b   0x00000001   PAD
+    0x2000033c   0x0000000c   Data   RW         4728    .data               cjson.o
+    0x20000348   0x00000004   Data   RW         4877    .data               umem.o
+    0x2000034c   0x00000004   Data   RW         4970    .data               mc_w.l(rand.o)
+    0x20000350   0x00000004   Data   RW         5340    .data               mc_w.l(stdout.o)
+    0x20000354   0x00000004   Data   RW         5354    .data               mc_w.l(errno.o)
+    0x20000358   0x00000020   Data   RW         1177    monitor_item_table  memory.o
+    0x20000378   0x00000008   Data   RW         4188    monitor_item_table  debug.o
+    0x20000380   0x00000008   Data   RW         4296    monitor_item_table  test_tcpip.o
+    0x20000388   0x00000008   Data   RW         4530    monitor_item_table  work.o
+    0x20000390   0x0000000c   Zero   RW           79    .bss                stm32f4x7_eth.o
+    0x2000039c   0x00001a1c   Zero   RW          720    .bss                os_core.o
+    0x20001db8   0x00000080   Zero   RW         1284    .bss                msg_q.o
+    0x20001e38   0x00000014   Zero   RW         1571    .bss                netdb.o
+    0x20001e4c   0x000000c0   Zero   RW         1607    .bss                sockets.o
+    0x20001f0c   0x0000000c   Zero   RW         1696    .bss                sys_arch.o
+    0x20001f18   0x0000002d   Zero   RW         1735    .bss                dhcp.o
+    0x20001f45   0x00000003   PAD
+    0x20001f48   0x000000b8   Zero   RW         1774    .bss                dns.o
+    0x20002000   0x000000ec   Zero   RW         1930    .bss                stats.o
+    0x200020ec   0x00000014   Zero   RW         1987    .bss                tcp_in.o
+    0x20002100   0x00000010   Zero   RW         2207    .bss                ip_addr.o
+    0x20002110   0x00000050   Zero   RW         2245    .bss                etharp.o
+    0x20002160   0x0000003c   Zero   RW         3671    .bss                camera.o
+    0x2000219c   0x00000410   Zero   RW         3778    .bss                ir_control.o
+    0x200025ac   0x00000270   Zero   RW         4013    .bss                usart.o
+    0x2000281c   0x00000018   Zero   RW         4045    .bss                w25p80.o
+    0x20002834   0x0000000c   Zero   RW         4129    .bss                key.o
+    0x20002840   0x00000020   Zero   RW         4160    .bss                24l01.o
+    0x20002860   0x00000070   Zero   RW         4423    .bss                tcpapp.o
+    0x200028d0   0x0000000e   Zero   RW         4498    .bss                sensers.o
+    0x200028de   0x00000002   PAD
+    0x200028e0   0x00000038   Zero   RW         4525    .bss                work.o
+    0x20002918   0x00000074   Zero   RW         4607    .bss                mqtt_app.o
+    0x2000298c   0x00000010   Zero   RW         4642    .bss                test.o
+    0x2000299c   0x000003e2   Zero   RW         4696    .bss                web_cfg.o
+    0x20002d7e   0x00005000   Zero   RW         4876    .bss                umem.o
+    0x20007d7e   0x00000002   PAD
+    0x20007d80   0x00000400   Zero   RW          712    STACK               startup_stm32f4xx.o
+

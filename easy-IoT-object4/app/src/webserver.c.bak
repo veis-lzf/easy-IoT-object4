@@ -1,0 +1,165 @@
+/*
+*web服务器例程
+*本例程在非os环境下编写，占用内存很小
+*可实现表单提交和文件传输等交互功能
+*例程没有进行表单数据的处理,只实现了重启功能
+*状态机的入口是handle_web_sm，由tcp_recv_thread线程调用
+*
+*/
+
+#define DEBUG
+#include "drivers.h"
+#include "app.h"
+#include "api.h"
+
+
+#include "cfg80211.h"
+#include "defs.h"
+#include "type.h"
+#include "types.h"
+
+#include "lwip/pbuf.h"
+#include "lwip/sys.h"
+#include "wpa.h"
+
+#include "lwip/sockets.h"
+#include "lwip/dns.h"
+
+#include "web_cfg.h"
+
+//#include "index_page.h"
+//#include "logo_gif.h"
+
+#include "usr_cfg.h"
+
+WEB_CFG web_cfg;
+
+#if SUPPORT_WEBSERVER
+void web_server_init(void)
+{
+//we will support web server soon
+}
+
+#endif
+
+
+uint8_t cal_buff_check_sum(uint8_t *buff, int size)
+{
+	int i;
+	uint8_t sum = 0;
+	p_dbg_enter;
+	
+	for(i = 0; i < size; i++)
+		sum ^= buff[i];
+
+	return sum;
+}
+
+WEB_CFG *get_web_cfg()
+{
+	return &web_cfg;
+}
+
+int verify_web_cfg(WEB_CFG *cfg)
+{
+	p_dbg_enter;
+	
+	if(cfg->check_sum == 0xff)
+		return 0;
+	
+	return (cfg->check_sum == cal_buff_check_sum((uint8_t*)cfg, SAVE_WEB_CFG_DATA_SIZE(cfg)));
+}
+
+void default_web_cfg(WEB_CFG *cfg)
+{
+	p_dbg_enter;
+	memset(cfg, 0, SAVE_WEB_CFG_SIZE(cfg));
+	cfg->ap.channel = 6;
+	cfg->ap.mode= MODE_AP;
+	strcpy(cfg->ap.essid, "lwip_ap");
+	strcpy(cfg->ap.key, "12345678");
+
+	cfg->sta.channel = 6;
+	cfg->sta.mode= MODE_STATION;
+	strcpy(cfg->sta.essid, "TP-LINK_2AA6");
+	strcpy(cfg->sta.key, "zsl540535");
+	//strcpy(cfg->sta.essid, "lwipsta");
+	//strcpy(cfg->sta.key, "123456789");
+
+	cfg->wifi_ip.ip = inet_addr("192.168.0.36");
+	cfg->wifi_ip.gw = inet_addr("192.168.0.1");
+	cfg->wifi_ip.msk= inet_addr("255.255.255.0");
+	cfg->wifi_ip.dns = inet_addr("8.8.8.8");
+	cfg->wifi_ip.auto_get = 1;	//wifi链接后自动获取一次IP
+
+	cfg->eth_ip.ip = inet_addr("192.168.1.37");
+	cfg->eth_ip.gw = inet_addr("192.168.1.1");
+	cfg->eth_ip.msk= inet_addr("255.255.255.0");
+	cfg->eth_ip.dns = inet_addr("8.8.8.8");
+	cfg->eth_ip.auto_get = 0;	//以太网，网线插入之后自动获取一次IP
+
+	cfg->audio.audio_fre= AUDIO_SAMPLERATE8000;
+	cfg->audio.audio_qua = SPEEX_DEFAULT_QUALITY;
+	cfg->audio.audio_alarm = 1000;
+	//cfg->remote[0].server_ip = inet_addr("192.168.1.108");
+	//cfg->remote[0].port = 1883;
+	cfg->remote[0].server_ip = inet_addr("121.42.188.97");
+	cfg->remote[0].port = 1883;
+	
+	cfg->remote[0].qos_sub = 0;
+	cfg->remote[0].qos_pub = 0;
+
+	strcpy(cfg->remote[0].usr_name, "test");
+	strcpy(cfg->remote[0].password, "test");
+
+	//默认的订阅topic就是"system"用于接收系统消息
+	memset(cfg->work_cfg.bond[0].mac, '0', 12);
+	strcpy(cfg->work_cfg.bond[0].sn, "system");
+	
+	//cfg->remote
+	
+}
+
+
+int save_web_cfg(WEB_CFG *cfg)
+{
+	int ret;
+//	uint32_t *p_buf;
+//	uint32_t Address;
+	p_dbg_enter;
+
+	cfg->check_sum = cal_buff_check_sum((uint8_t*)cfg, SAVE_WEB_CFG_DATA_SIZE(cfg));
+	
+	ret =m25p80_erase(WEB_CFG_ADDR, SAVE_WEB_CFG_SIZE(cfg));
+	if(ret)
+		return -1;
+	ret = m25p80_write(WEB_CFG_ADDR, SAVE_WEB_CFG_SIZE(cfg), (void*)cfg);
+	if(ret)
+		return -1;
+
+	return 0;
+}
+
+int load_web_cfg(WEB_CFG *cfg)
+{
+	int ret = 0;
+	p_dbg_enter;
+	memset(cfg, 0, sizeof(WEB_CFG));
+	ret = m25p80_read(WEB_CFG_ADDR, SAVE_WEB_CFG_SIZE(cfg), (void*)cfg);	
+	p_err("load_web_cfg ret=[%d]", ret);
+	if(ret != 0 || !verify_web_cfg(cfg))
+	//if(1)//this allow user to set their own info for the first time
+	{
+	    p_err("load_web_cfg reset all web configuration");
+		default_web_cfg(cfg);
+		save_web_cfg(cfg);
+		return 0;
+	}
+	else
+	{
+        return 0;
+	}
+	
+}
+
+

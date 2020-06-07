@@ -1,0 +1,119 @@
+#ifndef _WEBSEVER_H__
+#define _WEBSEVER_H__
+
+#include "app_cfg.h"
+
+#define WEB_CFG_ADDR				0
+#define REMOTE_SERVER_NUM 		1
+
+typedef enum _WEB_SM
+{
+	WEB_SM_IDLE,
+		
+	//must together
+	WEB_SM_GET_GETMORE,
+	WEB_SM_RESPONE_GET,
+
+	//must together
+	WEB_SM_POST_GETMORE,
+	WEB_SM_POST_GETMORE1,
+	WEB_SM_RESPONE_POST,
+
+	WEB_SM_SEND_DATA,
+	
+}WEB_SM;
+
+#define GET_NAME_LEN 32
+
+
+struct WEB_CFG_LINK{
+	char	auth;
+	char	mode;
+	char	channel;
+	char	essid[33];
+	char	key[33];
+}__packed;
+
+struct WEB_CFG_IP{
+	unsigned int	ip;
+	unsigned int	gw;
+	unsigned int	msk;
+	unsigned int	dns;
+	unsigned int	auto_get;
+}__packed;
+
+struct WEB_CFG_SERVER{
+	unsigned int	tcpudp;
+	unsigned int	port;
+	unsigned int	open;
+}__packed;
+
+struct WEB_CFG_DTU{
+	char			server_name[64 + 1];
+	unsigned int	tcpudp;
+	unsigned int	server_ip;
+	unsigned int	port;
+	unsigned int	qos_sub;
+	unsigned int	qos_pub;
+	char			usr_name[64 + 1];
+	char			password[64 + 1];
+	//char			topic_sub[64 + 1];
+	//char			topic_pub[64 + 1];
+	//unsigned int	baud;
+	//unsigned int	open;
+}__packed;
+
+struct WEB_CFG_AUDIO{
+	unsigned int	audio_fre;
+	unsigned int	audio_qua;
+	unsigned int	audio_alarm;
+}__packed;
+
+
+
+typedef struct  _WEB_CFG
+{
+	struct WEB_CFG_LINK		ap;
+	struct WEB_CFG_LINK		sta;
+	struct WEB_CFG_IP		ip;
+	struct WEB_CFG_IP		eth_ip;
+	struct WEB_CFG_SERVER	server;
+	struct WEB_CFG_DTU		remote[REMOTE_SERVER_NUM];
+	struct WEB_CFG_AUDIO	audio;
+	struct iot_work_config		work_cfg;
+	char	password[33];
+	uint8_t check_sum;
+	bool	   save_web_cfg_pos;
+
+	//struct WEB_GPIO 		gpio;
+	WEB_SM web_sm;
+	void (*cur_routing)(UCHAR s, CHAR _step);
+	int (*assemble_routing)(UCHAR s, CHAR _step);
+	char get_name[GET_NAME_LEN];
+	char str_end_len;
+	char is_update_post;
+	char update_data_timer;
+	char need_reboot;
+	int update_data_cnt;
+	int post_len;
+	uint32_t update_addr;
+	uint32_t update_remain_size;
+} WEB_CFG;
+
+#define SAVE_WEB_CFG_SIZE(x)	((uint32_t)&((x)->save_web_cfg_pos) - (uint32_t)(x)) 
+#define SAVE_WEB_CFG_DATA_SIZE(x)	((uint32_t)&((x)->check_sum) - (uint32_t)(x)) 
+
+#if SUPPORT_WEBSERVER
+void web_server_init(void);
+#endif
+
+WEB_CFG *get_web_cfg(void);
+int load_web_cfg(WEB_CFG *cfg);
+void default_web_cfg(WEB_CFG *cfg);
+int save_web_cfg(WEB_CFG *cfg);
+	
+extern WEB_CFG web_cfg;
+
+
+#endif
+
