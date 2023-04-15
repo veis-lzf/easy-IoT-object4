@@ -392,7 +392,7 @@ int TLSConnectNetwork(TLSDataParams *pTlsData, const char *addr, const char *por
       * 4. Handshake
     
       */
-     printf("\r\n ****Performing the SSL/TLS handshake*****\r\n");
+     printf("\r\n ****准备握手*****\r\n");
     ALIOT_LOG_DEBUG("Performing the SSL/TLS handshake...");
 
     while ((ret = mbedtls_ssl_handshake(&(pTlsData->ssl))) != 0)
@@ -404,7 +404,7 @@ int TLSConnectNetwork(TLSDataParams *pTlsData, const char *addr, const char *por
             return ret;
         }
     }
-         printf("\r\n ****handshake ok*****\r\n");
+         printf("\r\n ****握手成功*****\r\n");
     
     ALIOT_LOG_DEBUG( " ok" );
     /*

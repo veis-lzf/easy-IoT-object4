@@ -245,7 +245,7 @@ void rgb565_test(void)
     OV5640_OutSize_Set((640 - fac * lcddev.width) / 2, (480 - fac * lcddev.height) / 2, lcddev.width, lcddev.height);
 
     DCMI_Start(); 		//启动传输
-    p_dbg("*************图片LCD模式*************");
+    printf("图片LCD模式\r\n");
 }
 /**
  * @brief   rgb565
@@ -254,13 +254,14 @@ void rgb565_test(void)
 */
 void cemera_cofig(void)
 {
+
     while(OV5640_Init())//初始化OV2640
     {
-        p_dbg("ov5640初始化失败");
+        printf("ov5640初始化失败\r\n");
+
     }
-    p_dbg("ov5640初始化");
-	
-    // 自动对焦初始化
+    printf("ov5640初始化\r\n");
+    //自动对焦初始化
     OV5640_RGB565_Mode();	//RGB565模式
     OV5640_Focus_Init();
 
@@ -270,8 +271,13 @@ void cemera_cofig(void)
     OV5640_Contrast(3);		//对比度0
     OV5640_Sharpness(33);	//自动锐度
     OV5640_Focus_Constant();//启动持续对焦
-    p_dbg("摄像头参数配置完成");
+    printf("摄像头配置\r\n");
 }
+/*-----------------------------------------------------------------------------------*/
+void netcamera_init(void)
+{
 
+}
+/*-----------------------------------------------------------------------------------*/
 //#endif
 

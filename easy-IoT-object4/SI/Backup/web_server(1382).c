@@ -92,7 +92,7 @@ void web_server_thread(void *parameter)
     srv_sock = socket(AF_INET, SOCK_STREAM, 0);     //创建一个socket，使用AF_INET
     if (srv_sock < 0)
     {
-        p_dbg("netcam: create server socket failed due to (%s)\n",
+        printf("netcam: create server socket failed due to (%s)\n",
                strerror(errno));
         goto exit;
     }
@@ -109,29 +109,28 @@ void web_server_thread(void *parameter)
 
     if (bind(srv_sock, (struct sockaddr *)&addr, sock_len) != 0)
     {
-        p_dbg("netcam: bind() failed due to (%s)\n",
+        printf("netcam: bind() failed due to (%s)\n",
                strerror(errno));
         goto exit;
     }
     if (listen(srv_sock, 5) != 0)               //5：内核为此套接口排队的最大连接个数
     {
-        p_dbg("netcam: listen() failed due to (%s)\n",
+        printf("netcam: listen() failed due to (%s)\n",
                strerror(errno));
         goto exit;
     }
     while (1)
     {
 
-        p_dbg("等待连接\r\n");
+        printf("等待连接\r\n");
 
         if(my_web_flag == 3)
         {
-            p_dbg("路由设置成功\r\n");
+            printf("路由设置成功\r\n");
             LCD_Init();
-			Show_Str(200,130,150,24,(unsigned char *)"智能识别器",24,0);
-			Show_Str(10,280,300,24,(unsigned char *)"WIFI设置",24,0);  
-			Show_Str(380,280,150,24,(unsigned char *)"识别模式",24,0);	
-
+            Show_Str(200, 130, 150, 24, "智能识别器", 24, 0);
+            Show_Str(10, 280, 300, 24, "WIFI设置:", 24, 0);
+            Show_Str(380, 280, 100, 24, "识别模式:", 24, 0);
             interface_ret = 0;
             send_work_event(MODE_DETECT_CHANGE_STA);
             my_web_flag = 0;
@@ -152,6 +151,7 @@ void web_server_thread(void *parameter)
                 buf = strstr(g_buf, sniper);                 //判断接收的数据是什
                 memcpy(g_buf, buf, 100);
                 g_buf[100] = '\0';
+                printf("\r\n1111111:%s  \r\n", g_buf);
 
                 my_ret = admin(g_buf);
                 if(my_ret == 0) {
@@ -167,7 +167,7 @@ void web_server_thread(void *parameter)
                 buf = strstr(g_buf, sniper);                 //判断接收的数据是什么
                 memcpy(g_buf, buf, 100);
                 g_buf[100] = '\0';
-
+                printf("\r\n1111111:%s  \r\n", g_buf);
                 sdid_set(g_buf);
                 send_link(client, (char *)html6);
                 my_web_flag = 3;
@@ -186,15 +186,15 @@ int  handle_user_rev(char *g_buf, char *str_1)
 {
     char *buf;
     char a;
-    p_dbg("    进入用户\r\n");
-    p_dbg("\r\n 2222222:%s  \r\n", g_buf);
+    printf("    进入用户\r\n");
+    printf("\r\n 2222222:%s  \r\n", g_buf);
     buf = strstr(g_buf, "user=");                 //判断接收的数据是什么
     buf = buf + 5;
     memcpy(g_buf, buf, 50);
     g_buf[50] = '\0';
-    p_dbg("\r\n 33333:%s \r\n", g_buf);
+    printf("\r\n 33333:%s \r\n", g_buf);
     sscanf(g_buf, "%[^&]", str);
-    p_dbg("\r\n4444:%s  \r\n", str);
+    printf("\r\n4444:%s  \r\n", str);
     return strcmp(str, admin_name);
 }
 
@@ -205,17 +205,17 @@ int  handle_pwd_rev (char *g_buf, char *str_2 )
 {
     char *buf;
 
-    p_dbg("    进入密码\r\n");
+    printf("    进入密码\r\n");
 
-    p_dbg("\r\n0000001:%s  \r\n", g_buf);
+    printf("\r\n0000001:%s  \r\n", g_buf);
     buf = strstr(g_buf, str_2);                 //判断接收的数据是什么
     buf = buf + 4;
     memcpy(g_buf, buf, 50);
     g_buf[50] = '\0';
 
-    p_dbg("\r\n0000001:%s  %d\r\n", g_buf, post_state);
+    printf("\r\n0000001:%s  %d\r\n", g_buf, post_state);
     sscanf(g_buf, "%[^ ]", str);
-    p_dbg("\r\n0000001:%s  \r\n", str);
+    printf("\r\n0000001:%s  \r\n", str);
     return strcmp(str, admin_pwd);
 }
 
@@ -226,16 +226,16 @@ int admin (char *g_buf )
 
     my_ret = handle_user_rev(g_buf, str_1);
     if(my_ret != 0) {
-        p_dbg("\r\n 用户名错误\r\n");
+        printf("\r\n 用户名错误\r\n");
         return -1 ;
     }
-    p_dbg("\r\n 用户名正确\r\n");
+    printf("\r\n 用户名正确\r\n");
     my_ret = handle_pwd_rev(g_buf, str_2);
     if(my_ret != 0) {
-        p_dbg("\r\n 密码错误\r\n");
+        printf("\r\n 密码错误\r\n");
         return -1 ;
     }
-    p_dbg("\r\n 密码正确\r\n");
+    printf("\r\n 密码正确\r\n");
     return 0;
 }
 /*-----------------------------------------------------------------------------------*/
@@ -262,12 +262,12 @@ int sdid_set (char *g_buf )
     my_str[strlen(my_str)] = '\0';
     a = (char *)mem_malloc(strlen(my_str) + 5);
     if(a == 0) {
-        p_dbg("\r\n 申请失败\r\n");
+        printf("\r\n 申请失败\r\n");
     }
 	
-    p_dbg("\r\n 账号=%s\r\n", my_str);
+    printf("\r\n 账号=%s\r\n", my_str);
     str_sta_name = my_str;
-    p_dbg("\r\n 账号=%s\r\n", str_sta_name);
+    printf("\r\n 账号=%s\r\n", str_sta_name);
 
     buf = strstr(g_buf, str_2);                 //判断接收的数据是什么
     buf = buf + strlen(str_2);
@@ -278,14 +278,14 @@ int sdid_set (char *g_buf )
     sscanf(g_buf, "%[^ ]", my_str1);
 
     my_str1[strlen(my_str1)] = '\0';
-    p_dbg("\r\n 密码=%s\r\n", my_str1);
+    printf("\r\n 密码=%s\r\n", my_str1);
 
     str_sta_pwd = my_str1;
 
-    p_dbg("\r\n 密码=%s\r\n", str_sta_pwd);
-    p_dbg("\r\n********\r\n");
-    p_dbg("\r\n 账号=%s\r\n", str_sta_name);
-    p_dbg("\r\n 密码=%s\r\n", str_sta_pwd);
+    printf("\r\n 密码=%s\r\n", str_sta_pwd);
+    printf("\r\n********\r\n");
+    printf("\r\n 账号=%s\r\n", str_sta_name);
+    printf("\r\n 密码=%s\r\n", str_sta_pwd);
 
     default_web_cfg(&web_cfg);
     save_web_cfg(&web_cfg);

@@ -24,7 +24,7 @@
 #endif
 
 #ifndef BAIDU_AI_FACE_ENABLE
-#define BAIDU_AI_FACE_ENABLE   SUPPORT_CAM
+#define BAIDU_AI_FACE_ENABLE         SUPPORT_CAM
 #endif
 
 #ifndef BAIDU_AI_VOICE_ENABLE

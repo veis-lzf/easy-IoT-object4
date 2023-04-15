@@ -8,7 +8,7 @@
 #include "type.h"
 
 #ifndef SUPPORT_AUDIO
-#define SUPPORT_AUDIO 			0
+#define SUPPORT_AUDIO 			1
 #endif
 
 #ifndef SUPPORT_CAM

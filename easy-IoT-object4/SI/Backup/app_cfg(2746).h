@@ -8,7 +8,7 @@
 #include "type.h"
 
 #ifndef SUPPORT_AUDIO
-#define SUPPORT_AUDIO 			0
+#define SUPPORT_AUDIO 			1
 #endif
 
 #ifndef SUPPORT_CAM
@@ -24,7 +24,7 @@
 #endif
 
 #ifndef BAIDU_AI_FACE_ENABLE
-#define BAIDU_AI_FACE_ENABLE   SUPPORT_CAM
+#define BAIDU_AI_FACE_ENABLE         SUPPORT_CAM
 #endif
 
 #ifndef BAIDU_AI_VOICE_ENABLE

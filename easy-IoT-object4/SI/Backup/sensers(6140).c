@@ -68,14 +68,12 @@ void senser_poll_callback(void *arg)
 
 void init_sensers(void)
 {
-#if 0
 //  int ret;
 #if ENABLE_RFID == 1
     init_rc522();
 #endif
     BH1750_I2C_Init();    //init port  to control BH1750
     init_dht11();
-#endif
 //     LCD_Init();		      //初始化lcd屏幕
 //    POINT_COLOR=RED;      //设置字体为红色 
     senser_poll_mutex = mutex_init("");               //新建一个互斥量

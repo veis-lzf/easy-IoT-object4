@@ -9,7 +9,7 @@
 #include <absacc.h>
 
 timer_t ind1_timer;
-static u8 ind1_timer_del = 0;
+
 
 void delay_1us()
 {
@@ -115,34 +115,29 @@ void ind2_timer_callback(void *arg)
 		IND2_OFF;
 }
 
-void ind1_timer_callback(void *arg)
+void ind4_timer_callback(void *arg)
 {
 	static bool led_stat = FALSE;
 
 	led_stat = !led_stat;
-	
-	if(led_stat)
-		IND1_ON;
-	else
-		IND1_OFF;
+
 
 }
 
 void indicate_led_twink_start(int fre)
 {
-	if(!ind1_timer_del)
-	{
-		ind1_timer_del = 1;
-		ind1_timer = timer_setup(10000, 1, ind1_timer_callback, NULL);
-		add_timer(ind1_timer);
-	}
-	mod_timer(ind1_timer, fre);	
+	// 
+	del_timer(ind1_timer);
+	mod_timer(ind1_timer, fre);
+	
+	ind1_timer = timer_setup(fre, 1, ind4_timer_callback, NULL);
+	add_timer(ind1_timer);
 }
 
 void indicate_led_twink_stop()
 {
-	ind1_timer_del = 1;
 	del_timer(ind1_timer);
+	IND2_OFF;
 }
 
 /**
@@ -150,8 +145,8 @@ void indicate_led_twink_stop()
  */
 void misc_init()
 {
-	indicate_led_twink_start(10000);
-
+	ind1_timer = timer_setup(10000, 1, ind4_timer_callback, NULL);
+	add_timer(ind1_timer);
 }
 
 void show_sys_info(struct netif *p_netif)

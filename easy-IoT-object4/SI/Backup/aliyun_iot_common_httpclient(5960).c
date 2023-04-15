@@ -590,7 +590,6 @@ int httpclient_retrieve_content(httpclient_t *client, char *data, int len, httpc
             }
             else
             {
-            	ALIOT_LOG_DEBUG("RMore data needs to be retrieved, ret=%d", HTTP_RETRIEVE_MORE_DATA);
                 memcpy(client_data->response_buf + count, data, client_data->response_buf_len - 1 - count);
                 client_data->response_buf[client_data->response_buf_len - 1] = '\0';
                 client_data->retrieve_len -= (client_data->response_buf_len - 1 - count);
@@ -651,7 +650,7 @@ int httpclient_retrieve_content(httpclient_t *client, char *data, int len, httpc
         }
 
     }
-	ALIOT_LOG_DEBUG("return SUCCESS_RETURN");
+
     return SUCCESS_RETURN;
 }
 
@@ -1001,7 +1000,7 @@ int httpclient_common(httpclient_t *client, char *url, int port, char *ca_crt, i
         httpclient_close(client);
         return ret;
     }
-	ALIOT_LOG_DEBUG("httpclient_connect is ok,ret = %d",ret);  
+
     ret = httpclient_send_request(client, url, method, client_data);           //发送请求
     if(0 != ret)
     {
@@ -1009,7 +1008,7 @@ int httpclient_common(httpclient_t *client, char *url, int port, char *ca_crt, i
         httpclient_close(client);
         return ret;
     }
-	ALIOT_LOG_DEBUG("httpclient_send_request is ok,ret = %d",ret);  
+
     ret = httpclient_recv_response(client, client_data);                          //接收响应                   
     if (0 != ret)
     {
@@ -1017,7 +1016,7 @@ int httpclient_common(httpclient_t *client, char *url, int port, char *ca_crt, i
         httpclient_close(client);
         return ret;
     }
-	ALIOT_LOG_DEBUG("httpclient_recv_response is ok,ret = %d",ret); 
+
     httpclient_close(client);
     return ret;
 }

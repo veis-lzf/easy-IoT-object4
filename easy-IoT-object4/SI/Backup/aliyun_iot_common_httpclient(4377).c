@@ -590,7 +590,6 @@ int httpclient_retrieve_content(httpclient_t *client, char *data, int len, httpc
             }
             else
             {
-            	ALIOT_LOG_DEBUG("RMore data needs to be retrieved, ret=%d", HTTP_RETRIEVE_MORE_DATA);
                 memcpy(client_data->response_buf + count, data, client_data->response_buf_len - 1 - count);
                 client_data->response_buf[client_data->response_buf_len - 1] = '\0';
                 client_data->retrieve_len -= (client_data->response_buf_len - 1 - count);
@@ -651,7 +650,7 @@ int httpclient_retrieve_content(httpclient_t *client, char *data, int len, httpc
         }
 
     }
-	ALIOT_LOG_DEBUG("return SUCCESS_RETURN");
+
     return SUCCESS_RETURN;
 }
 

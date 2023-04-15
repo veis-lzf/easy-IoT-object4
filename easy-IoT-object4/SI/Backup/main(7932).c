@@ -49,7 +49,13 @@ void main_thread(void *pdata)
 		RCC_ClocksStatus.PCLK2_Frequency, 
 		0);
 #endif
-    LCD_Init();		      // 初始化lcd屏幕
+    //init the SPI flash
+	m25p80_init();  
+    LCD_Init();		      //初始化lcd屏幕
+    POINT_COLOR=RED;      
+     
+     
+//     show_pic_init();
     interface_display();
 #if 0
 	NRF24L01_Init();    //not support
@@ -90,6 +96,7 @@ void main_thread(void *pdata)
 	open_audio();       //音频相关的初始化
 #endif
 	init_key_dev();
+//	init_rtc();
 
 #if 0
 #if	!SUPPORT_AUDIO
@@ -99,12 +106,20 @@ void main_thread(void *pdata)
 	
     misc_init();
 
+//    interface_init();
+   
+//    init_sensers(); 
+
+//   my_hanzi_display();
+//    show_pic_init();
+
+    
+    
+
 #if SUPPORT_CAM	
 	open_camera();     //摄像头的初始化
-
-#if BAIDU_AI_VOICE_ENABLE
+    
      MUTE_ON;
-#endif
   
 #endif
 #if SURPPORT_USB

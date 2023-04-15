@@ -2,7 +2,6 @@
 #define __FONTUPD_H__	 
 #include <stm32f4xx.h>
 
-
 //字体信息保存地址,占33个字节,第1个字节用于标记字库是否存在.后续每8个字节一组,分别保存起始地址和文件大小														   
 extern u32 FONTINFOADDR;	
 //字库信息结构体定义

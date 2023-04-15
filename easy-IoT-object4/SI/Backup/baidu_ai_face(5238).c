@@ -1400,7 +1400,7 @@ int UTF8toGBK(const unsigned char* pszBufIn, int nBufInLen, unsigned char* pszBu
         else if ((pszBufIn[i] & 0xF0) == 0xE0) // 3? 
         {
 
-            if (i+2 >= nBufInLen) return -1; 
+            if (i+ 2 >= nBufInLen) return -1; 
             unicode = (((int)(pszBufIn[i] & 0x0F)) << 12) | (((int)(pszBufIn[i+1] & 0x3F)) << 6) | (pszBufIn[i+2]  & 0x3F); 
             gbk = mb_uni2gb_table[unicode-0x4e00];
             
@@ -1413,88 +1413,8 @@ int UTF8toGBK(const unsigned char* pszBufIn, int nBufInLen, unsigned char* pszBu
         {
             return -1;
         }
-		(*pnBufOutLen)++;
     }
     return 0;
-}
-
-/*************************************************************************************************
-* 将UTF8编码转换成Unicode（UCS-2LE）编码  低地址存低位字节
-* 参数：
-*    char* pInput     输入字符串
-*    char*pOutput   输出字符串
-* 返回值：转换后的Unicode字符串的字节数，如果出错则返回-1
-**************************************************************************************************/
-//utf8转unicode
-int Utf8ToUnicode(char* pInput, char* pOutput)
-{
-    int outputSize = 0; //记录转换后的Unicode字符串的字节数
- 
-    while (*pInput)
-    {
-        if (*pInput > 0x00 && *pInput <= 0x7F) //处理单字节UTF8字符（英文字母、数字）
-        {
-            *pOutput = *pInput;
-             pOutput++;
-            *pOutput = 0; //小端法表示，在高地址填补0
-        }
-        else if (((*pInput) & 0xE0) == 0xC0) //处理双字节UTF8字符
-        {
-            char high = *pInput;
-            pInput++;
-            char low = *pInput;
-            if ((low & 0xC0) != 0x80)  //检查是否为合法的UTF8字符表示
-            {
-                return -1; //如果不是则报错
-            }
- 
-            *pOutput = (high << 6) + (low & 0x3F);
-            pOutput++;
-            *pOutput = (high >> 2) & 0x07;
-        }
-        else if (((*pInput) & 0xF0) == 0xE0) //处理三字节UTF8字符
-        {
-            char high = *pInput;
-            pInput++;
-            char middle = *pInput;
-            pInput++;
-            char low = *pInput;
-            if (((middle & 0xC0) != 0x80) || ((low & 0xC0) != 0x80))
-            {
-                return -1;
-            }
-            *pOutput = (middle << 6) + (low & 0x3F);//取出middle的低两位与low的低6位，组合成unicode字符的低8位
-            pOutput++;
-            *pOutput = (high << 4) + ((middle >> 2) & 0x0F); //取出high的低四位与middle的中间四位，组合成unicode字符的高8位
-        }
-        else //对于其他字节数的UTF8字符不进行处理
-        {
-            return -1;
-        }
-        pInput ++;//处理下一个utf8字符
-        pOutput ++;
-        outputSize += 2;
-    }
-    //unicode字符串后面，有两个\0
-    *pOutput = 0;
-     pOutput++;
-    *pOutput = 0;
-    return outputSize;
-}
-
-// 将Utf8转成字符串形式
-int Utf8ToStr(char* pInput, char* pOutput){
-
-    char *ptemp = (char*)malloc(strlen(pInput)/3*2);
-    int num = Utf8ToUnicode(pInput, ptemp);
-    if (num != -1){
-        unsigned char* p = (unsigned char*)ptemp;
-        for (int i = 0; i <= num/2; i=i+2)
-        {
-            sprintf(&pOutput[strlen(pOutput)], "\\u%x%x", p[i+1], p[i]);
-        }
-    }
-    return num;
 }
 
 //urlencode a utf8 string
@@ -1873,13 +1793,10 @@ void play_image_recog_result(char *result)   // 对图片信息进行播报
     char *num = strstr(result, "result"); // 查找标识字符串
     char *key = NULL;
 	char *data = NULL;
-	int ret_len = 0;
     int value = 0;
 
-	// 停止图像传输，请屏
 	DCMI_Stop();
    	LCD_Clear(WHITE);
-	
     do
     {
         if(num == NULL) { // 没有找到数据返回的结果开始标识
@@ -1899,39 +1816,19 @@ void play_image_recog_result(char *result)   // 对图片信息进行播报
             while(*key != '"') key++;
             key++;
             while(*(key + value) != '"') value++;
-
-			p_dbg("keyword len=%d", value);
-			// 分配内存存储keyword结果
-			unsigned char *pszBufOut = (unsigned char *)mem_malloc(strlen(key)*4);
-			int nBufOutLen = 0;
 			
-			int ret = UTF8toGBK(key, strlen(key), pszBufOut, &nBufOutLen); // utf8转成中文在LCD显示
-			pszBufOut[nBufOutLen] = '\0';
-
-			while(*(pszBufOut+ret_len) != '"') ret_len++;
-			pszBufOut[ret_len] = '\0';
+            //send_and_encode_text_event(key, value);
+            p_dbg("答案是：%s", key);
+            Show_Str(200,130,120,24,(u8 *)key,24,0);
 			
-            if(ret != -1)
-            {
-           		p_dbg("keyword结果：%s，长度=%d", pszBufOut, ret_len);
-				Show_Str(100,130,180,24,"识别成功结果->",24,0);
-            	Show_Str(280,130,100,24,(u8 *)pszBufOut,24,0);
+            data = (char *)url_encode_utf8_text(key, value);         //utf8编码并转urlcode的值    data：  urlcode编码后的值
+            if(data) {
+				#if BAIDU_AI_VOICE_ENABLE
+					baidu_ai_text2audio(&auth_info, data);           //语音转文字    传入的是data：  urlcode编码后的值
+				#endif
+
+                mem_free(data);
             }
-			else
-			{
-				p_dbg("UTF8toGBK call fail, ret = %d", ret);
-				Show_Str(200,130,120,24,"UTF8toGBK call fail",24,0);
-			}
-			mem_free(pszBufOut);
-			
-			#if BAIDU_AI_VOICE_ENABLE
-	            data = (char *)url_encode_utf8_text(key, value); // utf8编码并转urlcode的值    data：  urlcode编码后的值
-	            if(data) 
-				{
-					baidu_ai_text2audio(&auth_info, data); // 语音转文字    传入的是data：  urlcode编码后的值
-	                mem_free(data);
-	            }
-			#endif
         }
     } while(0);
 	wait_event_timeout(client_camera_event, 0);
@@ -2097,7 +1994,7 @@ int32_t baidu_ai_image_verify(ai_auth_info_t  *auth_info)         //图像识别
 void ai_image_task(void* arg)
 {
     int32_t ret = 0, b = 1;
-    aliyun_iot_common_log_set_level(ALIOT_LOG_LEVEL_NONE);   //g_iotLogLevel==1;
+    aliyun_iot_common_log_set_level(ALIOT_LOG_LEVEL_DEBUG);   //g_iotLogLevel==1;
     ALIOT_LOG_INFO("start ai_image_task");                    //日志
     aliyun_iot_pthread_taskdelay(10000);        //睡眠延时  也就是把改任务挂起（阻塞）相对应的时间
     client_camera_event = init_event();         //创建一个二值信号量    是否进入物体识别模式

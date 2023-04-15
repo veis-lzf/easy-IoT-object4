@@ -21,6 +21,8 @@ typedef struct
 
 }NETCAMERA_HandleTypeDef;
 
+
+void netcamera_init(void);		   //网络摄像头初始化(创建网络摄像头线程)
 void netcamera_task(void );
 void  cemera_cofig(void);
 void  rgb565_test(void);

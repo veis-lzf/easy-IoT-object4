@@ -226,7 +226,6 @@ static int connect_ssl(pNetwork_t pNetwork)
 
     pNetwork->handle = (intptr_t)aliyun_iot_memory_malloc(sizeof(TLSDataParams));
     if (NULL == (void *)pNetwork->handle) {
-		 ALIOT_LOG_ERROR("aliyun_iot_memory_malloc fail");
         return -1;
     }
 
@@ -241,7 +240,6 @@ static int connect_ssl(pNetwork_t pNetwork)
         //TODO SHOLUD not remove this handle space
         // The space will be freed by calling disconnect_ssl()
         //aliyun_iot_memory_free((void *)pNetwork->handle);
-         ALIOT_LOG_ERROR("TODO SHOLUD not remove this handle space");
         return -1;
     }
 }

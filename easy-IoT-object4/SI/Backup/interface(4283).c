@@ -34,12 +34,12 @@ void interface_thread(void *parameter)
 void interface_display(void )
 {
    font_init();     //字库初始化
-
-   POINT_COLOR=BLUE;      //设置字体为红色 
-//   show_pic_init(1);
+   LCD_Init();		      //初始化lcd屏幕
+   POINT_COLOR=RED;      //设置字体为红色 
+   show_pic_init(1);
    Show_Str(200,130,150,24,(unsigned char *)"智能识别器",24,0);
-   Show_Str(10,280,300,24,(unsigned char *)"WIFI设置",24,0);	
-   Show_Str(380,280,150,24,(unsigned char *)"识别模式",24,0);   
+   Show_Str(10,280,300,24,(unsigned char *)"WIFI设置:",24,0);	
+   Show_Str(380,280,100,24,(unsigned char *)"识别模式:",24,0);   
 }
 
 

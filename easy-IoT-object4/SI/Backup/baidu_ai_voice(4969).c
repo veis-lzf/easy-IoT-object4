@@ -830,7 +830,7 @@ void ai_voice_task(void* arg)         //语音处理的任务
 {
     int32_t ret = 0;
     char * data = 0;
-    aliyun_iot_common_log_set_level(ALIOT_LOG_LEVEL_NONE);   //觉得打印的信息  debug  info error  等等
+    aliyun_iot_common_log_set_level(ALIOT_LOG_LEVEL_DEBUG);   //觉得打印的信息  debug  info error  等等
 
     ALIOT_LOG_DEBUG("start ai_voice_task");
     aliyun_iot_pthread_taskdelay(20000);

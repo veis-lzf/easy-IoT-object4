@@ -107,10 +107,10 @@ void handle_key(int key_type, int key_level, int long_press)
     case KEY2:
         if(!long_press)
         {
-            p_dbg("****** KEY2  SHORT *******");
+            printf("\r\n****** KEY2  SHORT *******\r\n");
             if(interface_ret == 0)
             {   
-				p_dbg("******按键按下，准备进入WIFI模式设置 *******");
+				printf("\r\n******按键按下，准备进入WIFI模式设置 *******\r\n");
                 wifi_ret = 0;
                 interface_ret = 1;
                 send_work_event(MODE_DETECT_CHANGE_AP);
@@ -130,27 +130,27 @@ void handle_key(int key_type, int key_level, int long_press)
         } 
 		else {
 #if SUPPORT_WIFI
-            p_dbg("****** KEY2  LONG *******");
-			send_work_event(INTERFACE_MODE_MOST); // 返回主界面
+            printf("\r\n****** KEY2  LONG *******\r\n");
+            printf("\r\n******  *******\r\n");
 #endif
         }
         break;
     case KEY_USR:
         if(!long_press) {   
-			p_dbg("****** KEY1  SHORT *******");
+			printf("\r\n****** KEY1  SHORT *******\r\n");
             if(interface_ret == 0)
             {
-                p_dbg("******按键按下，准备进入识别模式设置 *******");
+                printf("\r\n******按键按下，准备进入识别模式设置 *******\r\n");
                 interface_ret = 1;
                 send_work_event(INTERFACE_MODE_SHIBIE);
             }
             else {
-                wake_up(client_camera_event); //释放信号量  ，唤醒事件  client_camera_event
+                wake_up(client_camera_event);             //释放信号量  ，唤醒事件  client_camera_event
             }
         } 
 		else {
-            p_dbg("****** KEY1  LONG *******");
-            send_work_event(INTERFACE_MODE_MOST); // 返回主界面
+            printf("\r\n****** KEY1  LONG *******\r\n");
+            send_work_event(INTERFACE_MODE_MOST);
         }
         break;
     default:

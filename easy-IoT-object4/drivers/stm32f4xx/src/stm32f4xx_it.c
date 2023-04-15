@@ -279,7 +279,7 @@ void EXTI15_10_IRQHandler(void)
 	if(EXTI_GetITStatus(EXTI_Line11) == SET)
 	{
 		EXTI_ClearITPendingBit(EXTI_Line11);
-		__EXTI11_IRQHandler();
+		//__EXTI11_IRQHandler();
 	}	
 }
 
@@ -289,7 +289,7 @@ void EXTI2_IRQHandler(void)
 	if(EXTI_GetITStatus(EXTI_Line2) == SET)
 	{
 		EXTI_ClearITPendingBit(EXTI_Line2);
-		__DHT11_IRQHandler();
+		//__DHT11_IRQHandler();
 	}
 
 }

@@ -8,7 +8,7 @@
 extern int dbg_level;
 
 #define SYS_MONITOR    			1		//MONITOR开关
-#define RELEASE_VERSION			1		//置1后将关闭所有打印信息
+#define RELEASE_VERSION			0		//置1后将关闭所有打印信息
 
 
 #if RELEASE_VERSION		

@@ -78,8 +78,8 @@ void reset_ctl_cfg(WEB_CFG *cfg)
 
 }
 
-#define str_ap_n  "lwip_ap"  
-#define str_ap_p  "123456789"
+#define str_ap_n  "ÖÇÄÜÊ¶±ğÆ÷"  
+#define str_ap_p  "123456789"  
 #define str_sta_n  "veis"  
 #define str_sta_p  "123456789"  
  
@@ -111,8 +111,10 @@ void default_web_cfg(WEB_CFG *cfg)
     cfg->ap.channel = 6;
     cfg->ap.enable = 1;
     cfg->ap.mode= MODE_AP;
-    strcpy(cfg->ap.essid, str_ap_name);
-    strcpy(cfg->ap.key, str_ap_pwd);
+//    strcpy(cfg->ap.essid, str_ap_name);
+//    strcpy(cfg->ap.key, str_ap_pwd);
+     strcpy(cfg->ap.essid, "ÖÇÄÜÊ¶±ğÆ÷");
+    strcpy(cfg->ap.key, "123456789");
     printf("\r\n ÕËºÅ=%s\r\n",cfg->ap.essid);
     printf("\r\n ÃÜÂë=%s\r\n",cfg->ap.key);
 

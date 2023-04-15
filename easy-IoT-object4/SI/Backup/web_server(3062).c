@@ -128,10 +128,9 @@ void web_server_thread(void *parameter)
         {
             p_dbg("路由设置成功\r\n");
             LCD_Init();
-			Show_Str(200,130,150,24,(unsigned char *)"智能识别器",24,0);
-			Show_Str(10,280,300,24,(unsigned char *)"WIFI设置",24,0);  
-			Show_Str(380,280,150,24,(unsigned char *)"识别模式",24,0);	
-
+            Show_Str(200, 130, 150, 24, "智能识别器", 24, 0);
+            Show_Str(10, 280, 300, 24, "WIFI设置:", 24, 0);
+            Show_Str(380, 280, 100, 24, "识别模式:", 24, 0);
             interface_ret = 0;
             send_work_event(MODE_DETECT_CHANGE_STA);
             my_web_flag = 0;

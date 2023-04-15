@@ -29,6 +29,8 @@ typedef struct AI_AUTH_INFO
 //authentication to AI, get token, return 0 if successful
 int32_t ai_get_token(void);
 extern void baidu_ai_image_client(void);
+//  utf8转为Unicode，让pad可显示中文
+int UTF8toGBK(const unsigned char* pszBufIn, int nBufInLen, unsigned char* pszBufOut, int* pnBufOutLen);
 #if defined(__cplusplus)
 }
 #endif
