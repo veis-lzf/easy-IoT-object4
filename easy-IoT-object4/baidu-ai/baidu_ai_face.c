@@ -60,6 +60,7 @@ extern wait_event_t client_pic_event;
 extern int camera_mode( int  CAMERA_MODE);
 extern void netcamera_task(void );
 wait_event_t client_camera_event = NULL;            //是否进入物体识别模式
+extern wait_event_t client_tts_event; //是否需要文字转语音
 
 extern aliot_err_t aliyun_iot_common_base64encode(const uint8_t *data, uint32_t inputLength, uint32_t outputLenMax,uint8_t *encodedData,uint32_t *outputLength);
 
@@ -71,6 +72,9 @@ NETCAMERA_HandleTypeDef   my_netcemera;
 //''开始识别''utf8编码并转urlcode的值
 //http://www.mytju.com/classcode/tools/encode_utf8.asp
 char *beginhint = "%E5%BC%80%E5%A7%8B%E8%AF%86%E5%88%AB\0";
+
+// 识别失败
+char *endhint = "%E8%AF%86%E5%88%AB%E5%A4%B1%E8%B4%A5\0";
 
 const unsigned short mb_uni2gb_table[20902] = 
 {0xd2bb,0xb6a1,0x8140,0xc6df,0x8141,0x8142,0x8143,0xcdf2,0xd5c9,0xc8fd,0xc9cf,0xcfc2,0xd8a2,0xb2bb,0xd3eb,0x8144,
@@ -1880,9 +1884,27 @@ void play_image_recog_result(char *result)   // 对图片信息进行播报
 	DCMI_Stop();
    	LCD_Clear(WHITE);
 	
+	#if BAIDU_AI_VOICE_ENABLE
+        data = (char *)url_encode_utf8_text(beginhint, strlen(beginhint)); // utf8编码并转urlcode的值    data：  urlcode编码后的值
+        if(data) 
+		{
+			wake_up(client_tts_event); 
+			baidu_ai_text2audio(&auth_info, data); // 语音转文字    传入的是data：  urlcode编码后的值
+            mem_free(data);
+        }
+	#endif
     do
     {
         if(num == NULL) { // 没有找到数据返回的结果开始标识
+        	#if BAIDU_AI_VOICE_ENABLE
+		        data = (char *)url_encode_utf8_text(endhint, strlen(endhint)); // utf8编码并转urlcode的值    data：  urlcode编码后的值
+		        if(data) 
+				{
+					wake_up(client_tts_event); 
+					baidu_ai_text2audio(&auth_info, data); // 语音转文字    传入的是data：  urlcode编码后的值
+		            mem_free(data);
+		        }
+			#endif
         	p_dbg("识别失败！");
 			Show_Str(200,130,120,24,"识别失败",24,0);
             break;
@@ -1901,6 +1923,7 @@ void play_image_recog_result(char *result)   // 对图片信息进行播报
             while(*(key + value) != '"') value++;
 
 			p_dbg("keyword len=%d", value);
+			
 			// 分配内存存储keyword结果
 			unsigned char *pszBufOut = (unsigned char *)mem_malloc(strlen(key)*4);
 			int nBufOutLen = 0;
@@ -1915,7 +1938,7 @@ void play_image_recog_result(char *result)   // 对图片信息进行播报
             {
            		p_dbg("keyword结果：%s，长度=%d", pszBufOut, ret_len);
 				Show_Str(100,130,180,24,"识别成功结果->",24,0);
-            	Show_Str(280,130,100,24,(u8 *)pszBufOut,24,0);
+            	Show_Str(280,130,240,24,(u8 *)pszBufOut,24,0);
             }
 			else
 			{
@@ -1923,11 +1946,12 @@ void play_image_recog_result(char *result)   // 对图片信息进行播报
 				Show_Str(200,130,120,24,"UTF8toGBK call fail",24,0);
 			}
 			mem_free(pszBufOut);
-			
+
 			#if BAIDU_AI_VOICE_ENABLE
 	            data = (char *)url_encode_utf8_text(key, value); // utf8编码并转urlcode的值    data：  urlcode编码后的值
 	            if(data) 
 				{
+					wake_up(client_tts_event); 
 					baidu_ai_text2audio(&auth_info, data); // 语音转文字    传入的是data：  urlcode编码后的值
 	                mem_free(data);
 	            }
@@ -1942,7 +1966,6 @@ void play_image_recog_result(char *result)   // 对图片信息进行播报
 int ai_image_httpclient_common(ai_auth_info_t  *auth_info, httpclient_t *client, char *url, int port, char *ca_crt, int method, httpclient_data_t *client_data)
 {
     int ret = ERROR_HTTP_CONN;
-    int b;
     char * post_buf = NULL, *rawdata = NULL;
     int  length = 0, len1 = 0, len2 = 0, rawlen = 0;
     char port_str[6] = { 0 };
@@ -1966,7 +1989,7 @@ int ai_image_httpclient_common(ai_auth_info_t  *auth_info, httpclient_t *client,
     do
     {
         p_dbg("****识连接成功，等待图片数据的到来 *****");
-        b = wait_event_timeout(client_camera_event, 0);  //阻塞等待信号量   摄像头模式   按键按下  默认为lcd显示模式
+        wait_event_timeout(client_camera_event, 0);  //阻塞等待信号量   摄像头模式   按键按下  默认为lcd显示模式
         netcamera_task();
 		 // 图片没有到来
         if(image_data == NULL) {
@@ -2046,7 +2069,7 @@ int ai_image_httpclient_common(ai_auth_info_t  *auth_info, httpclient_t *client,
     return ret;
 }
 
-int32_t baidu_ai_image_verify(ai_auth_info_t  *auth_info)         //图像识别
+int32_t baidu_ai_image_verify(ai_auth_info_t  *auth_info)         // 图像识别
 {
 
     int ret = -1, length = 0;//, len1 = 0, len2 = 0;
@@ -2080,12 +2103,12 @@ int32_t baidu_ai_image_verify(ai_auth_info_t  *auth_info)         //图像识别
 
     if(ret == 0)
     {
-        play_image_recog_result(response_buf);    //对图片信息进行播报
+        play_image_recog_result(response_buf); // 对图片信息进行播报
         aliyun_iot_pthread_taskdelay(1000);
     }
     if (NULL != response_buf)
     {
-        aliyun_iot_memory_free(response_buf);            //对接收空间的的释放
+        aliyun_iot_memory_free(response_buf); // 对接收空间的的释放
     }
     return ret;
 }
@@ -2097,9 +2120,9 @@ int32_t baidu_ai_image_verify(ai_auth_info_t  *auth_info)         //图像识别
 void ai_image_task(void* arg)
 {
     int32_t ret = 0, b = 1;
-    aliyun_iot_common_log_set_level(ALIOT_LOG_LEVEL_NONE);   //g_iotLogLevel==1;
+    aliyun_iot_common_log_set_level(ALIOT_LOG_LEVEL_DEBUG);   //g_iotLogLevel==1;
     ALIOT_LOG_INFO("start ai_image_task");                    //日志
-    aliyun_iot_pthread_taskdelay(10000);        //睡眠延时  也就是把改任务挂起（阻塞）相对应的时间
+//    aliyun_iot_pthread_taskdelay(10000);        //睡眠延时  也就是把改任务挂起（阻塞）相对应的时间
     client_camera_event = init_event();         //创建一个二值信号量    是否进入物体识别模式
     do
     {
@@ -2107,7 +2130,6 @@ void ai_image_task(void* arg)
         if(ret != SUCCESS_RETURN) {
             aliyun_iot_pthread_taskdelay(10000);
             ALIOT_LOG_ERROR("ai_get_token ret=[%d]", ret);
-            p_dbg("\r\n token获取失败 \r\n");
             continue;
         }
 		
@@ -2115,11 +2137,10 @@ void ai_image_task(void* arg)
             p_dbg_enter_task;
             ret = baidu_ai_image_verify(&auth_info);      //图像识别
             if(ret != SUCCESS_RETURN) {
-                aliyun_iot_pthread_taskdelay(5000);    //睡眠延时  也就是把改任务挂起（阻塞）相对应的时间
+            //    aliyun_iot_pthread_taskdelay(5000);    //睡眠延时  也就是把改任务挂起（阻塞）相对应的时间
                 ALIOT_LOG_ERROR("baidu_ai_image_verify ret=[%d]", ret);
-                p_dbg("图像识别失败\r\n");
             }
-            aliyun_iot_pthread_taskdelay(2000);    //睡眠延时  也就是把改任务挂起（阻塞）相对应的时间
+            aliyun_iot_pthread_taskdelay(1000);    //睡眠延时  也就是把改任务挂起（阻塞）相对应的时间
             p_dbg_exit_task;
         }
     } while(1);
