@@ -77,7 +77,8 @@ void main_process()
 #if SUPPORT_WIFI
       if(pending_event & MODE_DETECT_CHANGE_AP)
       {
-            show_pic_init(2);
+            DCMI_Stop();
+            LCD_Clear(WHITE);
             Show_Str(100,120,300,24,"打开手机浏览器，",24,0);	
             Show_Str(150,150,300,24,"输入192.168.0.37",24,0);
             Show_Str(200,180,200,24,"配置路由信息:",24,0);             
