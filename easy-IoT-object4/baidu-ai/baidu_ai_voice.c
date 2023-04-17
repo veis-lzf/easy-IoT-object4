@@ -38,17 +38,21 @@
 #include "mad.h"   //for mp3 playback
 #if BAIDU_AI_VOICE_ENABLE
 
-//#define APIKEY "fmNTHNK2KqXsoosYxhUxL2R7"
-//#define SECRETKEY "jEm58eC6ra9fAap7cKOX20LIFQiPhcvr"
-//#define FACE_GID "test_group_1"
-//#define FACE_UID "test_user_1"
+#if (!BAIDU_AI_FACE_ENABLE)
+#define APIKEY "fmNTHNK2KqXsoosYxhUxL2R7"
+#define SECRETKEY "jEm58eC6ra9fAap7cKOX20LIFQiPhcvr"
+#define FACE_GID "test_group_1"
+#define FACE_UID "test_user_1"
 
-//const static char *ai_auth_host = "https://aip.baidubce.com/oauth/2.0/token";
+const static char *ai_auth_host = "https://aip.baidubce.com/oauth/2.0/token";
+#endif
+
 const static char *ai_voice2text_host = "https://vop.baidu.com/server_api";
 const static char *ai_text2voice_host = "https://tsn.baidu.com/text2audio";
 
 extern ai_auth_info_t auth_info;
 
+wait_event_t client_tts_event = NULL; //ÊÇ·ñĞèÒªÎÄ×Ö×ªÓïÒô
 
 extern void dac_close(void);
 extern int  dac_open(void);
@@ -382,7 +386,8 @@ int ai_httpclient_voice2text(ai_auth_info_t  *auth_info, httpclient_t *client, c
 
     return ret;
 }
-#if 0
+
+#if (!BAIDU_AI_FACE_ENABLE)
 int32_t baidu_ai_audio_auth(ai_auth_info_t  *auth_info)         //»ñÈ¡token
 {
 #define HTTP_POST_MAX_LEN   (512)
@@ -667,7 +672,7 @@ aliot_err_t ai_httpclient_text2audio_recv_response(httpclient_t *client, httpcli
                     pH += strlen("\r\n\r\n");
                     MUTE_OFF;
                     dac_open();
-                    play_mp3_stream((uint8_t*)pH, buf + ret - pH);              //¶Ô·µ»Ø»ØÀ´µÄÊı¾İ½øĞĞ²¥·Å   pH£º´æ·ÅÊı¾İµÄµØÖ·
+                    play_mp3_stream((uint8_t*)pH, buf + ret - pH); // ¶Ô·µ»Ø»ØÀ´µÄÊı¾İ½øĞĞ²¥·Å   pH£º´æ·ÅÊı¾İµÄµØÖ·
                     recflag = 1;
                     dac_close();
                     MUTE_ON;
@@ -680,7 +685,7 @@ aliot_err_t ai_httpclient_text2audio_recv_response(httpclient_t *client, httpcli
                 pH = buf;
                 MUTE_OFF;
                 dac_open();
-                play_mp3_stream((uint8_t*)pH, buf + ret - pH);                //¶Ô·µ»Ø»ØÀ´µÄÊı¾İ½øĞĞ²¥·Å   pH£º´æ·ÅÊı¾İµÄµØÖ·
+                play_mp3_stream((uint8_t*)pH, buf + ret - pH);  // ¶Ô·µ»Ø»ØÀ´µÄÊı¾İ½øĞĞ²¥·Å   pH£º´æ·ÅÊı¾İµÄµØÖ·
                 content_len -= (buf + ret - pH);
                 dac_close();
                 MUTE_ON;
@@ -724,7 +729,7 @@ int ai_httpclient_text2audio(ai_auth_info_t  *auth_info, httpclient_t *client, c
 
     aliyun_iot_net_init(&client->net, host, port_str, ca_crt);
 
-    ret = httpclient_connect(client);                                            //Á¬½ÓÍøÂç
+    ret = httpclient_connect(client); // Á¬½ÓÍøÂç
     if(0 != ret)
     {
         ALIOT_LOG_ERROR("httpclient_connect return ret = [%d]", ret);
@@ -732,26 +737,23 @@ int ai_httpclient_text2audio(ai_auth_info_t  *auth_info, httpclient_t *client, c
 
         return ret;
     }
-    ret = ai_httpclient_voice_send_request(client, url, method, client_data);     //ÎÄ×Ö×ªÓïÒôµÄÇëÇó
+    ret = ai_httpclient_voice_send_request(client, url, method, client_data); // ÎÄ×Ö×ªÓïÒôµÄÇëÇó
     if(0 != ret) {
         ALIOT_LOG_ERROR("httpclient_send_request is error,ret = %d", ret);
-
         httpclient_close(client);
         return ret;
     }
-    printf("\r\n ¡°text to audio¡±ÇëÇó³É¹¦ \r\n");
-    init_mp3_format();                                                   //¶ÔÒ»Ğ©Êı¾İ½øĞĞ¿Õ¼ä·ÖÅä
-    reset_mp3_stat();                                                    //¸´Î»Ò»Ğ©½á¹¹Ìå
+	
+    init_mp3_format(); // ¶ÔÒ»Ğ©Êı¾İ½øĞĞ¿Õ¼ä·ÖÅä
+    reset_mp3_stat(); // ¸´Î»Ò»Ğ©½á¹¹Ìå
 
     ret = ai_httpclient_text2audio_recv_response(client, client_data);     //ÎÄ×Ö×ªÓïÒôµÄ  »ØÓ¦µÄÊı¾İ½øĞĞ´¦Àí£¬dacÊä³ö
     if (0 != ret) {
         ALIOT_LOG_ERROR("httpclient_recv_response is error,ret = %d", ret);
         deinit_mp3_format();
         httpclient_close(client);
-        printf("\r\n ¡°text to audio¡±Ê§°Ü \r\n");
         return ret;
     }
-    printf("\r\n ¡°text to audio¡±ÏìÓ¦³É¹¦ \r\n");
     deinit_mp3_format();
 
     httpclient_close(client);               //¹Ø±ÕÁ¬½Ó
@@ -792,11 +794,11 @@ int32_t baidu_ai_text2audio(ai_auth_info_t  *auth_info, char *data)  //ÎÄ×Ö×ªÓïÒ
              "%s?tex=%s&lan=zh&cuid=%s&ctp=1&per=%d&tok=%s",
              ai_text2voice_host, data + index, auth_info->userid, type, auth_info->token);
 
-    ret = ai_httpclient_text2audio(auth_info, &httpclient, (char *)ai_host, 443, (char *)aliyun_iot_ca_get(), HTTPCLIENT_GET, &httpclient_data);   // ÎÄ×Ö×ªÓïÒôµÄÇëÇó£¬ÏìÓ¦Êı¾İµÄ´¦Àí
+    ret = ai_httpclient_text2audio(auth_info, &httpclient, (char *)ai_host, HTTPS_PORT, (char *)aliyun_iot_ca_get(), HTTPCLIENT_GET, &httpclient_data);   // ÎÄ×Ö×ªÓïÒôµÄÇëÇó£¬ÏìÓ¦Êı¾İµÄ´¦Àí
     return ret;
 }
 
-#if 0
+#if (!BAIDU_AI_FACE_ENABLE)
 int32_t ai_audio_get_token(void)     //»ñÈ¡token
 {
 #define TOCKEN "24.099c21adb4e057716f2f35c762f02bbd.2592000.1527523382.282335-11172081"
@@ -830,13 +832,16 @@ void ai_voice_task(void* arg)         //ÓïÒô´¦ÀíµÄÈÎÎñ
 {
     int32_t ret = 0;
     char * data = 0;
-    aliyun_iot_common_log_set_level(ALIOT_LOG_LEVEL_NONE);   //¾õµÃ´òÓ¡µÄĞÅÏ¢  debug  info error  µÈµÈ
-
+    aliyun_iot_common_log_set_level(ALIOT_LOG_LEVEL_DEBUG);   //¾õµÃ´òÓ¡µÄĞÅÏ¢  debug  info error  µÈµÈ
     ALIOT_LOG_DEBUG("start ai_voice_task");
     aliyun_iot_pthread_taskdelay(20000);
+    client_tts_event = init_event();
     do
     {
 #if BAIDU_AI_FACE_ENABLE
+		ALIOT_LOG_DEBUG("wait client_tts_event");
+		wait_event_timeout(client_tts_event, 0);
+		ALIOT_LOG_DEBUG("get client_tts_event");
         if(auth_info.token[0] == 0)
         {
             aliyun_iot_pthread_taskdelay(5000);
@@ -856,12 +861,12 @@ void ai_voice_task(void* arg)         //ÓïÒô´¦ÀíµÄÈÎÎñ
         {   
 			p_dbg_enter_task;
             //get text or recording event  from queue
-            if( get_voice_ai_event(&data) < 0)     //µÈ´ıÏûÏ¢¶ÓÁĞÖĞÊı¾İµÄµ½À´
+            if( get_voice_ai_event(&data) < 0) // µÈ´ıÏûÏ¢¶ÓÁĞÖĞÊı¾İµÄµ½À´
             {
                 continue;
             }
             //if it is recording event, send audio data to AI server
-            if(data[0] == 0)                              //½ÓÊÕµ½µÄÊÇÒôÆµÎÄ¼ş
+            if(data[0] == 0) // ½ÓÊÕµ½µÄÊÇÒôÆµÎÄ¼ş
             {
                 ret = baidu_ai_voice2text_query(&auth_info);
                 if(ret != SUCCESS_RETURN)
@@ -869,7 +874,7 @@ void ai_voice_task(void* arg)         //ÓïÒô´¦ÀíµÄÈÎÎñ
                     ALIOT_LOG_DEBUG("baidu_ai_face_verify ret=[%d]", ret);
                 }
             }
-            else                                       //½ÓÊÕµ½µÄÊÇÎÄ×ÖĞÅÏ¢
+            else   // ½ÓÊÕµ½µÄÊÇÎÄ×ÖĞÅÏ¢
             {   //if it text data, send to text data AI server
                 ALIOT_LOG_DEBUG("Get text data [%s]", data);
                 ret = baidu_ai_text2audio(&auth_info, data);
