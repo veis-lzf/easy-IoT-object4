@@ -14,7 +14,9 @@ void _mem_init(void)
 	malloc_start = (uint32_t) &Image$$RW_IRAM1$$ZI$$Limit; //取空闲内存最低地址
 	malloc_start = (malloc_start + 3) & (~0x03);// ALIGN TO word
 
-//0x20000为板子内存总大小，更换MCU时需注意
+	// 0x20000为板子内存总大小，更换MCU时需注意
+	// malloc_size = 0x20000000 + (128*1024) - malloc_start;
+	// @veis20230416, stm32f427vit6 sram size=256(112+16+64+64(ccm))KB
 	malloc_size = 0x20000000 + (192*1024) - malloc_start;
 
 /*
