@@ -82,7 +82,9 @@ void reset_ctl_cfg(WEB_CFG *cfg)
 #define str_ap_p  "123456789"
 #define str_sta_n  "veis"  
 #define str_sta_p  "123456789"  
- 
+#define str_devname "IoT Unified Platform"
+#define str_version "V2 with LwIP2.0.3"
+
 
 extern char * str_ap_name;
 extern char *str_ap_pwd;
@@ -100,13 +102,12 @@ void first_web_cfg(WEB_CFG *cfg)   //第一次登陆设置
 
 
 void default_web_cfg(WEB_CFG *cfg)
-{     p_dbg_enter;
-
-     memset(cfg, 0, sizeof(WEB_CFG));
+{     
+	p_dbg_enter;
+    memset(cfg, 0, sizeof(WEB_CFG));
  
-  
-    strcpy(cfg->devinfo.devname, "IoT Unified Platform");
-    strcpy(cfg->devinfo.version, "V2 with LwIP2.0.3");
+    strcpy(cfg->devinfo.devname, str_devname);
+    strcpy(cfg->devinfo.version, str_version);
     
     cfg->ap.channel = 6;
     cfg->ap.enable = 1;
@@ -194,7 +195,15 @@ int read_web_cfg(WEB_CFG *cfg)
     
     p_err("load_web_cfg ret=[%d]", ret);
 
-
+	// 如果发现是未写入的则重新写入配置
+	if(strcmp(cfg->devinfo.devname, str_devname) != 0)
+	{
+        printf("load_web_cfg: reset web\n");
+        first_web_cfg(cfg);
+        default_web_cfg(cfg); 
+        ret = save_web_cfg(cfg);
+	}
+	return ret;
 }
 
 int load_web_cfg(WEB_CFG *cfg)
