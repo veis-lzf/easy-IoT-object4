@@ -1,9 +1,0 @@
-.\out\cjson.o: ..\..\net\cjson\cJSON.c
-.\out\cjson.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
-.\out\cjson.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
-.\out\cjson.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
-.\out\cjson.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
-.\out\cjson.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\float.h
-.\out\cjson.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\limits.h
-.\out\cjson.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\ctype.h
-.\out\cjson.o: ..\..\net\cjson\cJSON.h
